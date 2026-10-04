@@ -1,0 +1,117 @@
+{
+ "benchmark": {
+  "n_per_config": 500,
+  "note": "Simulated textbook presentations (2 volunteered symptoms + 30% noise, then 5 adaptive questions); measures internal consistency, not real-world accuracy.",
+  "results": {
+   "full": {
+    "after_interview": {
+     "median_rank": 1.0,
+     "mrr": 0.8152334720535875,
+     "top1": 0.72,
+     "top10": 0.966,
+     "top5": 0.95
+    },
+    "volunteered_only": {
+     "median_rank": 2.0,
+     "mrr": 0.6393638583282321,
+     "top1": 0.486,
+     "top10": 0.944,
+     "top5": 0.84
+    }
+   },
+   "no_demographics": {
+    "after_interview": {
+     "median_rank": 1.0,
+     "mrr": 0.794195808973009,
+     "top1": 0.696,
+     "top10": 0.958,
+     "top5": 0.936
+    },
+    "volunteered_only": {
+     "median_rank": 2.0,
+     "mrr": 0.6191497575821573,
+     "top1": 0.464,
+     "top10": 0.93,
+     "top5": 0.838
+    }
+   },
+   "no_dosha": {
+    "after_interview": {
+     "median_rank": 1.0,
+     "mrr": 0.8183628990592776,
+     "top1": 0.726,
+     "top10": 0.964,
+     "top5": 0.938
+    },
+    "volunteered_only": {
+     "median_rank": 2.0,
+     "mrr": 0.6435710581485209,
+     "top1": 0.498,
+     "top10": 0.942,
+     "top5": 0.84
+    }
+   },
+   "no_prevalence": {
+    "after_interview": {
+     "median_rank": 1.0,
+     "mrr": 0.8206350477367326,
+     "top1": 0.726,
+     "top10": 0.98,
+     "top5": 0.96
+    },
+    "volunteered_only": {
+     "median_rank": 2.0,
+     "mrr": 0.6467965880013706,
+     "top1": 0.496,
+     "top10": 0.96,
+     "top5": 0.84
+    }
+   },
+   "symptoms_only": {
+    "after_interview": {
+     "median_rank": 1.0,
+     "mrr": 0.8120974321056925,
+     "top1": 0.718,
+     "top10": 0.974,
+     "top5": 0.94
+    },
+    "volunteered_only": {
+     "median_rank": 2.0,
+     "mrr": 0.6158809347657173,
+     "top1": 0.462,
+     "top10": 0.932,
+     "top5": 0.818
+    }
+   }
+  },
+  "seed": 0
+ },
+ "built_at": "2026-10-04T07:24:14+00:00",
+ "content_id": "f3a44403a751",
+ "counts": {
+  "conditions": 1446,
+  "prakriti_questions": 9,
+  "symptoms": 215
+ },
+ "files": {
+  "conditions.json": "cdf9ab466fb646041bfef510434ef33cc1f2cbcceede4e54401c6083fba251bf",
+  "evidence.json": "3492478ac3f9aaafe94fcd1aa0e125331a0783866e336373ed608b45f1537bf6",
+  "prakriti.json": "6debb63e8f8872c6cfdecdcadde450321a598c4ca3195e8c8afc9763b9a0a71c",
+  "symptoms.json": "521d3c6b0bc0ebb7dc36951a1ff2d3e5cc7830864f56f02008e91cbf38126b3a",
+  "vikriti.json": "2f60bae2882935760c6409304088ac87f9a2fe21b967a072c621567da1a31a71"
+ },
+ "metrics": {
+  "cluster_nmi_body_system": 0.2883282811062061,
+  "prakriti_cv_accuracy": 0.8469999999999999
+ },
+ "pack_version": 1,
+ "source_sha256": {
+  "condition_kb_classical": "f3f67afa2f88141a3252d06882961d7d01fa32cbac1f37339ca2785f0d4fedd3",
+  "condition_kb_modern": "6b722b8784e5947b762d93a0f1a6e86650ca7af27bbe21a95ab0c84afd4f37d5",
+  "namc_terminology": "a7bb22633f42dc73fe9085dbfe59ee351ae1a88d216e2d6ca74a36aa50e2afe5",
+  "orphanet_names": "df8d562a0c6011af36a74eb4000ce81ca7d723e8031010819fb71727c0962bbb",
+  "orphanet_prevalence": "6b492b3cc61e5a0327de12f59386a07a071760a938d0bbd8f525bc4a5f71b7f0",
+  "patient_intake": "8c9ae69c805a8c64c24d7e5811a12d414ed14f6eb5fbd8714d8d6373e0d4233f",
+  "prakriti_assessment": "5e57a1e5bea9d0cd69bb402bee0de1478f483d5a2856c9095ded211297c73854"
+ }
+}

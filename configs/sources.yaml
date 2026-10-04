@@ -1,0 +1,97 @@
+# Source registry: every dataset the platform knows about, pinned by checksum.
+# `role` decides where a source lands in the warehouse. Sources with role `audit_only`
+# are run through the data-quality gate (so the report shows *why* they are excluded)
+# but never loaded.
+sources:
+  patient_intake:
+    kaggle: riyaptl1/ayurvedic-lifecycle-form-diabetes-prediction
+    file: my_project_2042_updated.csv
+    sha256: 8c9ae69c805a8c64c24d7e5811a12d414ed14f6eb5fbd8714d8d6373e0d4233f
+    role: patient_cohort
+    label: Diabetes Diagnosis
+    description: Lifestyle intake form (prakriti, diet, sleep, stress) with self-reported diabetes status.
+
+  prakriti_assessment:
+    kaggle: devanshsingh2207/doshas-for-vata-pitta-and-kapha
+    file: ayurvedic_dosha_dataset (1).csv
+    sha256: 5e57a1e5bea9d0cd69bb402bee0de1478f483d5a2856c9095ded211297c73854
+    role: assessment
+    label: Dosha
+    description: 25-item Prakriti (constitution) assessment questionnaire with assessed dosha.
+
+  condition_kb_classical:
+    kaggle: akashkumarpr/ayurvedic-knowledge-dataset
+    file: ayurvedic_knowledge_dataset.csv
+    sha256: f3f67afa2f88141a3252d06882961d7d01fa32cbac1f37339ca2785f0d4fedd3
+    role: knowledge_base
+    label: System / Body Part
+    text_column: Symptoms
+    entity_column: Ayurvedic Name
+    description: 1,000 classical conditions (Charaka/Sushruta) with symptoms, dosha and body system.
+
+  condition_kb_modern:
+    kaggle: kagglekirti123/ayurgenixai-ayurvedic-dataset
+    file: AyurGenixAI_Dataset.csv
+    sha256: 6b722b8784e5947b762d93a0f1a6e86650ca7af27bbe21a95ab0c84afd4f37d5
+    role: knowledge_base
+    label: Doshas
+    text_column: Symptoms
+    entity_column: Disease
+    description: 446 modern disease profiles with symptoms, risk factors and Ayurvedic mapping.
+
+  namc_terminology:
+    kaggle: nnm22cs185surajn/national-ayurveda-morbidity-codes-csv
+    file: NATIONAL AYURVEDA MORBIDITY CODES.csv
+    sha256: a7bb22633f42dc73fe9085dbfe59ee351ae1a88d216e2d6ca74a36aa50e2afe5
+    role: terminology
+    description: Ministry of AYUSH National Ayurveda Morbidity Codes (NAMC).
+
+  orphanet_prevalence:
+    url: https://www.orphadata.com/data/xml/en_product9_prev.xml
+    file: en_product9_prev.xml
+    sha256: 6b492b3cc61e5a0327de12f59386a07a071760a938d0bbd8f525bc4a5f71b7f0
+    role: epidemiology
+    format: xml
+    licence: CC-BY-4.0 (Orphanet, orphadata.com)
+    description: Orphanet prevalence classes by geography for ~6,700 rare disorders.
+
+  orphanet_names:
+    url: https://www.orphadata.com/data/xml/en_product1.xml
+    file: en_product1.xml
+    sha256: df8d562a0c6011af36a74eb4000ce81ca7d723e8031010819fb71727c0962bbb
+    role: epidemiology
+    format: xml
+    licence: CC-BY-4.0 (Orphanet, orphadata.com)
+    description: Orphanet disorder names and synonyms (used to link conditions to prevalence).
+
+  # ---- audited, rejected by the quality gate ---------------------------------
+  prakriti_small:
+    kaggle: prathameshdhande/prakriti-dosha-dataset
+    file: Prakriti.csv
+    sha256: fd3f1c432a1c5654f6353a9349ef060658aadfd1f63c637ccb21970ab9284524
+    role: audit_only
+    label: Dosha
+
+  prakriti_updated:
+    kaggle: adityaprashantshirke/prakriti-updated
+    file: Updated_Prakriti_With_Features.csv
+    sha256: c9748a9baaaab30ac90438d9e8ea2d0a04d0b68baab3e8f6b769e08673e47473
+    role: audit_only
+    label: Dosha
+
+  ayurveda_healthcare_10k:
+    kaggle: aliainaanraza/ayurveda-healthcare-dataset
+    file: ayurveda_dataset.csv
+    sha256: 3a9d99e3617e5fcfa5ccef0e13c89967dfcc157a01c028067626d0d525690de7
+    role: audit_only
+    label: Dosha Type
+    text_column: Symptoms
+    entity_column: Problem
+
+# Thresholds for the quality gate. A source fails if any *blocking* check fails.
+quality_gate:
+  max_duplicate_rate: 0.05
+  max_null_rate: 0.30
+  min_text_uniqueness: 0.20      # unique symptom strings / unique entities
+  noise_feature_alpha: 0.01      # permutation-test p-value for "feature carries signal"
+  max_noise_feature_share: 0.50  # advisory: share of features indistinguishable from noise

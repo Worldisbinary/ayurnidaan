@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+.env
+# Raw Kaggle data is fetched + checksum-verified by `ayur fetch`; never commit it
+# (licensing, size, and the intake file contains real names).
+data/raw/
+# Pipeline outputs are reproducible from code + pinned data.
+artifacts/
+# Local SQLite databases (production uses Postgres)
+*.db
+# Mobile / web client
+mobile/node_modules/
+mobile/dist/
+mobile/.expo/
+mobile/example/
+mobile/android/
+mobile/ios/
+mobile/*.apk
+mobile/*.aab

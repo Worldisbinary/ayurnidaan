@@ -1,0 +1,1085 @@
+{
+ "base_rate": {
+  "kapha": 0.3801775147928994,
+  "pitta": 0.4948224852071006,
+  "vata": 0.5502958579881657
+ },
+ "llr": {
+  "abdominal cramps": {
+   "kapha": 0.4491,
+   "pitta": 0.2109,
+   "vata": -0.3014
+  },
+  "abdominal distension": {
+   "kapha": -0.11,
+   "pitta": -0.3568,
+   "vata": 1.1571
+  },
+  "abdominal pain": {
+   "kapha": -0.3727,
+   "pitta": 0.7686,
+   "vata": -0.2466
+  },
+  "abscess": {
+   "kapha": 0.3287,
+   "pitta": 0.2819,
+   "vata": -0.6769
+  },
+  "acidity": {
+   "kapha": -1.4414,
+   "pitta": 1.2007,
+   "vata": -1.3
+  },
+  "agitation": {
+   "kapha": -0.2543,
+   "pitta": 0.4606,
+   "vata": 0.8976
+  },
+  "anemia": {
+   "kapha": 0.464,
+   "pitta": -0.9256,
+   "vata": 0.2432
+  },
+  "anger": {
+   "kapha": -0.8289,
+   "pitta": 0.9619,
+   "vata": -1.0221
+  },
+  "anosmia": {
+   "kapha": 0.6674,
+   "pitta": -0.4434,
+   "vata": -0.5377
+  },
+  "anxiety": {
+   "kapha": -1.8696,
+   "pitta": -0.854,
+   "vata": 1.228
+  },
+  "back pain": {
+   "kapha": -1.362,
+   "pitta": -0.735,
+   "vata": 0.995
+  },
+  "belching": {
+   "kapha": 0.0419,
+   "pitta": -1.0918,
+   "vata": 1.0357
+  },
+  "bitter taste": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": -0.8477
+  },
+  "bleeding": {
+   "kapha": -0.4718,
+   "pitta": 1.1473,
+   "vata": -0.5542
+  },
+  "bleeding from fissures": {
+   "kapha": -0.0753,
+   "pitta": -0.7829,
+   "vata": 0.7373
+  },
+  "bleeding tendency": {
+   "kapha": -0.2797,
+   "pitta": 0.3395,
+   "vata": -0.3679
+  },
+  "bloating": {
+   "kapha": -0.6671,
+   "pitta": -0.2261,
+   "vata": 0.4576
+  },
+  "blood in stool": {
+   "kapha": -0.9606,
+   "pitta": 1.1056,
+   "vata": 0.101
+  },
+  "blood in urine": {
+   "kapha": 0.4605,
+   "pitta": -0.1298,
+   "vata": 0.0137
+  },
+  "blurred vision": {
+   "kapha": 0.1721,
+   "pitta": -0.1298,
+   "vata": -0.2729
+  },
+  "body pain": {
+   "kapha": -0.143,
+   "pitta": 0.4938,
+   "vata": -0.1427
+  },
+  "bone pain": {
+   "kapha": -0.9393,
+   "pitta": -0.5333,
+   "vata": 0.4176
+  },
+  "burning pain": {
+   "kapha": -0.9606,
+   "pitta": 0.6284,
+   "vata": -0.7121
+  },
+  "burning sensation": {
+   "kapha": -0.9586,
+   "pitta": 1.7973,
+   "vata": -2.1043
+  },
+  "burning urination": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": 0.1784
+  },
+  "chest congestion": {
+   "kapha": 1.1328,
+   "pitta": 0.0092,
+   "vata": 0.8976
+  },
+  "chest pain": {
+   "kapha": -0.3246,
+   "pitta": 0.7651,
+   "vata": 0.3602
+  },
+  "chest tightness": {
+   "kapha": 0.4392,
+   "pitta": -0.7829,
+   "vata": 0.7373
+  },
+  "chills": {
+   "kapha": -0.223,
+   "pitta": 1.2276,
+   "vata": -1.3565
+  },
+  "coated tongue": {
+   "kapha": 0.9471,
+   "pitta": -0.7829,
+   "vata": -0.8477
+  },
+  "cold intolerance": {
+   "kapha": 0.4491,
+   "pitta": -1.0918,
+   "vata": 0.5297
+  },
+  "colicky pain": {
+   "kapha": -0.8531,
+   "pitta": -1.0878,
+   "vata": 0.995
+  },
+  "conductive hearing loss": {
+   "kapha": 0.4392,
+   "pitta": -0.7829,
+   "vata": -0.3263
+  },
+  "confusion": {
+   "kapha": -0.6364,
+   "pitta": -0.2869,
+   "vata": 0.8315
+  },
+  "congestion": {
+   "kapha": 0.9471,
+   "pitta": -0.7829,
+   "vata": -0.3263
+  },
+  "constipation": {
+   "kapha": -0.3583,
+   "pitta": -1.1429,
+   "vata": 2.0205
+  },
+  "cough": {
+   "kapha": 0.5838,
+   "pitta": 0.019,
+   "vata": -0.0489
+  },
+  "cracking": {
+   "kapha": 0.0419,
+   "pitta": -0.1904,
+   "vata": 0.5297
+  },
+  "crusting": {
+   "kapha": 0.9733,
+   "pitta": -0.111,
+   "vata": -1.3851
+  },
+  "crying": {
+   "kapha": -0.4062,
+   "pitta": -0.1904,
+   "vata": 0.5297
+  },
+  "dark urine": {
+   "kapha": -0.3582,
+   "pitta": 1.0091,
+   "vata": -0.4332
+  },
+  "deformity": {
+   "kapha": -0.8531,
+   "pitta": -1.518,
+   "vata": 1.4518
+  },
+  "dehydration": {
+   "kapha": -0.3582,
+   "pitta": 0.6479,
+   "vata": 0.5208
+  },
+  "depression": {
+   "kapha": -0.2418,
+   "pitta": -0.8771,
+   "vata": 0.7892
+  },
+  "developmental delay": {
+   "kapha": -1.0459,
+   "pitta": 1.1131,
+   "vata": 1.9711
+  },
+  "diarrhea": {
+   "kapha": -0.2837,
+   "pitta": 0.833,
+   "vata": -0.2245
+  },
+  "difficulty eating": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": -0.3263
+  },
+  "difficulty moving": {
+   "kapha": 0.4227,
+   "pitta": -0.3335,
+   "vata": -0.3679
+  },
+  "difficulty passing stool": {
+   "kapha": -0.0753,
+   "pitta": -0.7829,
+   "vata": 0.7373
+  },
+  "difficulty speaking": {
+   "kapha": -0.2418,
+   "pitta": -0.155,
+   "vata": 0.3994
+  },
+  "difficulty swallowing": {
+   "kapha": 0.2433,
+   "pitta": -0.0963,
+   "vata": 0.9727
+  },
+  "difficulty urinating": {
+   "kapha": -0.677,
+   "pitta": -0.2438,
+   "vata": 0.7373
+  },
+  "difficulty walking": {
+   "kapha": -0.2418,
+   "pitta": -0.155,
+   "vata": 0.7892
+  },
+  "discharge": {
+   "kapha": 0.8642,
+   "pitta": 0.3111,
+   "vata": -0.9113
+  },
+  "discomfort": {
+   "kapha": -0.223,
+   "pitta": -0.235,
+   "vata": 0.265
+  },
+  "distension": {
+   "kapha": -0.2418,
+   "pitta": -0.8771,
+   "vata": 0.3994
+  },
+  "dizziness": {
+   "kapha": -0.7006,
+   "pitta": 0.4013,
+   "vata": 0.4385
+  },
+  "drooling": {
+   "kapha": 0.2209,
+   "pitta": 0.0092,
+   "vata": -0.5377
+  },
+  "drowsiness": {
+   "kapha": 1.0097,
+   "pitta": -1.2165,
+   "vata": -0.8605
+  },
+  "dry eyes": {
+   "kapha": -0.8289,
+   "pitta": -0.4434,
+   "vata": 0.8976
+  },
+  "dry mouth": {
+   "kapha": -1.0771,
+   "pitta": -0.3568,
+   "vata": 0.6678
+  },
+  "dry skin": {
+   "kapha": -0.7586,
+   "pitta": -0.6241,
+   "vata": 0.5208
+  },
+  "dryness": {
+   "kapha": -1.225,
+   "pitta": -0.8839,
+   "vata": 1.3769
+  },
+  "dysuria": {
+   "kapha": -0.2543,
+   "pitta": 0.0092,
+   "vata": -0.09
+  },
+  "ear pain": {
+   "kapha": -0.2418,
+   "pitta": -0.4993,
+   "vata": 0.3994
+  },
+  "edema": {
+   "kapha": 1.1217,
+   "pitta": -0.8454,
+   "vata": -0.746
+  },
+  "emaciation": {
+   "kapha": -0.6544,
+   "pitta": -0.8771,
+   "vata": 1.2653
+  },
+  "epistaxis": {
+   "kapha": -0.0753,
+   "pitta": 0.2589,
+   "vata": -0.8477
+  },
+  "exudation": {
+   "kapha": 1.1328,
+   "pitta": 0.0092,
+   "vata": -0.09
+  },
+  "eye pain": {
+   "kapha": -0.4062,
+   "pitta": 0.6284,
+   "vata": -0.3014
+  },
+  "facial abnormalities": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": 0.7373
+  },
+  "facial deviation": {
+   "kapha": -0.8289,
+   "pitta": -0.9492,
+   "vata": 0.8976
+  },
+  "facial pain": {
+   "kapha": 0.4491,
+   "pitta": -1.0918,
+   "vata": 0.101
+  },
+  "fainting": {
+   "kapha": -0.677,
+   "pitta": 0.2589,
+   "vata": 0.1784
+  },
+  "fatigue": {
+   "kapha": -0.3585,
+   "pitta": 0.6076,
+   "vata": 0.1089
+  },
+  "fever": {
+   "kapha": -0.2713,
+   "pitta": 1.4431,
+   "vata": -0.893
+  },
+  "foreign body sensation": {
+   "kapha": -0.0753,
+   "pitta": -0.2438,
+   "vata": -0.3263
+  },
+  "foul smell": {
+   "kapha": 0.0419,
+   "pitta": 0.6284,
+   "vata": -0.3014
+  },
+  "fractures": {
+   "kapha": -0.5379,
+   "pitta": -0.3568,
+   "vata": 1.1571
+  },
+  "gas": {
+   "kapha": -1.0771,
+   "pitta": -1.2165,
+   "vata": 1.1571
+  },
+  "growth delay": {
+   "kapha": -0.498,
+   "pitta": 0.0059,
+   "vata": 0.5463
+  },
+  "hallucinations": {
+   "kapha": 0.0419,
+   "pitta": 0.6284,
+   "vata": 1.0357
+  },
+  "halos around lights": {
+   "kapha": 0.4392,
+   "pitta": -0.2438,
+   "vata": 0.1784
+  },
+  "headache": {
+   "kapha": -1.1671,
+   "pitta": 0.8592,
+   "vata": 0.0795
+  },
+  "hearing loss": {
+   "kapha": 0.4558,
+   "pitta": -0.155,
+   "vata": 0.3994
+  },
+  "heat intolerance": {
+   "kapha": -0.5379,
+   "pitta": 1.2311,
+   "vata": -0.8605
+  },
+  "heaviness": {
+   "kapha": 2.1055,
+   "pitta": -2.3987,
+   "vata": -1.2223
+  },
+  "hematuria": {
+   "kapha": 0.3476,
+   "pitta": -0.4653,
+   "vata": -0.3784
+  },
+  "hemoptysis": {
+   "kapha": 0.2701,
+   "pitta": 1.2311,
+   "vata": 0.6678
+  },
+  "hepatomegaly": {
+   "kapha": 0.4392,
+   "pitta": 0.2589,
+   "vata": -0.8477
+  },
+  "hoarseness": {
+   "kapha": 0.0557,
+   "pitta": -0.8348,
+   "vata": 0.7266
+  },
+  "hot flushes": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": -0.3263
+  },
+  "hypertension": {
+   "kapha": -0.2292,
+   "pitta": 0.8349,
+   "vata": -0.0345
+  },
+  "indigestion": {
+   "kapha": 0.0419,
+   "pitta": 1.1056,
+   "vata": -0.3014
+  },
+  "infertility": {
+   "kapha": -0.677,
+   "pitta": 0.2589,
+   "vata": 0.7373
+  },
+  "insomnia": {
+   "kapha": -0.7586,
+   "pitta": -0.6241,
+   "vata": 0.8974
+  },
+  "intellectual disability": {
+   "kapha": -0.9606,
+   "pitta": 0.6284,
+   "vata": 1.0357
+  },
+  "irregular heartbeat": {
+   "kapha": -0.498,
+   "pitta": 0.0059,
+   "vata": 0.5463
+  },
+  "irregular periods": {
+   "kapha": -0.5379,
+   "pitta": 0.3787,
+   "vata": -0.1104
+  },
+  "irritability": {
+   "kapha": -0.9393,
+   "pitta": 0.8598,
+   "vata": 0.135
+  },
+  "irritation": {
+   "kapha": 0.5832,
+   "pitta": 0.0146,
+   "vata": -0.6192
+  },
+  "itching": {
+   "kapha": 1.0886,
+   "pitta": 0.0486,
+   "vata": -1.095
+  },
+  "jaundice": {
+   "kapha": -1.1068,
+   "pitta": 2.2097,
+   "vata": -1.6331
+  },
+  "joint pain": {
+   "kapha": -0.4805,
+   "pitta": 0.1849,
+   "vata": 0.3389
+  },
+  "lacrimation": {
+   "kapha": -0.0753,
+   "pitta": 0.2589,
+   "vata": -0.3263
+  },
+  "liver enlargement": {
+   "kapha": 0.4392,
+   "pitta": 0.2589,
+   "vata": -0.3263
+  },
+  "local swelling": {
+   "kapha": 0.0,
+   "pitta": -0.0,
+   "vata": 0.0
+  },
+  "loss of appetite": {
+   "kapha": 0.5732,
+   "pitta": 0.4425,
+   "vata": -0.7975
+  },
+  "loss of consciousness": {
+   "kapha": -0.6544,
+   "pitta": 0.1791,
+   "vata": 1.2653
+  },
+  "loss of motor skills": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": 0.7373
+  },
+  "loss of sensation": {
+   "kapha": -0.4062,
+   "pitta": -0.6097,
+   "vata": 1.0357
+  },
+  "loss of smell": {
+   "kapha": -0.11,
+   "pitta": -1.2165,
+   "vata": 0.2613
+  },
+  "loss of taste": {
+   "kapha": 0.2701,
+   "pitta": -0.3568,
+   "vata": -0.4758
+  },
+  "low blood pressure": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": 0.7373
+  },
+  "low energy": {
+   "kapha": 0.8531,
+   "pitta": -1.0918,
+   "vata": -0.7121
+  },
+  "low mood": {
+   "kapha": -0.0753,
+   "pitta": -0.2438,
+   "vata": 0.7373
+  },
+  "lower abdominal pain": {
+   "kapha": -0.4062,
+   "pitta": 0.2109,
+   "vata": -0.3014
+  },
+  "lung infections": {
+   "kapha": 0.4392,
+   "pitta": -0.7829,
+   "vata": 0.1784
+  },
+  "malabsorption": {
+   "kapha": 0.4392,
+   "pitta": 0.2589,
+   "vata": 0.1784
+  },
+  "memory loss": {
+   "kapha": -0.8289,
+   "pitta": -0.4434,
+   "vata": 0.8976
+  },
+  "mood swings": {
+   "kapha": -1.0771,
+   "pitta": 0.772,
+   "vata": 1.1571
+  },
+  "mouth breathing": {
+   "kapha": 1.1328,
+   "pitta": -0.9492,
+   "vata": -0.5377
+  },
+  "mucoid discharge": {
+   "kapha": 1.5438,
+   "pitta": -1.3274,
+   "vata": -0.9897
+  },
+  "mucus": {
+   "kapha": 1.71,
+   "pitta": -1.0856,
+   "vata": -1.2273
+  },
+  "mucus discharge": {
+   "kapha": 0.9471,
+   "pitta": -0.2438,
+   "vata": 0.1784
+  },
+  "muffled voice": {
+   "kapha": 0.9471,
+   "pitta": 0.2589,
+   "vata": -0.8477
+  },
+  "muscle pain": {
+   "kapha": -0.3401,
+   "pitta": 1.114,
+   "vata": -0.3945
+  },
+  "muscle rigidity": {
+   "kapha": -1.0771,
+   "pitta": -0.3568,
+   "vata": 1.1571
+  },
+  "muscle spasm": {
+   "kapha": -0.9606,
+   "pitta": -1.0918,
+   "vata": 1.0357
+  },
+  "muscle stiffness": {
+   "kapha": 0.143,
+   "pitta": 0.0059,
+   "vata": 0.5463
+  },
+  "muscle wasting": {
+   "kapha": -0.3582,
+   "pitta": -1.4272,
+   "vata": 0.5208
+  },
+  "muscle weakness": {
+   "kapha": -1.2898,
+   "pitta": 0.3153,
+   "vata": 1.2199
+  },
+  "nasal congestion": {
+   "kapha": 0.5958,
+   "pitta": -0.8348,
+   "vata": 0.135
+  },
+  "nasal obstruction": {
+   "kapha": 1.2893,
+   "pitta": -0.6097,
+   "vata": -1.1705
+  },
+  "nausea": {
+   "kapha": 0.0559,
+   "pitta": 0.5866,
+   "vata": -1.1811
+  },
+  "neck stiffness": {
+   "kapha": 0.0419,
+   "pitta": -0.6097,
+   "vata": 0.5297
+  },
+  "night sweats": {
+   "kapha": -0.2257,
+   "pitta": 1.6213,
+   "vata": 0.0376
+  },
+  "numbness": {
+   "kapha": -0.7961,
+   "pitta": -0.5561,
+   "vata": 1.3113
+  },
+  "obstruction": {
+   "kapha": 0.4605,
+   "pitta": -1.0878,
+   "vata": 0.0137
+  },
+  "oozing": {
+   "kapha": 0.9267,
+   "pitta": -0.2976,
+   "vata": -1.5169
+  },
+  "pain": {
+   "kapha": -0.5653,
+   "pitta": -0.3579,
+   "vata": 0.6042
+  },
+  "painful urination": {
+   "kapha": -0.11,
+   "pitta": 0.0113,
+   "vata": -0.1104
+  },
+  "pallor": {
+   "kapha": 0.5585,
+   "pitta": -0.5182,
+   "vata": -0.3322
+  },
+  "palpitations": {
+   "kapha": -0.6431,
+   "pitta": -0.9256,
+   "vata": 1.1656
+  },
+  "paralysis": {
+   "kapha": -1.515,
+   "pitta": -1.2617,
+   "vata": 1.609
+  },
+  "pelvic pain": {
+   "kapha": -0.8289,
+   "pitta": 0.9619,
+   "vata": -0.09
+  },
+  "pelvic pressure": {
+   "kapha": -0.0753,
+   "pitta": -0.7829,
+   "vata": 0.7373
+  },
+  "photophobia": {
+   "kapha": -1.1608,
+   "pitta": 0.3513,
+   "vata": -0.2571
+  },
+  "photosensitivity": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": -0.3263
+  },
+  "poor growth": {
+   "kapha": -0.0753,
+   "pitta": 0.2589,
+   "vata": 0.7373
+  },
+  "post-ictal confusion": {
+   "kapha": -0.0753,
+   "pitta": -0.2438,
+   "vata": 0.7373
+  },
+  "productive cough": {
+   "kapha": 0.9471,
+   "pitta": 0.7941,
+   "vata": 0.1784
+  },
+  "pus discharge": {
+   "kapha": 0.8531,
+   "pitta": -0.1904,
+   "vata": -0.3014
+  },
+  "rash": {
+   "kapha": -1.1377,
+   "pitta": 1.9079,
+   "vata": -0.8155
+  },
+  "red eyes": {
+   "kapha": -1.2757,
+   "pitta": 1.443,
+   "vata": -1.1042
+  },
+  "redness": {
+   "kapha": -0.0497,
+   "pitta": 1.325,
+   "vata": -1.4815
+  },
+  "reduced hearing": {
+   "kapha": -0.0753,
+   "pitta": -0.7829,
+   "vata": 0.1784
+  },
+  "reduced mobility": {
+   "kapha": -0.0753,
+   "pitta": -0.7829,
+   "vata": 0.1784
+  },
+  "reduced range of motion": {
+   "kapha": -0.677,
+   "pitta": -0.7829,
+   "vata": 0.7373
+  },
+  "reduced vision": {
+   "kapha": 0.1182,
+   "pitta": -0.155,
+   "vata": 0.0499
+  },
+  "regurgitation": {
+   "kapha": -0.2543,
+   "pitta": 0.4606,
+   "vata": -1.0221
+  },
+  "relieved by warmth": {
+   "kapha": -0.677,
+   "pitta": -0.7829,
+   "vata": 0.7373
+  },
+  "restlessness": {
+   "kapha": -1.5835,
+   "pitta": -0.7239,
+   "vata": 1.2411
+  },
+  "roughness": {
+   "kapha": -0.0753,
+   "pitta": -0.7829,
+   "vata": 0.1784
+  },
+  "runny nose": {
+   "kapha": 0.2209,
+   "pitta": -0.4434,
+   "vata": -0.09
+  },
+  "salivation": {
+   "kapha": 0.9471,
+   "pitta": -0.7829,
+   "vata": -0.8477
+  },
+  "scaling": {
+   "kapha": 0.8214,
+   "pitta": 0.0146,
+   "vata": -0.1427
+  },
+  "secondary infection": {
+   "kapha": 0.143,
+   "pitta": 0.0059,
+   "vata": -0.6363
+  },
+  "seizures": {
+   "kapha": -0.7006,
+   "pitta": 0.8173,
+   "vata": 0.8971
+  },
+  "sensitivity to cold": {
+   "kapha": -0.8289,
+   "pitta": -0.9492,
+   "vata": 0.8976
+  },
+  "short stature": {
+   "kapha": -0.2543,
+   "pitta": -0.4434,
+   "vata": 0.8976
+  },
+  "shortness of breath": {
+   "kapha": 0.3724,
+   "pitta": 0.0188,
+   "vata": 0.7563
+  },
+  "skeletal deformities": {
+   "kapha": -0.0753,
+   "pitta": -0.2438,
+   "vata": 0.7373
+  },
+  "skin lesions": {
+   "kapha": 0.2701,
+   "pitta": 0.772,
+   "vata": -0.4758
+  },
+  "skin ulcers": {
+   "kapha": -0.2543,
+   "pitta": 0.4606,
+   "vata": -1.0221
+  },
+  "slow digestion": {
+   "kapha": 0.9471,
+   "pitta": -0.7829,
+   "vata": -0.3263
+  },
+  "slow healing": {
+   "kapha": -0.2543,
+   "pitta": -0.4434,
+   "vata": 0.3694
+  },
+  "sneezing": {
+   "kapha": 0.3287,
+   "pitta": -0.8348,
+   "vata": 0.7266
+  },
+  "snoring": {
+   "kapha": 0.8531,
+   "pitta": -1.0918,
+   "vata": 0.101
+  },
+  "sore throat": {
+   "kapha": 0.7476,
+   "pitta": 0.7595,
+   "vata": -0.2729
+  },
+  "stiff neck": {
+   "kapha": -0.677,
+   "pitta": 0.7941,
+   "vata": -0.8477
+  },
+  "stiffness": {
+   "kapha": -0.019,
+   "pitta": -1.5301,
+   "vata": 2.139
+  },
+  "straining": {
+   "kapha": -0.4624,
+   "pitta": -1.0878,
+   "vata": 0.995
+  },
+  "suppurating": {
+   "kapha": -0.8289,
+   "pitta": 0.9619,
+   "vata": -1.0221
+  },
+  "sweating": {
+   "kapha": -0.1038,
+   "pitta": 0.6794,
+   "vata": -0.8206
+  },
+  "swelling": {
+   "kapha": 0.503,
+   "pitta": 0.233,
+   "vata": -0.5504
+  },
+  "swollen lymph nodes": {
+   "kapha": -0.5149,
+   "pitta": 1.1131,
+   "vata": -0.6165
+  },
+  "systemic toxicity": {
+   "kapha": -0.0753,
+   "pitta": 0.7941,
+   "vata": -0.8477
+  },
+  "tastelessness": {
+   "kapha": 1.2893,
+   "pitta": -0.6097,
+   "vata": -0.7121
+  },
+  "tearing": {
+   "kapha": 0.0419,
+   "pitta": -1.0918,
+   "vata": 0.101
+  },
+  "tenderness": {
+   "kapha": -0.989,
+   "pitta": 0.2068,
+   "vata": 0.2337
+  },
+  "tenesmus": {
+   "kapha": -0.7586,
+   "pitta": 0.6479,
+   "vata": -0.7534
+  },
+  "thickened skin": {
+   "kapha": 0.4491,
+   "pitta": -0.1904,
+   "vata": -0.3014
+  },
+  "thickening": {
+   "kapha": 1.3706,
+   "pitta": -0.735,
+   "vata": 0.629
+  },
+  "thirst": {
+   "kapha": -0.072,
+   "pitta": 0.4925,
+   "vata": -1.0889
+  },
+  "tingling": {
+   "kapha": -0.9393,
+   "pitta": -0.8348,
+   "vata": 1.0839
+  },
+  "tinnitus": {
+   "kapha": -0.5379,
+   "pitta": -0.7523,
+   "vata": 0.6678
+  },
+  "tissue necrosis": {
+   "kapha": -0.0753,
+   "pitta": 0.7941,
+   "vata": -0.3263
+  },
+  "tremors": {
+   "kapha": -1.1813,
+   "pitta": 0.5223,
+   "vata": 0.0499
+  },
+  "ulcers": {
+   "kapha": 0.4605,
+   "pitta": 0.4483,
+   "vata": -0.5624
+  },
+  "unconsciousness": {
+   "kapha": 0.4392,
+   "pitta": -0.7829,
+   "vata": -0.3263
+  },
+  "urgency": {
+   "kapha": -0.5379,
+   "pitta": 0.3787,
+   "vata": 0.6678
+  },
+  "variable appetite": {
+   "kapha": -0.0753,
+   "pitta": -0.2438,
+   "vata": 0.1784
+  },
+  "vision loss": {
+   "kapha": -0.8289,
+   "pitta": 0.0092,
+   "vata": -0.09
+  },
+  "vision problems": {
+   "kapha": -0.3582,
+   "pitta": 0.3227,
+   "vata": 0.8974
+  },
+  "vomiting": {
+   "kapha": -0.1716,
+   "pitta": 0.462,
+   "vata": -0.746
+  },
+  "watery nasal discharge": {
+   "kapha": -0.0753,
+   "pitta": -0.7829,
+   "vata": 0.7373
+  },
+  "weak stream": {
+   "kapha": 0.4392,
+   "pitta": -0.7829,
+   "vata": 0.1784
+  },
+  "weakness": {
+   "kapha": -0.4655,
+   "pitta": -0.6006,
+   "vata": 0.5292
+  },
+  "weight gain": {
+   "kapha": 1.447,
+   "pitta": -1.3447,
+   "vata": -0.8106
+  },
+  "weight loss": {
+   "kapha": -0.4928,
+   "pitta": 1.4918,
+   "vata": 0.0545
+  },
+  "wheezing": {
+   "kapha": 1.5546,
+   "pitta": -1.2617,
+   "vata": 1.609
+  },
+  "worry": {
+   "kapha": -0.677,
+   "pitta": -0.2438,
+   "vata": 0.7373
+  },
+  "worse at night": {
+   "kapha": 0.4558,
+   "pitta": -1.3274,
+   "vata": 0.0499
+  },
+  "worse in cold": {
+   "kapha": -0.2543,
+   "pitta": -0.9492,
+   "vata": 0.8976
+  }
+ },
+ "pseudo_count": 5.0
+}

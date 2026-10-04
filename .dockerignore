@@ -1,0 +1,12 @@
+.venv
+.git
+data
+artifacts
+tests
+mobile
+**/__pycache__
+.pytest_cache
+.ruff_cache
+.env
+*.db
+knowledge_pack/evidence_cache.json

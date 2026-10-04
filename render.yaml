@@ -1,0 +1,26 @@
+# Render Blueprint (render.com -> New -> Blueprint -> pick this repo).
+# Database: create a free Postgres on neon.tech (Mumbai region, ap-south-1) and paste its
+# connection string into AYUR_DATABASE_URL when Render asks.
+services:
+  - type: web
+    name: ayurnidaan-api
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /ready
+    autoDeploy: true
+    envVars:
+      - key: AYUR_ENVIRONMENT
+        value: production
+      - key: AYUR_DATABASE_URL
+        sync: false            # paste the Neon connection string
+      - key: AYUR_JWT_SECRET
+        generateValue: true
+      - key: AYUR_PII_SALT
+        generateValue: true
+      - key: AYUR_CORS_ORIGINS
+        sync: false            # e.g. ["https://ayurnidaan.vercel.app"]
+      - key: AYUR_BOOTSTRAP_ADMIN_EMAIL
+        sync: false            # the first account registered with this email becomes admin
+      - key: WEB_CONCURRENCY
+        value: "1"             # free tier: 512 MB RAM

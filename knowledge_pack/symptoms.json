@@ -1,0 +1,2133 @@
+{
+ "terms": [
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 0,
+   "doc_freq": 6,
+   "term": "abdominal cramps"
+  },
+  {
+   "aliases": [
+    "lower abdominal distension",
+    "massive abdominal distension"
+   ],
+   "background": 0.0225,
+   "cluster": 0,
+   "doc_freq": 6,
+   "term": "abdominal distension"
+  },
+  {
+   "aliases": [
+    "abdominal pain associated",
+    "abdominal pain if stone-related",
+    "abdominal pain of variable location",
+    "colicky abdominal pain",
+    "cramping abdominal pain",
+    "mixed abdominal pain",
+    "spasmodic abdominal pain",
+    "upper abdominal pain"
+   ],
+   "background": 0.0462,
+   "cluster": 0,
+   "doc_freq": 63,
+   "term": "abdominal pain"
+  },
+  {
+   "aliases": [
+    "abscess at site of injury",
+    "abscess formation",
+    "abscesses",
+    "deep-seated painful abscess in diabetic",
+    "hard abscess",
+    "painless or mildly painful cold abscess",
+    "perianal abscess",
+    "rapidly forming abscess",
+    "reddish-blue abscess"
+   ],
+   "background": 0.025,
+   "cluster": 16,
+   "doc_freq": 12,
+   "term": "abscess"
+  },
+  {
+   "aliases": [],
+   "background": 0.0242,
+   "cluster": 0,
+   "doc_freq": 10,
+   "term": "acidity"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 17,
+   "doc_freq": 4,
+   "term": "agitation"
+  },
+  {
+   "aliases": [
+    "anemia if chronic",
+    "vata disorders or anemia"
+   ],
+   "background": 0.0254,
+   "cluster": 3,
+   "doc_freq": 13,
+   "term": "anemia"
+  },
+  {
+   "aliases": [
+    "explosive anger"
+   ],
+   "background": 0.0217,
+   "cluster": 1,
+   "doc_freq": 4,
+   "term": "anger"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 4,
+   "doc_freq": 4,
+   "term": "anosmia"
+  },
+  {
+   "aliases": [
+    "anticipatory anxiety",
+    "anxiety or exertion",
+    "anxiety preceding",
+    "associated anxiety"
+   ],
+   "background": 0.0279,
+   "cluster": 2,
+   "doc_freq": 19,
+   "term": "anxiety"
+  },
+  {
+   "aliases": [
+    "dull or sharp low back pain",
+    "low back pain",
+    "lower back pain",
+    "neck or back pain"
+   ],
+   "background": 0.0238,
+   "cluster": 1,
+   "doc_freq": 9,
+   "term": "back pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0221,
+   "cluster": 0,
+   "doc_freq": 5,
+   "term": "belching"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 10,
+   "doc_freq": 3,
+   "term": "bitter taste"
+  },
+  {
+   "aliases": [
+    "associated bleeding or blood pressure changes",
+    "bleeding from lip corners",
+    "bleeding from multiple sites",
+    "bleeding from one or both nostrils",
+    "bleeding gums",
+    "bleeding on brushing",
+    "bleeding or prolapsing rectal masses",
+    "bleeding piles",
+    "bleeding ulcer",
+    "bleeding while brushing",
+    "bleeding wound",
+    "bright red bleeding per rectum",
+    "gum bleeding",
+    "heavy bleeding",
+    "heavy irregular bleeding",
+    "heavy or prolonged menstrual bleeding",
+    "intermenstrual bleeding",
+    "irregular bleeding",
+    "mucoid bleeding piles",
+    "nasal bleeding",
+    "or irregular menstrual bleeding",
+    "painless bright red bleeding",
+    "pulsatile bleeding",
+    "simultaneous bleeding from upper",
+    "spontaneous gum bleeding"
+   ],
+   "background": 0.0396,
+   "cluster": 4,
+   "doc_freq": 47,
+   "term": "bleeding"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "bleeding from fissures"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "bleeding tendency"
+  },
+  {
+   "aliases": [
+    "abdominal bloating"
+   ],
+   "background": 0.0317,
+   "cluster": 0,
+   "doc_freq": 28,
+   "term": "bloating"
+  },
+  {
+   "aliases": [
+    "blood in stools",
+    "bright red blood in stool"
+   ],
+   "background": 0.0221,
+   "cluster": 0,
+   "doc_freq": 5,
+   "term": "blood in stool"
+  },
+  {
+   "aliases": [],
+   "background": 0.0238,
+   "cluster": 14,
+   "doc_freq": 9,
+   "term": "blood in urine"
+  },
+  {
+   "aliases": [
+    "blurred vision if cornea is invaded",
+    "blurred vision without complete opacity"
+   ],
+   "background": 0.0238,
+   "cluster": 6,
+   "doc_freq": 9,
+   "term": "blurred vision"
+  },
+  {
+   "aliases": [],
+   "background": 0.0254,
+   "cluster": 1,
+   "doc_freq": 13,
+   "term": "body pain"
+  },
+  {
+   "aliases": [
+    "aching bone pain",
+    "deep bone pain",
+    "deep boring bone pain"
+   ],
+   "background": 0.0246,
+   "cluster": 15,
+   "doc_freq": 11,
+   "term": "bone pain"
+  },
+  {
+   "aliases": [
+    "burning pain after eating",
+    "electric-shock-like or burning pain"
+   ],
+   "background": 0.0225,
+   "cluster": 16,
+   "doc_freq": 6,
+   "term": "burning pain"
+  },
+  {
+   "aliases": [
+    "burning sensation in body",
+    "burning sensation in chest",
+    "burning sensation in nose",
+    "burning sensation in soles",
+    "burning sensation in vaginal area",
+    "burning sensation throughout body",
+    "burning sensations"
+   ],
+   "background": 0.0396,
+   "cluster": 10,
+   "doc_freq": 47,
+   "term": "burning sensation"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 0,
+   "doc_freq": 3,
+   "term": "burning urination"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 2,
+   "doc_freq": 4,
+   "term": "chest congestion"
+  },
+  {
+   "aliases": [
+    "associated chest pain",
+    "chest pain from injury",
+    "chest pain on coughing",
+    "chest pain or tightness",
+    "chest pain radiating to left arm or jaw",
+    "pleuritic chest pain",
+    "sharp pleuritic chest pain on breathing"
+   ],
+   "background": 0.0367,
+   "cluster": 2,
+   "doc_freq": 40,
+   "term": "chest pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "chest tightness"
+  },
+  {
+   "aliases": [
+    "alternating chills",
+    "chills predominant"
+   ],
+   "background": 0.0279,
+   "cluster": 1,
+   "doc_freq": 19,
+   "term": "chills"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 3,
+   "doc_freq": 3,
+   "term": "coated tongue"
+  },
+  {
+   "aliases": [],
+   "background": 0.0221,
+   "cluster": 9,
+   "doc_freq": 5,
+   "term": "cold intolerance"
+  },
+  {
+   "aliases": [
+    "colicky pain associated",
+    "colicky pain from loin to groin",
+    "colicky pain in scrotum"
+   ],
+   "background": 0.0238,
+   "cluster": 0,
+   "doc_freq": 9,
+   "term": "colicky pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 11,
+   "doc_freq": 3,
+   "term": "conductive hearing loss"
+  },
+  {
+   "aliases": [],
+   "background": 0.0262,
+   "cluster": 5,
+   "doc_freq": 15,
+   "term": "confusion"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 8,
+   "doc_freq": 3,
+   "term": "congestion"
+  },
+  {
+   "aliases": [
+    "absolute constipation",
+    "constipation or diarrhea"
+   ],
+   "background": 0.0275,
+   "cluster": 0,
+   "doc_freq": 18,
+   "term": "constipation"
+  },
+  {
+   "aliases": [
+    "cough after chest trauma",
+    "cough in infant",
+    "cough in kapha season",
+    "cough of varying character",
+    "dry cough",
+    "dry or wet cough",
+    "hoarse barking cough",
+    "morning cough",
+    "non-productive cough",
+    "paroxysmal whooping cough followed by inspiratory whoop"
+   ],
+   "background": 0.0433,
+   "cluster": 2,
+   "doc_freq": 56,
+   "term": "cough"
+  },
+  {
+   "aliases": [
+    "cracking sounds in joints",
+    "varies cracking"
+   ],
+   "background": 0.0221,
+   "cluster": 6,
+   "doc_freq": 5,
+   "term": "cracking"
+  },
+  {
+   "aliases": [
+    "weeping or crusting skin"
+   ],
+   "background": 0.0246,
+   "cluster": 4,
+   "doc_freq": 11,
+   "term": "crusting"
+  },
+  {
+   "aliases": [
+    "crying spells"
+   ],
+   "background": 0.0221,
+   "cluster": -1,
+   "doc_freq": 5,
+   "term": "crying"
+  },
+  {
+   "aliases": [],
+   "background": 0.0233,
+   "cluster": 0,
+   "doc_freq": 8,
+   "term": "dark urine"
+  },
+  {
+   "aliases": [
+    "bone deformity",
+    "joint deformity",
+    "nail deformity"
+   ],
+   "background": 0.0246,
+   "cluster": 15,
+   "doc_freq": 11,
+   "term": "deformity"
+  },
+  {
+   "aliases": [
+    "dehydration risk",
+    "dehydration signs",
+    "rapid dehydration"
+   ],
+   "background": 0.0238,
+   "cluster": 0,
+   "doc_freq": 9,
+   "term": "dehydration"
+  },
+  {
+   "aliases": [
+    "bone marrow depression",
+    "central depression"
+   ],
+   "background": 0.0233,
+   "cluster": 9,
+   "doc_freq": 8,
+   "term": "depression"
+  },
+  {
+   "aliases": [
+    "developmental delays"
+   ],
+   "background": 0.0275,
+   "cluster": 5,
+   "doc_freq": 18,
+   "term": "developmental delay"
+  },
+  {
+   "aliases": [
+    "acid-induced diarrhea",
+    "alternating diarrhea",
+    "burning diarrhea",
+    "diarrhea after eating",
+    "diarrhea or constipation",
+    "diarrhea persisting",
+    "diarrhea tendency",
+    "noisy diarrhea",
+    "onset diarrhea after fright or shock",
+    "watery diarrhea"
+   ],
+   "background": 0.0371,
+   "cluster": 0,
+   "doc_freq": 41,
+   "term": "diarrhea"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 18,
+   "doc_freq": 3,
+   "term": "difficulty eating"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 3,
+   "doc_freq": 3,
+   "term": "difficulty moving"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 0,
+   "doc_freq": 3,
+   "term": "difficulty passing stool"
+  },
+  {
+   "aliases": [
+    "difficulty speaking or swallowing",
+    "difficulty speaking or understanding speech"
+   ],
+   "background": 0.0229,
+   "cluster": 7,
+   "doc_freq": 7,
+   "term": "difficulty speaking"
+  },
+  {
+   "aliases": [
+    "difficulty swallowing dry foods"
+   ],
+   "background": 0.0258,
+   "cluster": 12,
+   "doc_freq": 14,
+   "term": "difficulty swallowing"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 14,
+   "doc_freq": 3,
+   "term": "difficulty urinating"
+  },
+  {
+   "aliases": [
+    "difficulty walking in severe cases"
+   ],
+   "background": 0.0229,
+   "cluster": 12,
+   "doc_freq": 7,
+   "term": "difficulty walking"
+  },
+  {
+   "aliases": [
+    "bloodstained nasal discharge",
+    "bloodstained thin nasal discharge",
+    "bloody discharge",
+    "bloody nasal discharge",
+    "continuous nasal discharge",
+    "dark discharge",
+    "discharge from curved opening",
+    "discharge from ulcer",
+    "discharge of pus on rupture",
+    "discharge of pus or faeces",
+    "ear discharge",
+    "ear discharge in infant",
+    "eye discharge",
+    "fetid discharge",
+    "foul discharge",
+    "foul-smelling ear discharge",
+    "foul-smelling nasal discharge",
+    "heavy discharge",
+    "malodorous discharge",
+    "mixed discharge",
+    "mucoid ropy discharge",
+    "mucopurulent discharge",
+    "mucopurulent discharge on pressure over lacrimal sac",
+    "mucous discharge",
+    "multiple types of discharge"
+   ],
+   "background": 0.0488,
+   "cluster": 4,
+   "doc_freq": 69,
+   "term": "discharge"
+  },
+  {
+   "aliases": [
+    "bladder discomfort",
+    "breast discomfort",
+    "chest discomfort",
+    "colicky discomfort",
+    "digestive discomfort",
+    "discomfort after eating",
+    "discomfort in upper abdomen",
+    "intestinal discomfort",
+    "left-sided abdominal discomfort",
+    "passing of flatus relieves discomfort",
+    "pelvic discomfort",
+    "right upper quadrant discomfort",
+    "throat discomfort",
+    "urinary discomfort"
+   ],
+   "background": 0.0287,
+   "cluster": 0,
+   "doc_freq": 21,
+   "term": "discomfort"
+  },
+  {
+   "aliases": [
+    "heavy distension",
+    "tender distension"
+   ],
+   "background": 0.0229,
+   "cluster": 0,
+   "doc_freq": 7,
+   "term": "distension"
+  },
+  {
+   "aliases": [],
+   "background": 0.0271,
+   "cluster": 2,
+   "doc_freq": 17,
+   "term": "dizziness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": -1,
+   "doc_freq": 4,
+   "term": "drooling"
+  },
+  {
+   "aliases": [
+    "daytime drowsiness",
+    "pathological drowsiness",
+    "post-ictal drowsiness"
+   ],
+   "background": 0.0225,
+   "cluster": 3,
+   "doc_freq": 6,
+   "term": "drowsiness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 6,
+   "doc_freq": 4,
+   "term": "dry eyes"
+  },
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 1,
+   "doc_freq": 6,
+   "term": "dry mouth"
+  },
+  {
+   "aliases": [
+    "fish-scale dry skin",
+    "silvery-white scaly plaques over dry skin"
+   ],
+   "background": 0.0233,
+   "cluster": -1,
+   "doc_freq": 8,
+   "term": "dry skin"
+  },
+  {
+   "aliases": [
+    "associated dryness",
+    "dryness of mouth",
+    "scalp dryness",
+    "skin dryness",
+    "vaginal dryness"
+   ],
+   "background": 0.0258,
+   "cluster": 2,
+   "doc_freq": 14,
+   "term": "dryness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 0,
+   "doc_freq": 4,
+   "term": "dysuria"
+  },
+  {
+   "aliases": [
+    "burning ear pain",
+    "dull aching ear pain",
+    "ear pain following injury or slap",
+    "sharp or throbbing ear pain"
+   ],
+   "background": 0.0229,
+   "cluster": 11,
+   "doc_freq": 7,
+   "term": "ear pain"
+  },
+  {
+   "aliases": [
+    "ankle edema",
+    "canal edema",
+    "cold edema",
+    "dependent edema",
+    "edema from excessive",
+    "edema in evening",
+    "edema of face",
+    "edema of leg possible",
+    "edema or dehydration",
+    "edema progressing upward",
+    "eyelid edema",
+    "facial edema",
+    "massive non-pitting edema of limb",
+    "pitting edema",
+    "pitting edema that is dry",
+    "pitting or non-pitting edema",
+    "spreading edema"
+   ],
+   "background": 0.0317,
+   "cluster": 3,
+   "doc_freq": 28,
+   "term": "edema"
+  },
+  {
+   "aliases": [],
+   "background": 0.0229,
+   "cluster": 2,
+   "doc_freq": 7,
+   "term": "emaciation"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 4,
+   "doc_freq": 4,
+   "term": "epistaxis"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 4,
+   "doc_freq": 4,
+   "term": "exudation"
+  },
+  {
+   "aliases": [
+    "deep boring eye pain",
+    "deep dull eye pain"
+   ],
+   "background": 0.0225,
+   "cluster": 6,
+   "doc_freq": 6,
+   "term": "eye pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 5,
+   "doc_freq": 3,
+   "term": "facial abnormalities"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 7,
+   "doc_freq": 4,
+   "term": "facial deviation"
+  },
+  {
+   "aliases": [
+    "facial pain or swelling",
+    "lightning-like facial pain lasting seconds"
+   ],
+   "background": 0.0221,
+   "cluster": 8,
+   "doc_freq": 5,
+   "term": "facial pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 2,
+   "doc_freq": 4,
+   "term": "fainting"
+  },
+  {
+   "aliases": [
+    "daytime fatigue",
+    "fatigue after physical activity",
+    "fatigue in liver disease",
+    "vocal fatigue",
+    "worsened by fatigue"
+   ],
+   "background": 0.0742,
+   "cluster": 1,
+   "doc_freq": 130,
+   "term": "fatigue"
+  },
+  {
+   "aliases": [
+    "afternoon low-grade fever",
+    "autumn fever",
+    "burning fever",
+    "complications arising in first 7 days of fever",
+    "complications of fever beyond 7 days",
+    "fever after delivery",
+    "fever after initial ama phase",
+    "fever after toxin exposure",
+    "fever associated",
+    "fever daily at similar time",
+    "fever during pregnancy",
+    "fever every alternate day",
+    "fever every fourth day",
+    "fever following physical injury",
+    "fever in children",
+    "fever in cold season",
+    "fever in severe cases",
+    "fever in specific stages shivering",
+    "fever in systemic involvement",
+    "fever preceding",
+    "fever preceding rash",
+    "fevers",
+    "irregular or intermittent fever pattern",
+    "low-grade or high fever",
+    "low-grade persistent fever"
+   ],
+   "background": 0.1,
+   "cluster": 1,
+   "doc_freq": 192,
+   "term": "fever"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "foreign body sensation"
+  },
+  {
+   "aliases": [
+    "sour or foul smell"
+   ],
+   "background": 0.0221,
+   "cluster": -1,
+   "doc_freq": 5,
+   "term": "foul smell"
+  },
+  {
+   "aliases": [
+    "bone fractures"
+   ],
+   "background": 0.0225,
+   "cluster": 15,
+   "doc_freq": 6,
+   "term": "fractures"
+  },
+  {
+   "aliases": [
+    "gas passage",
+    "relieved by passing gas or stool",
+    "upward-moving gas"
+   ],
+   "background": 0.0225,
+   "cluster": 0,
+   "doc_freq": 6,
+   "term": "gas"
+  },
+  {
+   "aliases": [
+    "growth delays"
+   ],
+   "background": 0.0217,
+   "cluster": -1,
+   "doc_freq": 4,
+   "term": "growth delay"
+  },
+  {
+   "aliases": [],
+   "background": 0.0221,
+   "cluster": 17,
+   "doc_freq": 5,
+   "term": "hallucinations"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "halos around lights"
+  },
+  {
+   "aliases": [
+    "bursting headache",
+    "headache after reading",
+    "headache associated",
+    "headache of variable location",
+    "headache radiating from eye",
+    "headache worse at sunrise",
+    "heavy headache",
+    "mixed headache features",
+    "pulsating headache",
+    "throbbing headache",
+    "throbbing or vice-like headache"
+   ],
+   "background": 0.0467,
+   "cluster": 1,
+   "doc_freq": 64,
+   "term": "headache"
+  },
+  {
+   "aliases": [
+    "or hearing loss depending on type"
+   ],
+   "background": 0.0233,
+   "cluster": 11,
+   "doc_freq": 8,
+   "term": "hearing loss"
+  },
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 10,
+   "doc_freq": 6,
+   "term": "heat intolerance"
+  },
+  {
+   "aliases": [
+    "abdominal heaviness",
+    "chest heaviness",
+    "head heaviness",
+    "heaviness after eating",
+    "heaviness along sciatic distribution",
+    "heaviness in legs",
+    "heaviness in limbs",
+    "heaviness in scrotum",
+    "heaviness of chest",
+    "heaviness of eye",
+    "heaviness of eyelids",
+    "heaviness of thighs",
+    "pelvic heaviness",
+    "sensation of heaviness"
+   ],
+   "background": 0.0467,
+   "cluster": 3,
+   "doc_freq": 64,
+   "term": "heaviness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0254,
+   "cluster": 0,
+   "doc_freq": 13,
+   "term": "hematuria"
+  },
+  {
+   "aliases": [
+    "hemoptysis from cavitary lung lesion"
+   ],
+   "background": 0.0225,
+   "cluster": 1,
+   "doc_freq": 6,
+   "term": "hemoptysis"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 3,
+   "doc_freq": 3,
+   "term": "hepatomegaly"
+  },
+  {
+   "aliases": [
+    "hoarseness in obese or fat-dominant individuals"
+   ],
+   "background": 0.0242,
+   "cluster": 12,
+   "doc_freq": 10,
+   "term": "hoarseness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 1,
+   "doc_freq": 3,
+   "term": "hot flushes"
+  },
+  {
+   "aliases": [
+    "heat or hypertension"
+   ],
+   "background": 0.0258,
+   "cluster": -1,
+   "doc_freq": 14,
+   "term": "hypertension"
+  },
+  {
+   "aliases": [],
+   "background": 0.0221,
+   "cluster": 0,
+   "doc_freq": 5,
+   "term": "indigestion"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "infertility"
+  },
+  {
+   "aliases": [
+    "insomnia during fever"
+   ],
+   "background": 0.0238,
+   "cluster": 2,
+   "doc_freq": 9,
+   "term": "insomnia"
+  },
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 5,
+   "doc_freq": 6,
+   "term": "intellectual disability"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 2,
+   "doc_freq": 3,
+   "term": "irregular heartbeat"
+  },
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 9,
+   "doc_freq": 6,
+   "term": "irregular periods"
+  },
+  {
+   "aliases": [],
+   "background": 0.0242,
+   "cluster": 1,
+   "doc_freq": 10,
+   "term": "irritability"
+  },
+  {
+   "aliases": [
+    "corneal irritation",
+    "eye irritation",
+    "irritation of affected area",
+    "laryngopharyngeal irritation",
+    "skin irritation",
+    "skin irritation in skin folds",
+    "throat irritation"
+   ],
+   "background": 0.025,
+   "cluster": 6,
+   "doc_freq": 12,
+   "term": "irritation"
+  },
+  {
+   "aliases": [
+    "anal itching",
+    "itching inside ear canal",
+    "itching of eyes",
+    "itching scalp",
+    "itching without major skin lesion",
+    "nasal itching",
+    "no itching or pain",
+    "or localized itching",
+    "skin itching",
+    "vulvar itching"
+   ],
+   "background": 0.0475,
+   "cluster": 4,
+   "doc_freq": 66,
+   "term": "itching"
+  },
+  {
+   "aliases": [
+    "deep jaundice",
+    "jaundice in severe cases"
+   ],
+   "background": 0.0325,
+   "cluster": 0,
+   "doc_freq": 30,
+   "term": "jaundice"
+  },
+  {
+   "aliases": [
+    "joint pain worse on movement",
+    "shoulder joint pain"
+   ],
+   "background": 0.0329,
+   "cluster": 1,
+   "doc_freq": 31,
+   "term": "joint pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 6,
+   "doc_freq": 3,
+   "term": "lacrimation"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 0,
+   "doc_freq": 3,
+   "term": "liver enlargement"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 19,
+   "doc_freq": 3,
+   "term": "local swelling"
+  },
+  {
+   "aliases": [],
+   "background": 0.0258,
+   "cluster": 3,
+   "doc_freq": 14,
+   "term": "loss of appetite"
+  },
+  {
+   "aliases": [
+    "brief loss of consciousness",
+    "loss of consciousness possible",
+    "total loss of consciousness"
+   ],
+   "background": 0.0229,
+   "cluster": 5,
+   "doc_freq": 7,
+   "term": "loss of consciousness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 5,
+   "doc_freq": 3,
+   "term": "loss of motor skills"
+  },
+  {
+   "aliases": [
+    "loss of sensation below lesion"
+   ],
+   "background": 0.0221,
+   "cluster": 7,
+   "doc_freq": 5,
+   "term": "loss of sensation"
+  },
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 8,
+   "doc_freq": 6,
+   "term": "loss of smell"
+  },
+  {
+   "aliases": [
+    "loss of taste on anterior tongue"
+   ],
+   "background": 0.0225,
+   "cluster": 20,
+   "doc_freq": 6,
+   "term": "loss of taste"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 1,
+   "doc_freq": 3,
+   "term": "low blood pressure"
+  },
+  {
+   "aliases": [],
+   "background": 0.0221,
+   "cluster": 3,
+   "doc_freq": 5,
+   "term": "low energy"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "low mood"
+  },
+  {
+   "aliases": [
+    "colicky lower abdominal pain",
+    "cramping lower abdominal pain"
+   ],
+   "background": 0.0221,
+   "cluster": 0,
+   "doc_freq": 5,
+   "term": "lower abdominal pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 2,
+   "doc_freq": 3,
+   "term": "lung infections"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 0,
+   "doc_freq": 3,
+   "term": "malabsorption"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 5,
+   "doc_freq": 4,
+   "term": "memory loss"
+  },
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 9,
+   "doc_freq": 6,
+   "term": "mood swings"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 21,
+   "doc_freq": 4,
+   "term": "mouth breathing"
+  },
+  {
+   "aliases": [
+    "thick white or mucoid discharge",
+    "watery or mucoid discharge"
+   ],
+   "background": 0.0229,
+   "cluster": 3,
+   "doc_freq": 7,
+   "term": "mucoid discharge"
+  },
+  {
+   "aliases": [
+    "excess mucus",
+    "mucus congestion",
+    "mucus in stools",
+    "mucus production",
+    "thick white or yellow mucus"
+   ],
+   "background": 0.0258,
+   "cluster": -1,
+   "doc_freq": 14,
+   "term": "mucus"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 4,
+   "doc_freq": 3,
+   "term": "mucus discharge"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "muffled voice"
+  },
+  {
+   "aliases": [],
+   "background": 0.0287,
+   "cluster": 1,
+   "doc_freq": 21,
+   "term": "muscle pain"
+  },
+  {
+   "aliases": [
+    "neck muscle rigidity"
+   ],
+   "background": 0.0225,
+   "cluster": 5,
+   "doc_freq": 6,
+   "term": "muscle rigidity"
+  },
+  {
+   "aliases": [
+    "jaw muscle spasm",
+    "muscle spasms"
+   ],
+   "background": 0.0221,
+   "cluster": 5,
+   "doc_freq": 5,
+   "term": "muscle spasm"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "muscle stiffness"
+  },
+  {
+   "aliases": [
+    "muscle wasting in affected limbs",
+    "muscle wasting in one or more limbs",
+    "muscle wasting on affected side"
+   ],
+   "background": 0.0233,
+   "cluster": 7,
+   "doc_freq": 8,
+   "term": "muscle wasting"
+  },
+  {
+   "aliases": [],
+   "background": 0.0296,
+   "cluster": 12,
+   "doc_freq": 23,
+   "term": "muscle weakness"
+  },
+  {
+   "aliases": [
+    "nasal congestion alternating sides"
+   ],
+   "background": 0.0242,
+   "cluster": 8,
+   "doc_freq": 10,
+   "term": "nasal congestion"
+  },
+  {
+   "aliases": [],
+   "background": 0.0221,
+   "cluster": 4,
+   "doc_freq": 5,
+   "term": "nasal obstruction"
+  },
+  {
+   "aliases": [
+    "associated nausea",
+    "nausea preceding vomiting",
+    "nausea worse after spicy food",
+    "slow onset nausea"
+   ],
+   "background": 0.0508,
+   "cluster": 0,
+   "doc_freq": 74,
+   "term": "nausea"
+  },
+  {
+   "aliases": [],
+   "background": 0.0221,
+   "cluster": 13,
+   "doc_freq": 5,
+   "term": "neck stiffness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0267,
+   "cluster": 1,
+   "doc_freq": 16,
+   "term": "night sweats"
+  },
+  {
+   "aliases": [
+    "numbness in hand"
+   ],
+   "background": 0.0258,
+   "cluster": 7,
+   "doc_freq": 14,
+   "term": "numbness"
+  },
+  {
+   "aliases": [
+    "lymphatic obstruction",
+    "obstruction of nasal passages",
+    "obstruction to movement or elimination",
+    "reversible airflow obstruction",
+    "risk of airway obstruction",
+    "vata-related respiratory obstruction"
+   ],
+   "background": 0.0238,
+   "cluster": 20,
+   "doc_freq": 9,
+   "term": "obstruction"
+  },
+  {
+   "aliases": [
+    "continuously oozing fistula",
+    "weeping or oozing lesions"
+   ],
+   "background": 0.0233,
+   "cluster": 4,
+   "doc_freq": 8,
+   "term": "oozing"
+  },
+  {
+   "aliases": [
+    "breast pain",
+    "burning epigastric pain",
+    "burning epigastric pain worsened by empty stomach",
+    "colicky flank pain",
+    "cramp-like pain",
+    "deep aching pain in bones",
+    "deep throat pain",
+    "dental pain",
+    "ear canal pain",
+    "epigastric pain",
+    "epigastric pain 2 3 hours after meals",
+    "epigastric pain radiating to back",
+    "face pain",
+    "flank pain",
+    "flank pain radiating to groin",
+    "frequency without pain",
+    "heel pain on first steps in morning",
+    "hunger pain at night",
+    "jaw pain",
+    "jaw pain when eating",
+    "kidney pain",
+    "knee pain worsening",
+    "leg pain",
+    "local pain",
+    "loin-to-groin pain"
+   ],
+   "background": 0.0938,
+   "cluster": 13,
+   "doc_freq": 177,
+   "term": "pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0225,
+   "cluster": 14,
+   "doc_freq": 6,
+   "term": "painful urination"
+  },
+  {
+   "aliases": [
+    "mixed pallor",
+    "pallor from blood loss",
+    "pallor of skin",
+    "white pallor",
+    "yellowish pallor"
+   ],
+   "background": 0.0275,
+   "cluster": 3,
+   "doc_freq": 18,
+   "term": "pallor"
+  },
+  {
+   "aliases": [
+    "heart palpitations"
+   ],
+   "background": 0.025,
+   "cluster": 2,
+   "doc_freq": 12,
+   "term": "palpitations"
+  },
+  {
+   "aliases": [
+    "intestinal paralysis",
+    "left-sided paralysis",
+    "one-sided paralysis of face",
+    "paralysis of both legs",
+    "paralysis of one or both lower limbs",
+    "paralysis of one side of body",
+    "paralysis of single limb",
+    "right-sided paralysis"
+   ],
+   "background": 0.0246,
+   "cluster": 7,
+   "doc_freq": 11,
+   "term": "paralysis"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 14,
+   "doc_freq": 4,
+   "term": "pelvic pain"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "pelvic pressure"
+  },
+  {
+   "aliases": [],
+   "background": 0.0254,
+   "cluster": 6,
+   "doc_freq": 13,
+   "term": "photophobia"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 1,
+   "doc_freq": 3,
+   "term": "photosensitivity"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 5,
+   "doc_freq": 3,
+   "term": "poor growth"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 5,
+   "doc_freq": 3,
+   "term": "post-ictal confusion"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 1,
+   "doc_freq": 3,
+   "term": "productive cough"
+  },
+  {
+   "aliases": [
+    "pus discharge from gum near a tooth",
+    "pus discharge through tunnel"
+   ],
+   "background": 0.0221,
+   "cluster": 13,
+   "doc_freq": 5,
+   "term": "pus discharge"
+  },
+  {
+   "aliases": [
+    "bull's-eye rash",
+    "itchy rash",
+    "itchy rashes",
+    "koplik's spots in mouth before rash",
+    "maculopapular rash starting from face downward",
+    "rash on hands",
+    "vesicular rash",
+    "vesicular rash after prodromal fever"
+   ],
+   "background": 0.0363,
+   "cluster": 1,
+   "doc_freq": 39,
+   "term": "rash"
+  },
+  {
+   "aliases": [],
+   "background": 0.0233,
+   "cluster": 1,
+   "doc_freq": 8,
+   "term": "red eyes"
+  },
+  {
+   "aliases": [
+    "associated redness",
+    "conjunctival redness",
+    "deep redness",
+    "no redness in chronic stage",
+    "no redness or pain",
+    "redness at birth or shortly after",
+    "redness at limbus",
+    "redness of conjunctiva",
+    "redness of eye",
+    "redness of eyelid edge",
+    "sectoral bright redness of episclera",
+    "tender redness"
+   ],
+   "background": 0.0417,
+   "cluster": 6,
+   "doc_freq": 52,
+   "term": "redness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 11,
+   "doc_freq": 3,
+   "term": "reduced hearing"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 9,
+   "doc_freq": 3,
+   "term": "reduced mobility"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 13,
+   "doc_freq": 3,
+   "term": "reduced range of motion"
+  },
+  {
+   "aliases": [
+    "significantly reduced vision"
+   ],
+   "background": 0.0229,
+   "cluster": 6,
+   "doc_freq": 7,
+   "term": "reduced vision"
+  },
+  {
+   "aliases": [
+    "acid regurgitation"
+   ],
+   "background": 0.0217,
+   "cluster": 0,
+   "doc_freq": 4,
+   "term": "regurgitation"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 0,
+   "doc_freq": 3,
+   "term": "relieved by warmth"
+  },
+  {
+   "aliases": [],
+   "background": 0.0254,
+   "cluster": 2,
+   "doc_freq": 13,
+   "term": "restlessness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 6,
+   "doc_freq": 3,
+   "term": "roughness"
+  },
+  {
+   "aliases": [
+    "brief episodes of runny nose"
+   ],
+   "background": 0.0217,
+   "cluster": 8,
+   "doc_freq": 4,
+   "term": "runny nose"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 3,
+   "doc_freq": 3,
+   "term": "salivation"
+  },
+  {
+   "aliases": [
+    "fine scaling",
+    "oily scaling of scalp",
+    "scaling at advancing border",
+    "scaling of lid margins",
+    "scaling of pinna",
+    "scaling or weeping",
+    "silvery scaling"
+   ],
+   "background": 0.025,
+   "cluster": 4,
+   "doc_freq": 12,
+   "term": "scaling"
+  },
+  {
+   "aliases": [
+    "secondary infection risk"
+   ],
+   "background": 0.0217,
+   "cluster": 4,
+   "doc_freq": 4,
+   "term": "secondary infection"
+  },
+  {
+   "aliases": [
+    "refractory seizures",
+    "tonic-clonic seizures"
+   ],
+   "background": 0.0275,
+   "cluster": 5,
+   "doc_freq": 18,
+   "term": "seizures"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 13,
+   "doc_freq": 4,
+   "term": "sensitivity to cold"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 22,
+   "doc_freq": 4,
+   "term": "short stature"
+  },
+  {
+   "aliases": [],
+   "background": 0.0408,
+   "cluster": 2,
+   "doc_freq": 50,
+   "term": "shortness of breath"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 22,
+   "doc_freq": 3,
+   "term": "skeletal deformities"
+  },
+  {
+   "aliases": [
+    "hard nodular skin lesions"
+   ],
+   "background": 0.0225,
+   "cluster": -1,
+   "doc_freq": 6,
+   "term": "skin lesions"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": 1,
+   "doc_freq": 4,
+   "term": "skin ulcers"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 3,
+   "doc_freq": 3,
+   "term": "slow digestion"
+  },
+  {
+   "aliases": [],
+   "background": 0.0217,
+   "cluster": -1,
+   "doc_freq": 4,
+   "term": "slow healing"
+  },
+  {
+   "aliases": [
+    "paroxysmal sneezing",
+    "sneezing bouts",
+    "sneezing without obstruction"
+   ],
+   "background": 0.0242,
+   "cluster": 8,
+   "doc_freq": 10,
+   "term": "sneezing"
+  },
+  {
+   "aliases": [
+    "loud snoring"
+   ],
+   "background": 0.0221,
+   "cluster": 21,
+   "doc_freq": 5,
+   "term": "snoring"
+  },
+  {
+   "aliases": [
+    "varies sore throat"
+   ],
+   "background": 0.0238,
+   "cluster": 1,
+   "doc_freq": 9,
+   "term": "sore throat"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 1,
+   "doc_freq": 3,
+   "term": "stiff neck"
+  },
+  {
+   "aliases": [
+    "joint stiffness",
+    "morning stiffness",
+    "morning stiffness 1 hour",
+    "morning stiffness 30 minutes",
+    "morning stiffness resolving quickly",
+    "shoulder joint stiffness",
+    "stiffness after rest",
+    "stiffness in morning",
+    "stiffness in tendons",
+    "stiffness of thighs",
+    "stiffness on waking"
+   ],
+   "background": 0.0333,
+   "cluster": 1,
+   "doc_freq": 32,
+   "term": "stiffness"
+  },
+  {
+   "aliases": [
+    "history of straining",
+    "straining at stool",
+    "straining to void",
+    "worsened by straining"
+   ],
+   "background": 0.0238,
+   "cluster": 23,
+   "doc_freq": 9,
+   "term": "straining"
+  },
+  {
+   "aliases": [
+    "quickly suppurating",
+    "suppurating or inflammatory"
+   ],
+   "background": 0.0221,
+   "cluster": 16,
+   "doc_freq": 5,
+   "term": "suppurating"
+  },
+  {
+   "aliases": [
+    "no sweating",
+    "or absent sweating",
+    "sweating phases"
+   ],
+   "background": 0.0287,
+   "cluster": 10,
+   "doc_freq": 21,
+   "term": "sweating"
+  },
+  {
+   "aliases": [
+    "bluish swelling",
+    "cold swelling",
+    "cyclical abdominal swelling",
+    "discolored swelling on diabetic skin",
+    "eyelid swelling",
+    "glandular swelling associated",
+    "gradually enlarging swelling in throat",
+    "gum swelling",
+    "hard or fluctuant swelling depending on type",
+    "hard swelling on palate resembling tortoise back",
+    "heavy scrotal swelling",
+    "intraocular inflammation without external swelling",
+    "joint swelling",
+    "knee joint swelling",
+    "leg swelling",
+    "lid swelling possible",
+    "lip swelling",
+    "liver swelling",
+    "neck swelling",
+    "non-tender round swelling on eyelid",
+    "painful scrotal swelling",
+    "painful swelling",
+    "painful swelling inside eyelid",
+    "painful swelling of parotid glands",
+    "pale swelling"
+   ],
+   "background": 0.0692,
+   "cluster": 1,
+   "doc_freq": 118,
+   "term": "swelling"
+  },
+  {
+   "aliases": [],
+   "background": 0.0271,
+   "cluster": 1,
+   "doc_freq": 17,
+   "term": "swollen lymph nodes"
+  },
+  {
+   "aliases": [
+    "systemic toxicity from chronic ama"
+   ],
+   "background": 0.0221,
+   "cluster": 19,
+   "doc_freq": 5,
+   "term": "systemic toxicity"
+  },
+  {
+   "aliases": [
+    "tastelessness or altered taste"
+   ],
+   "background": 0.0221,
+   "cluster": 3,
+   "doc_freq": 5,
+   "term": "tastelessness"
+  },
+  {
+   "aliases": [
+    "tearing quality"
+   ],
+   "background": 0.0221,
+   "cluster": -1,
+   "doc_freq": 5,
+   "term": "tearing"
+  },
+  {
+   "aliases": [
+    "gum tenderness",
+    "local tenderness",
+    "lower abdominal tenderness",
+    "rebound tenderness",
+    "tenderness along intercostal space",
+    "tenderness at fracture site",
+    "tenderness at heel or ankle",
+    "tenderness over bone",
+    "tenderness over sinuses",
+    "tenderness to touch",
+    "tragus tenderness",
+    "uterine tenderness"
+   ],
+   "background": 0.0275,
+   "cluster": 15,
+   "doc_freq": 18,
+   "term": "tenderness"
+  },
+  {
+   "aliases": [],
+   "background": 0.0233,
+   "cluster": 0,
+   "doc_freq": 8,
+   "term": "tenesmus"
+  },
+  {
+   "aliases": [
+    "leathery thickened skin",
+    "thickened skin at pressure points"
+   ],
+   "background": 0.0221,
+   "cluster": -1,
+   "doc_freq": 5,
+   "term": "thickened skin"
+  },
+  {
+   "aliases": [
+    "skin thickening",
+    "thickening or crumbling of nails"
+   ],
+   "background": 0.0238,
+   "cluster": -1,
+   "doc_freq": 9,
+   "term": "thickening"
+  },
+  {
+   "aliases": [
+    "burning thirst",
+    "thirst secondary to fever or systemic disease",
+    "unquenchable thirst"
+   ],
+   "background": 0.0304,
+   "cluster": 10,
+   "doc_freq": 25,
+   "term": "thirst"
+  },
+  {
+   "aliases": [
+    "tingling in limbs",
+    "tingling of extremities",
+    "tingling prodrome before blister"
+   ],
+   "background": 0.0242,
+   "cluster": 7,
+   "doc_freq": 10,
+   "term": "tingling"
+  },
+  {
+   "aliases": [
+    "tinnitus or fullness"
+   ],
+   "background": 0.0225,
+   "cluster": 11,
+   "doc_freq": 6,
+   "term": "tinnitus"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": -1,
+   "doc_freq": 3,
+   "term": "tissue necrosis"
+  },
+  {
+   "aliases": [],
+   "background": 0.0229,
+   "cluster": -1,
+   "doc_freq": 7,
+   "term": "tremors"
+  },
+  {
+   "aliases": [
+    "painful oral ulcers",
+    "painful oral ulcers or generalised oral inflammation",
+    "painful ulcers",
+    "painful ulcers on tongue surface",
+    "small ulcers",
+    "white or pale oral ulcers"
+   ],
+   "background": 0.0238,
+   "cluster": 18,
+   "doc_freq": 9,
+   "term": "ulcers"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 3,
+   "doc_freq": 3,
+   "term": "unconsciousness"
+  },
+  {
+   "aliases": [
+    "urgency incontinence in overactive bladder"
+   ],
+   "background": 0.0225,
+   "cluster": 0,
+   "doc_freq": 6,
+   "term": "urgency"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 0,
+   "doc_freq": 3,
+   "term": "variable appetite"
+  },
+  {
+   "aliases": [
+    "vision loss secondary to primary pathology"
+   ],
+   "background": 0.0221,
+   "cluster": 6,
+   "doc_freq": 5,
+   "term": "vision loss"
+  },
+  {
+   "aliases": [],
+   "background": 0.0233,
+   "cluster": 12,
+   "doc_freq": 8,
+   "term": "vision problems"
+  },
+  {
+   "aliases": [
+    "delayed vomiting",
+    "dry vomiting",
+    "mucus-like vomiting",
+    "no vomiting or diarrhea despite severe colic",
+    "post-tussive vomiting",
+    "sensation of wanting to vomit without actual vomiting",
+    "vomiting after emesis therapy",
+    "vomiting after feeding",
+    "vomiting after ingesting toxins",
+    "vomiting of acid",
+    "vomiting of faecal matter",
+    "vomiting of sour",
+    "vomiting of sour fluid"
+   ],
+   "background": 0.0329,
+   "cluster": 0,
+   "doc_freq": 31,
+   "term": "vomiting"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 8,
+   "doc_freq": 3,
+   "term": "watery nasal discharge"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 23,
+   "doc_freq": 3,
+   "term": "weak stream"
+  },
+  {
+   "aliases": [
+    "arm weakness",
+    "hand weakness",
+    "limb weakness",
+    "maternal weakness",
+    "motor weakness distally",
+    "one-sided facial weakness",
+    "respiratory weakness",
+    "right-side weakness",
+    "weakness associated",
+    "weakness or fracture of limbs",
+    "weakness or paralysis of all four limbs",
+    "weakness or paralysis of one arm"
+   ],
+   "background": 0.0392,
+   "cluster": 7,
+   "doc_freq": 46,
+   "term": "weakness"
+  },
+  {
+   "aliases": [
+    "poor weight gain",
+    "unexplained weight gain"
+   ],
+   "background": 0.0271,
+   "cluster": 9,
+   "doc_freq": 17,
+   "term": "weight gain"
+  },
+  {
+   "aliases": [
+    "unexplained weight loss",
+    "weight loss despite eating",
+    "weight loss in type 1"
+   ],
+   "background": 0.0392,
+   "cluster": 1,
+   "doc_freq": 46,
+   "term": "weight loss"
+  },
+  {
+   "aliases": [
+    "bronchospasm without wheezing"
+   ],
+   "background": 0.0246,
+   "cluster": 2,
+   "doc_freq": 11,
+   "term": "wheezing"
+  },
+  {
+   "aliases": [],
+   "background": 0.0213,
+   "cluster": 2,
+   "doc_freq": 3,
+   "term": "worry"
+  },
+  {
+   "aliases": [
+    "cough worse at night"
+   ],
+   "background": 0.0229,
+   "cluster": 4,
+   "doc_freq": 7,
+   "term": "worse at night"
+  },
+  {
+   "aliases": [
+    "worse in cold weather"
+   ],
+   "background": 0.0217,
+   "cluster": 1,
+   "doc_freq": 4,
+   "term": "worse in cold"
+  }
+ ]
+}

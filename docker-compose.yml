@@ -1,0 +1,30 @@
+# Local production-like stack:  docker compose up --build
+#   db   Postgres 16 (the same engine Neon runs)
+#   api  clinical API on :8000 (runs migrations on start)
+# The web / Android client is built separately from mobile/ (see DEPLOYMENT.md).
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ayur
+      POSTGRES_PASSWORD: ayur-local-only
+      POSTGRES_DB: ayurnidaan
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ayur"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: .
+    env_file: [.env]
+    environment:
+      AYUR_DATABASE_URL: postgresql://ayur:ayur-local-only@db:5432/ayurnidaan
+    ports: ["8000:8000"]
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:

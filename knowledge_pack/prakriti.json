@@ -1,0 +1,286 @@
+{
+ "classes": [
+  "kapha",
+  "pitta",
+  "vata"
+ ],
+ "cv_accuracy": 0.8469999999999999,
+ "intercept": {
+  "kapha": 0.3570638423054293,
+  "pitta": -0.37373638644757,
+  "vata": 0.01667254414194864
+ },
+ "n_train": 5000,
+ "questions": [
+  {
+   "id": "pace_of_performing_work",
+   "options": [
+    {
+     "value": "Fast",
+     "weights": {
+      "kapha": -1.0818552110321968,
+      "pitta": 2.222598693475557,
+      "vata": -1.1407434824433627
+     }
+    },
+    {
+     "value": "Medium",
+     "weights": {
+      "kapha": -1.0258296196557848,
+      "pitta": 2.1913979009416584,
+      "vata": -1.1655682812858732
+     }
+    },
+    {
+     "value": "Slow",
+     "weights": {
+      "kapha": 2.4444543067772497,
+      "pitta": -4.7720459195092975,
+      "vata": 2.3275916127320047
+     }
+    }
+   ],
+   "question": "How fast do you usually do things (walk, talk, work)?"
+  },
+  {
+   "id": "quality_of_voice",
+   "options": [
+    {
+     "value": "Deep",
+     "weights": {
+      "kapha": 0.5527771479501957,
+      "pitta": -0.6758964853605094,
+      "vata": 0.1231193374103153
+     }
+    },
+    {
+     "value": "Fast",
+     "weights": {
+      "kapha": -1.4402395114552207,
+      "pitta": 3.4787165271752087,
+      "vata": -2.038477015720039
+     }
+    },
+    {
+     "value": "Rough",
+     "weights": {
+      "kapha": 1.224231839594307,
+      "pitta": -3.160869366906765,
+      "vata": 1.936637527312458
+     }
+    }
+   ],
+   "question": "How would you describe your voice?"
+  },
+  {
+   "id": "body_energy",
+   "options": [
+    {
+     "value": "High",
+     "weights": {
+      "kapha": 0.6728095152961776,
+      "pitta": -1.466179398207864,
+      "vata": 0.7933698829116894
+     }
+    },
+    {
+     "value": "Low",
+     "weights": {
+      "kapha": 0.7642588314842451,
+      "pitta": -1.561713476849127,
+      "vata": 0.7974546453648886
+     }
+    },
+    {
+     "value": "Medium",
+     "weights": {
+      "kapha": -1.1002988706911345,
+      "pitta": 2.669843549964924,
+      "vata": -1.5695446792738286
+     }
+    }
+   ],
+   "question": "How is your physical energy through the day?"
+  },
+  {
+   "id": "body_frame",
+   "options": [
+    {
+     "value": "Medium",
+     "weights": {
+      "kapha": -1.0872302607839524,
+      "pitta": 2.57087536620519,
+      "vata": -1.4836451054212643
+     }
+    },
+    {
+     "value": "Thin and Lean",
+     "weights": {
+      "kapha": 0.7886661434251875,
+      "pitta": -1.4566486682663697,
+      "vata": 0.6679825248411834
+     }
+    },
+    {
+     "value": "Well Built",
+     "weights": {
+      "kapha": 0.635333593448046,
+      "pitta": -1.472276023030878,
+      "vata": 0.836942429582834
+     }
+    }
+   ],
+   "question": "What is your body frame?"
+  },
+  {
+   "id": "hunger",
+   "options": [
+    {
+     "value": "Irregular",
+     "weights": {
+      "kapha": 0.43833698904539614,
+      "pitta": -1.5762360661046337,
+      "vata": 1.137899077059233
+     }
+    },
+    {
+     "value": "Skips Meal",
+     "weights": {
+      "kapha": -0.06485889625928812,
+      "pitta": 0.6733447708901291,
+      "vata": -0.6084858746308469
+     }
+    },
+    {
+     "value": "Sudden and Sharp",
+     "weights": {
+      "kapha": -0.0367086166968277,
+      "pitta": 0.5448419701224587,
+      "vata": -0.5081333534256378
+     }
+    }
+   ],
+   "question": "How is your hunger / appetite pattern?"
+  },
+  {
+   "id": "type_of_hair",
+   "options": [
+    {
+     "value": "Dry",
+     "weights": {
+      "kapha": 0.5635898186233819,
+      "pitta": -1.647503828686703,
+      "vata": 1.083914010063321
+     }
+    },
+    {
+     "value": "Greasy",
+     "weights": {
+      "kapha": -0.12602085174098893,
+      "pitta": 0.6719365096148505,
+      "vata": -0.5459156578738649
+     }
+    },
+    {
+     "value": "Normal",
+     "weights": {
+      "kapha": -0.10079949079310727,
+      "pitta": 0.6175179939798066,
+      "vata": -0.5167185031866948
+     }
+    }
+   ],
+   "question": "What is your natural hair type?"
+  },
+  {
+   "id": "joints",
+   "options": [
+    {
+     "value": "Healthy",
+     "weights": {
+      "kapha": -0.3162243215681438,
+      "pitta": 0.7042926123733335,
+      "vata": -0.388068290805184
+     }
+    },
+    {
+     "value": "Heavy",
+     "weights": {
+      "kapha": 1.1017805665335467,
+      "pitta": -1.8287180026255057,
+      "vata": 0.7269374360919475
+     }
+    },
+    {
+     "value": "Weak",
+     "weights": {
+      "kapha": -0.44878676887612745,
+      "pitta": 0.7663760651601268,
+      "vata": -0.3175892962839927
+     }
+    }
+   ],
+   "question": "How are your joints?"
+  },
+  {
+   "id": "mental_activity",
+   "options": [
+    {
+     "value": "Aggressive",
+     "weights": {
+      "kapha": -0.3589838819984926,
+      "pitta": 0.6783372274849131,
+      "vata": -0.3193533454864187
+     }
+    },
+    {
+     "value": "Restless",
+     "weights": {
+      "kapha": -0.4380228139524079,
+      "pitta": 0.8318840716667558,
+      "vata": -0.3938612577143482
+     }
+    },
+    {
+     "value": "Stable",
+     "weights": {
+      "kapha": 1.1337761720401687,
+      "pitta": -1.8682706242437155,
+      "vata": 0.7344944522035319
+     }
+    }
+   ],
+   "question": "How is your mind usually?"
+  },
+  {
+   "id": "body_odor",
+   "options": [
+    {
+     "value": "Mild",
+     "weights": {
+      "kapha": -0.34093239169593265,
+      "pitta": 0.679807255667272,
+      "vata": -0.33887486397133765
+     }
+    },
+    {
+     "value": "Negligible",
+     "weights": {
+      "kapha": -0.39597410384101367,
+      "pitta": 0.6900085059307803,
+      "vata": -0.2940344020897575
+     }
+    },
+    {
+     "value": "Strong",
+     "weights": {
+      "kapha": 1.0736759716262236,
+      "pitta": -1.7278650866900995,
+      "vata": 0.654189115063864
+     }
+    }
+   ],
+   "question": "How strong is your natural body odour?"
+  }
+ ]
+}
