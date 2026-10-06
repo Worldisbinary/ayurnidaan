@@ -2,10 +2,24 @@ import { useQuery } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import { useState } from 'react';
 
-import { Badge, Card, Chip, ErrorText, Loading, Notice, Row, Screen, T, Table } from '@/components/ui';
+import {
+  Badge, Card, Chip, EmptyState, ErrorText, Notice, Row, Screen, Skeleton, StatRow, StatTile, T, Table,
+} from '@/components/ui';
 import { api } from '@/lib/api';
 import { useSession } from '@/lib/session';
 import { pretty } from '@/lib/theme';
+
+function QueueSkeleton() {
+  return (
+    <>
+      {Array.from({ length: 5 }, (_, i) => (
+        <Row key={i} style={{ paddingVertical: 8, flexWrap: 'nowrap' }}>
+          <Skeleton h={16} w={80} r={8} /><Skeleton h={10} w="15%" /><Skeleton h={10} w="35%" /><Skeleton h={10} w="30%" />
+        </Row>
+      ))}
+    </>
+  );
+}
 
 export default function Queue() {
   const { user } = useSession();
@@ -35,14 +49,17 @@ export default function Queue() {
           <Chip label="Reviewed" selected={status === 'reviewed'} onPress={() => setStatus('reviewed')} />
         </Row>
       </Row>
-      <Row>
-        <Badge status="emergency" /><T>{counts.emergency}</T>
-        <Badge status="urgent" /><T>{counts.urgent}</T>
-        <Badge status="routine" /><T>{counts.routine}</T>
-      </Row>
+      <StatRow>
+        <StatTile label="Emergency" value={counts.emergency} icon="alert-circle" tone={counts.emergency ? 'critical' : 'muted'}
+          hint="call the patient first" />
+        <StatTile label="Urgent" value={counts.urgent} icon="warning" tone={counts.urgent ? 'warning' : 'muted'} hint="review today" />
+        <StatTile label="Routine" value={counts.routine} icon="checkmark-circle" tone="good" hint="review this week" />
+        <StatTile label="Assigned to me" value={rows.filter((r) => r.assigned_to_me).length} icon="person-outline" tone="accent"
+          hint={status === 'submitted' ? 'awaiting review' : 'reviewed'} />
+      </StatRow>
       <ErrorText error={q.error} />
       <Card title={`${rows.length} cases · emergencies first`}>
-        {q.isLoading ? <Loading /> : rows.length ? (
+        {q.isLoading ? <QueueSkeleton /> : rows.length ? (
           <Table head={['Triage', 'Received', 'Patient', 'Complaint', 'Top condition', 'Vikriti', 'Ritu', 'Mine']}
             flex={[1.2, 1.1, 1.1, 2, 2, 0.9, 0.9, 0.5]}
             rows={rows.map((r) => [
@@ -54,7 +71,13 @@ export default function Queue() {
               pretty(r.vikriti), pretty(r.ritu), r.assigned_to_me ? '●' : '',
             ])}
             onRowPress={(i) => router.push(`/(practitioner)/case/${rows[i].id}`)} />
-        ) : <T v="muted">No cases.</T>}
+        ) : (
+          <EmptyState icon={status === 'submitted' ? 'checkmark-done-outline' : 'file-tray-outline'}
+            title={status === 'submitted' ? 'Queue is clear' : 'No reviewed cases yet'}
+            message={status === 'submitted'
+              ? 'New cases appear here as soon as a patient shares a check-up. The queue refreshes every 30 seconds.'
+              : 'Cases you confirm or revise are listed here.'} />
+        )}
       </Card>
     </Screen>
   );

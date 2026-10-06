@@ -17,7 +17,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
-from . import dosha, guidance, pariksha, red_flags
+from . import ayurveda, dosha, guidance, pariksha, red_flags
 from .differential import DifferentialModel, Feedback
 from .kala_desha import kala_desha
 from .knowledge import KnowledgePack
@@ -44,6 +44,10 @@ class EncounterInput:
     aggravating: list[str] = field(default_factory=list)
     relieving: list[str] = field(default_factory=list)
     agni: str | None = None
+    # Patient-reported mala/mutra from the digestion module; a practitioner's own
+    # examination of the same field always wins.
+    reported_examination: dict[str, str] = field(default_factory=dict)
+    bmi: float | None = None
     skip_red_flags: bool = False  # only for offline evaluation
 
 
@@ -86,8 +90,9 @@ class AssessmentEngine:
 
         present = [s for s, v in answers.items() if v]
         prak = dosha.prakriti(self.pack.prakriti, enc.prakriti_answers)
+        examination = {**enc.reported_examination, **enc.examination}
         extra, trail = pariksha.dosha_evidence(
-            enc.examination, enc.aggravating, enc.relieving, enc.agni
+            examination, enc.aggravating, enc.relieving, enc.agni
         )
         vik = dosha.vikriti(self.pack.vikriti, present, extra, trail)
         kd = kala_desha(enc.on_date, enc.desha)
@@ -101,7 +106,7 @@ class AssessmentEngine:
                 "prakriti": prak.to_dict() if prak else None,
                 "vikriti": vik.to_dict() if vik else None,
                 "agni": pariksha.AGNI[enc.agni][0] if enc.agni in pariksha.AGNI else None,
-                "ama": pariksha.ama_assessment(set(present), enc.examination),
+                "ama": pariksha.ama_assessment(set(present), examination),
                 "kala_desha": kd.to_dict(),
                 "differential": self.model.rank(post, parts, answers, top=top),
                 "next_questions": [
@@ -109,6 +114,8 @@ class AssessmentEngine:
                 ],
                 "answered_symptoms": len(answers),
                 "guidance": guidance.patient_guidance(kd.ritu, vik.dominant if vik else None),
+                "ayurveda": ayurveda.derive(present, enc.bmi).to_dict(),
+                "vaya": ayurveda.vaya(enc.age),
             }
         )
         return result

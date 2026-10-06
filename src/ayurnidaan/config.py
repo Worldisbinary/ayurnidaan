@@ -47,6 +47,37 @@ class Settings(BaseSettings):
     open_meteo_geocode_url: str = "https://geocoding-api.open-meteo.com/v1/search"
     geocode_country: str | None = "IN"  # ISO code; None searches worldwide
     bootstrap_admin_email: str | None = None  # first registration with this email -> admin
+    public_api_url: str = "http://localhost:8000"  # this API's public base URL (OAuth callbacks)
+
+    # --- DigiLocker (identity prefill) ----------------------------------------------------
+    # None -> "sandbox" in development/test, "disabled" in production.
+    digilocker_mode: Literal["disabled", "sandbox", "production"] | None = None
+    digilocker_client_id: str | None = None
+    digilocker_client_secret: str | None = None
+    digilocker_redirect_uri: str | None = None
+    # Confirm these against the partner API specification issued at onboarding.
+    digilocker_authorize_url: str = (
+        "https://digilocker.meripehchaan.gov.in/public/oauth2/1/authorize"
+    )
+    digilocker_token_url: str = "https://digilocker.meripehchaan.gov.in/public/oauth2/1/token"
+    digilocker_user_url: str = "https://digilocker.meripehchaan.gov.in/public/oauth2/1/user"
+    digilocker_eaadhaar_url: str = (
+        "https://digilocker.meripehchaan.gov.in/public/oauth2/3/xml/eaadhaar"
+    )
+    digilocker_sandbox_identity: dict = Field(
+        default_factory=lambda: {
+            "dob": "21051990",
+            "gender": "F",
+            "state": "Rajasthan",
+            "district": "Jhunjhunu",
+        }
+    )
+
+    @property
+    def digilocker_effective_mode(self) -> str:
+        if self.digilocker_mode:
+            return self.digilocker_mode
+        return "disabled" if self.environment == "production" else "sandbox"
 
     def check_production(self) -> None:
         """Refuse to start in production with development secrets."""

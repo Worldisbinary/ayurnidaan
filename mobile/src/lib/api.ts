@@ -2,7 +2,8 @@
 import { Platform } from 'react-native';
 
 import type {
-  Assessment, CaseView, Encounter, History, IntakeOptions, Profile, QueueItem, Tokens, User,
+  Assessment, AyurvedaProfile, CaseView, DailyCatalog, DailyLog, Encounter, History, IntakeOptions, Profile,
+  Questionnaire, QueueItem, Tokens, Trends, User,
 } from './types';
 
 const DEFAULT_URL = Platform.OS === 'android' ? 'http://10.0.2.2:8000' : 'http://localhost:8000';
@@ -113,6 +114,20 @@ export const api = {
   history: () => get<History>('/me/history'),
   exportData: () => get<unknown>('/me/export'),
   erase: () => request<void>('DELETE', '/me'),
+
+  // ayurvedic profile, modules, daily tracking
+  ayurveda: () => get<AyurvedaProfile>('/me/ayurveda'),
+  trends: () => get<Trends>('/me/trends'),
+  questionnaires: () => get<Questionnaire[]>('/questionnaires'),
+  submitModule: (id: string, answers: Record<string, string | number>) =>
+    post<Record<string, unknown>>(`/me/modules/${id}`, { answers }),
+  dailyCatalog: () => get<DailyCatalog>('/daily/catalog'),
+  daily: (days = 14) => get<DailyLog[]>(`/me/daily?days=${days}`),
+  saveDaily: (day: string, body: { dinacharya: Record<string, boolean>; meals: Record<string, string[]> }) =>
+    put<DailyLog>(`/me/daily/${day}`, body),
+  digilockerStatus: () => get<{ mode: 'disabled' | 'sandbox' | 'production' }>('/digilocker/status'),
+  digilockerStart: (return_to: string) =>
+    post<{ authorize_url: string; mode: string }>('/me/digilocker/start', { return_to }),
 
   // encounters
   createEncounter: (b: {

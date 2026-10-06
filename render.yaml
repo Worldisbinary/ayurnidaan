@@ -8,7 +8,9 @@ services:
     plan: free
     region: singapore
     healthCheckPath: /ready
-    autoDeploy: true
+    # Off: deploys come only from .github/workflows/cd.yml (deploy hook) after CI, the
+    # security scans and the image gate have passed - never straight from a push.
+    autoDeploy: false
     envVars:
       - key: AYUR_ENVIRONMENT
         value: production
@@ -22,5 +24,9 @@ services:
         sync: false            # e.g. ["https://ayurnidaan.vercel.app"]
       - key: AYUR_BOOTSTRAP_ADMIN_EMAIL
         sync: false            # the first account registered with this email becomes admin
+      - key: AYUR_PUBLIC_API_URL
+        sync: false            # e.g. https://ayurnidaan-api.onrender.com
+      - key: AYUR_DIGILOCKER_MODE
+        value: sandbox         # demo: test identity. Use production once NeGD approves you.
       - key: WEB_CONCURRENCY
         value: "1"             # free tier: 512 MB RAM

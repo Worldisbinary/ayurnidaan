@@ -1,5 +1,10 @@
 # Ayurnidaan
 
+[![ci](https://github.com/Worldisbinary/ayurnidaan/actions/workflows/ci.yml/badge.svg)](https://github.com/Worldisbinary/ayurnidaan/actions/workflows/ci.yml)
+[![security](https://github.com/Worldisbinary/ayurnidaan/actions/workflows/security.yml/badge.svg)](https://github.com/Worldisbinary/ayurnidaan/actions/workflows/security.yml)
+[![codeql](https://github.com/Worldisbinary/ayurnidaan/actions/workflows/codeql.yml/badge.svg)](https://github.com/Worldisbinary/ayurnidaan/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Worldisbinary/ayurnidaan/badge)](https://scorecard.dev/viewer/?uri=github.com/Worldisbinary/ayurnidaan)
+
 An Ayurvedic screening and clinical decision-support platform. **Patients** do an intake
 on their phone or the web: an emergency checklist, symptoms, what makes them worse or
 better, digestion, constitution and location. The engine reasons the way an Ayurvedic
@@ -19,6 +24,7 @@ feed a learning loop that updates the model only when it measurably improves.
 | App (Android + web) | Expo SDK 57 · React Native · Expo Router · React Query · TypeScript |
 | Data pipeline | pandas · scikit-learn · DuckDB warehouse · checksum-pinned sources |
 | Deploy | Docker → Render · Neon Postgres · Vercel (web) · EAS → Google Play |
+| DevSecOps | GitHub Actions · CodeQL · Bandit · gitleaks · pip-audit · Trivy · OWASP ZAP · cosign · SBOM |
 
 ## How the engine reasons
 
@@ -42,6 +48,36 @@ Every ranked condition carries its evidence: which reported symptoms support it,
 typical symptoms the patient denied, what has not been asked, and the log-odds of each
 prior. Practitioners also see the NAMC code, the classical treatment principles,
 herbs and tests from the knowledge bases, and the most-cited Ayurveda papers on it.
+
+## The Ayurvedic profile
+
+The intake stays short. Name, date of birth, sex and district can be pre-filled from
+**DigiLocker**, location gives Desha, and 9 questions give Prakriti. Everything else is
+an optional module that raises an **assessment-completeness** score:
+
+| Panel | What it shows | Source |
+|---|---|---|
+| Prakriti · Manas Prakriti | body constitution (quick 9 or full 25 items); Sattva / Rajas / Tamas | questionnaires |
+| Vikriti · subdoshas | current imbalance; which of the 15 subdoshas are involved | each check-up |
+| Vaya · Desha · Kala | life stage, habitat, season, a **Ritu forecast** and the **dosha clock** | date of birth, location, date |
+| Agni · Koshtha · Mala · Ama | digestive fire, bowel nature, stool / urine / sweat, toxin load | digestion module + check-ups |
+| Sapta Dhatu · Srotas | depletion or excess of the 7 tissues; involvement of 15 body channels | symptoms + BMI |
+| Ojas · Bala · Dashavidha | vitality score, exercise capacity, Pramana (BMI, Asian cut-offs), Satmya | modules |
+| Artava | menstrual pattern (women only) | module |
+| Dinacharya · Ahara | daily-routine score, streak, six-taste balance, **Viruddha ahara** (incompatible food) alerts | 30-second daily check-in |
+| Trends | Vikriti, Ojas and routine over time | history |
+
+Subdosha, dhatu, srotas, guna and food-compatibility outputs are **rule tables from the
+classical texts** (Ashtanga Hridaya Sutra 11–12, Charaka Sutra 17 & 26, Vimana 5 & 8),
+each cited in code (`clinical/ayurveda.py`, `clinical/modules.py`). They are not learned
+from data, and should be reviewed by a BAMS practitioner.
+
+**DigiLocker** (`app/digilocker.py`) uses OAuth 2.0 with PKCE. Only date of birth, sex,
+state and district are stored; the Aadhaar number and documents never are. In sandbox
+mode a local consent screen returns a test identity, so the whole flow works today.
+Production needs onboarding as a DigiLocker *Requester* with NeGD, which is open to
+organisations only, after which you set `AYUR_DIGILOCKER_MODE=production` plus the
+client credentials.
 
 ## Data sources
 
@@ -107,7 +143,9 @@ real patients**. That needs a supervised pilot.
 - **Access control:** practitioners must be verified by an admin before they see any case,
   and every case view is audit-logged.
 - **Security:** scrypt password hashing, revocable refresh tokens, per-IP rate limits,
-  security headers, and a production start-up check that refuses development secrets.
+  strict security headers and CSP on the API and the web app, HTTPS-only outbound calls,
+  `defusedxml` for XML, and a production start-up check that refuses development
+  secrets. See [SECURITY.md](SECURITY.md) for how to report a vulnerability.
 - **Patient-facing guidance** is general lifestyle advice only. Herbs and doses are shown
   to practitioners only.
 
@@ -133,17 +171,35 @@ ayur benchmark        # simulated-patient benchmark → manifest
 Deployment to Render, Neon, Vercel and Google Play is covered step by step in
 **[DEPLOYMENT.md](DEPLOYMENT.md)**.
 
+## Delivery pipeline (DevSecOps)
+
+```
+commit ─▶ pre-commit (ruff · bandit · gitleaks) ─▶ CI: tests · lint · migrations · app build
+       ─▶ security: secrets · SAST (CodeQL, Bandit) · SCA (pip-audit, npm gate) · IaC · Trivy image
+       ─▶ DAST: OWASP ZAP attacks a throwaway container ─▶ CD: signed image (cosign) + SBOM + provenance
+       ─▶ deploy API (Render) + web (Vercel) ─▶ wait for the new commit ─▶ smoke test ─▶ ZAP baseline
+```
+
+Nothing deploys from a plain push. Render and Vercel auto-deploys are off for `main`, so
+production only receives builds that passed every gate. Third-party actions are pinned to
+commit SHAs, the base image is pinned by digest, and Dependabot keeps all four ecosystems
+current. Every accepted risk is written down with an expiry date. Details and the one-time
+GitHub setup are in [docs/PIPELINE.md](docs/PIPELINE.md).
+
 ## Testing
 
-- **Backend:** 110 tests at 91% coverage, covering the whole pipeline on synthetic
+- **Backend:** 150+ tests, covering the whole pipeline on synthetic
   sources with planted structure, the clinical engine, and the full API flow (auth,
   consent, triage ordering, review, learning loop, k-anonymity, export and erasure).
 - **App:** `tsc` and ESLint are clean.
-- **End to end:** a browser test drives the exported web app against the live API,
-  walking patient onboarding → check-up → adaptive answer → share → admin verification
-  → practitioner examination and review → the patient sees the plan.
-- **CI** (`.github/workflows/ci.yml`) runs all of the above, plus a migration-drift
-  check and a Docker build.
+- **End to end:** browser tests drive the production web build, served with its real
+  Content-Security-Policy, against the live API. They walk patient onboarding →
+  DigiLocker → check-up → adaptive answer → share → admin verification → practitioner
+  review → the patient sees the plan, in desktop, phone and dark mode.
+- **Security tests:** URL-scheme guard, security headers and CSP, rate limiting that
+  ignores CORS preflights, and HTML escaping on the DigiLocker sandbox page.
+- **Post-deploy:** `scripts/smoke.py` checks the live system (commit, database, headers,
+  auth, CORS, docs-off, SPA routing).
 
 ## Limitations
 
@@ -170,6 +226,9 @@ src/ayurnidaan/
   evidence.py              Europe PMC crawl + regional relevance
   pipeline.py ingest.py quality.py warehouse.py cli.py
 migrations/                Alembic
-mobile/                    Expo app (patient · practitioner · admin)
-tests/                     unit · synthetic end-to-end · API · real-data integration
+mobile/                    Expo app (patient · practitioner · admin); responsive shell in components/nav.tsx
+tests/                     unit · synthetic end-to-end · API · security · real-data integration
+scripts/smoke.py           post-deploy smoke test
+docs/PIPELINE.md           CI/CD + DevSecOps gates, secrets, branch protection, releases
+.github/workflows/         ci · security · codeql · scorecard · cd
 ```

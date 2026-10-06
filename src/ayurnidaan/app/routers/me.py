@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from datetime import UTC, datetime
+
 from fastapi import APIRouter, HTTPException
 from sqlalchemy import select
 
@@ -112,6 +114,17 @@ def post_prakriti(body: PrakritiIn, user: Patient, db: DB, clinical: Clinical) -
         raise HTTPException(422, "no recognised answers")
     p = _profile(user)
     p.prakriti_answers, p.prakriti_result = body.answers, result.to_dict()
+    # keep the modules registry in step, so "Prakriti - quick" shows as completed
+    now = datetime.now(UTC).isoformat(timespec="seconds")
+    p.modules = {
+        **(p.modules or {}),
+        "prakriti_quick": {
+            "answers": body.answers,
+            "result": p.prakriti_result,
+            "completed_at": now,
+            "history": [{"at": now}],
+        },
+    }
     audit(db, user.id, "prakriti.assess", "user", user.id)
     db.commit()
     return p.prakriti_result

@@ -231,8 +231,11 @@ def write_pack(
     sources: dict[str, str],
     metrics: dict,
     evidence: dict | None = None,
+    prakriti_full: dict | None = None,
 ) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
+    previous = out_dir / "manifest.json"
+    old = json.loads(previous.read_text(encoding="utf-8")) if previous.exists() else {}
     hashes = {
         "conditions.json": _write(out_dir / "conditions.json", conditions),
         "symptoms.json": _write(out_dir / "symptoms.json", symptoms),
@@ -241,6 +244,8 @@ def write_pack(
     }
     if evidence is not None:
         hashes["evidence.json"] = _write(out_dir / "evidence.json", evidence)
+    if prakriti_full is not None:
+        hashes["prakriti_full.json"] = _write(out_dir / "prakriti_full.json", prakriti_full)
     content_id = hashlib.sha256("".join(sorted(hashes.values())).encode()).hexdigest()[:12]
     manifest = {
         "pack_version": PACK_VERSION,
@@ -255,6 +260,9 @@ def write_pack(
         },
         "metrics": metrics,
     }
+    # A benchmark describes one exact pack; keep it only if the content is unchanged.
+    if old.get("content_id") == content_id and "benchmark" in old:
+        manifest["benchmark"] = old["benchmark"]
     _write(out_dir / "manifest.json", manifest)
     return manifest
 
@@ -268,11 +276,13 @@ class KnowledgePack:
     prakriti: dict
     vikriti: dict
     evidence: dict = field(default_factory=dict)
+    prakriti_full: dict | None = None
 
     @classmethod
     def load(cls, directory: Path) -> KnowledgePack:
         read = lambda n: json.loads((directory / n).read_text(encoding="utf-8"))  # noqa: E731
         evidence = read("evidence.json") if (directory / "evidence.json").exists() else {}
+        full = read("prakriti_full.json") if (directory / "prakriti_full.json").exists() else None
         return cls(
             read("manifest.json"),
             read("conditions.json"),
@@ -280,6 +290,7 @@ class KnowledgePack:
             read("prakriti.json"),
             read("vikriti.json"),
             evidence,
+            full,
         )
 
     @property

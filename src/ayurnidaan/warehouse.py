@@ -75,7 +75,8 @@ def replace_table(con: duckdb.DuckDBPyConnection, name: str, df: pd.DataFrame) -
     if name not in REBUILT_TABLES:
         raise ValueError(f"{name} is not a rebuildable table")
     con.register("_staging", df)
-    con.execute(f'CREATE OR REPLACE TABLE "{name}" AS SELECT * FROM _staging')
+    # `name` is checked against REBUILT_TABLES above.
+    con.execute(f'CREATE OR REPLACE TABLE "{name}" AS SELECT * FROM _staging')  # nosec B608
     con.unregister("_staging")
 
 
@@ -84,7 +85,8 @@ def append(con: duckdb.DuckDBPyConnection, name: str, df: pd.DataFrame) -> None:
         return
     con.register("_staging", df)
     cols = ", ".join(f'"{c}"' for c in df.columns)
-    con.execute(f'INSERT INTO "{name}" ({cols}) SELECT {cols} FROM _staging')
+    # Table and column names come from our own code and DataFrames, never from requests.
+    con.execute(f'INSERT INTO "{name}" ({cols}) SELECT {cols} FROM _staging')  # nosec B608
     con.unregister("_staging")
 
 

@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { Card, Columns, Loading, Notice, Screen, T, Table } from '@/components/ui';
+import { Card, Columns, EmptyState, Notice, Screen, SkeletonCards, T, Table } from '@/components/ui';
 import { api } from '@/lib/api';
 import { pretty } from '@/lib/theme';
 
@@ -12,11 +12,12 @@ export default function Insights() {
     ritu_condition: Row[] } | undefined;
   const table = (rows: Row[], keys: string[]) =>
     rows.length ? <Table head={[...keys.map(pretty), 'Cases']} rows={rows.map((r) => [...keys.map((k) => pretty(String(r[k]))), String(r.count)])} />
-      : <T v="muted">Not enough confirmed cases yet.</T>;
+      : <EmptyState icon="shield-checkmark-outline" title="Hidden for privacy"
+          message="Patterns appear once each group has enough confirmed cases to keep patients anonymous." />;
   return (
     <Screen onRefresh={() => q.refetch()} refreshing={q.isFetching}>
       <T v="h1">Population patterns</T>
-      {!d ? <Loading /> : (
+      {!d ? <SkeletonCards count={3} min={380} /> : (
         <>
           <Notice><T v="small">{d.n_confirmed} confirmed diagnoses. Groups smaller than {d.k_anonymity} patients are hidden to protect privacy.</T></Notice>
           <Columns min={380}>

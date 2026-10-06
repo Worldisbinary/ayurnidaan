@@ -355,6 +355,8 @@ def run(settings: Settings, fast: bool = False) -> dict:
         pack_symptoms = knowledge.build_symptoms(vocab, sym_table)
         prakriti_items = qr.ranking[: qr.recommended_k]
         pack_prakriti = knowledge.build_prakriti(assessments, prakriti_items, seed=seed)
+        all_items = [c for c in assessments.columns if c not in ("assessment_id", "dosha")]
+        pack_prakriti_full = knowledge.build_prakriti(assessments, all_items, seed=seed)
         pack_vikriti = knowledge.build_vikriti(pack_conditions, vocab.terms)
         evidence = knowledge.build_evidence(pack_conditions, literature) if literature else None
         manifest = knowledge.write_pack(
@@ -369,6 +371,7 @@ def run(settings: Settings, fast: bool = False) -> dict:
                 "cluster_nmi_body_system": clustering.nmi_body_system,
             },
             evidence=evidence,
+            prakriti_full=pack_prakriti_full,
         )
 
     with ctx.step("load_warehouse"), warehouse.connect(settings.warehouse_path) as con:

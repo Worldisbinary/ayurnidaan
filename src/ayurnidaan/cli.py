@@ -117,14 +117,16 @@ def dashboard(
 ) -> None:
     """Start the clinician dashboard."""
     import time
-    import urllib.request
     import webbrowser
+
+    from .http import open_url
 
     script = Path(__file__).parent / "dashboard" / "app.py"
     # Headless skips Streamlit's first-run "Email:" prompt, which otherwise blocks
     # startup (or crashes it when stdin is not a terminal). We open the browser ourselves
     # once the server reports healthy.
-    proc = subprocess.Popen(
+    # Fixed argv, no shell, nothing user-controlled.
+    proc = subprocess.Popen(  # nosec B603
         [
             sys.executable,
             "-m",
@@ -144,7 +146,7 @@ def dashboard(
         if proc.poll() is not None:
             raise typer.Exit(proc.returncode or 1)
         try:
-            urllib.request.urlopen(f"{url}/_stcore/health", timeout=1)
+            open_url(f"{url}/_stcore/health", timeout=1).close()
             break
         except OSError:
             time.sleep(0.5)

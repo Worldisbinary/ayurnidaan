@@ -1,0 +1,766 @@
+{
+ "classes": [
+  "kapha",
+  "pitta",
+  "vata"
+ ],
+ "cv_accuracy": 0.8284,
+ "intercept": {
+  "kapha": 0.1566293554964181,
+  "pitta": -0.1637042370413331,
+  "vata": 0.007074881544778013
+ },
+ "n_train": 5000,
+ "questions": [
+  {
+   "id": "body_frame",
+   "options": [
+    {
+     "value": "Medium",
+     "weights": {
+      "kapha": -1.1671471306834018,
+      "pitta": 2.670518048811606,
+      "vata": -1.5033709181282011
+     }
+    },
+    {
+     "value": "Thin and Lean",
+     "weights": {
+      "kapha": 0.7454297375468139,
+      "pitta": -1.4179969901742153,
+      "vata": 0.6725672526274039
+     }
+    },
+    {
+     "value": "Well Built",
+     "weights": {
+      "kapha": 0.5689637477092818,
+      "pitta": -1.4087022842323895,
+      "vata": 0.8397385365231085
+     }
+    }
+   ],
+   "question": "What is your body frame?"
+  },
+  {
+   "id": "type_of_hair",
+   "options": [
+    {
+     "value": "Dry",
+     "weights": {
+      "kapha": 0.5107864917164917,
+      "pitta": -1.5933731269411349,
+      "vata": 1.082586635224643
+     }
+    },
+    {
+     "value": "Greasy",
+     "weights": {
+      "kapha": -0.20342708285894417,
+      "pitta": 0.7728101909316432,
+      "vata": -0.5693831080726978
+     }
+    },
+    {
+     "value": "Normal",
+     "weights": {
+      "kapha": -0.16011305428485528,
+      "pitta": 0.6643817104144908,
+      "vata": -0.5042686561296349
+     }
+    }
+   ],
+   "question": "What is your natural hair type?"
+  },
+  {
+   "id": "color_of_hair",
+   "options": [
+    {
+     "value": "Black",
+     "weights": {
+      "kapha": 0.06327992787970543,
+      "pitta": -0.13583087232816632,
+      "vata": 0.07255094444846037
+     }
+    },
+    {
+     "value": "Brown",
+     "weights": {
+      "kapha": 0.04507864307901407,
+      "pitta": 0.00921539463576459,
+      "vata": -0.05429403771477602
+     }
+    },
+    {
+     "value": "Grey",
+     "weights": {
+      "kapha": 0.03888778361397296,
+      "pitta": -0.029565747902598315,
+      "vata": -0.009322035711373893
+     }
+    }
+   ],
+   "question": "Color of hair?"
+  },
+  {
+   "id": "skin",
+   "options": [
+    {
+     "value": "Dry,Rough",
+     "weights": {
+      "kapha": 0.10565384722555464,
+      "pitta": -0.0993394990402175,
+      "vata": -0.006314348185337741
+     }
+    },
+    {
+     "value": "Moist,Greasy",
+     "weights": {
+      "kapha": -0.00560928457967181,
+      "pitta": -0.10822871688866578,
+      "vata": 0.11383800146833851
+     }
+    },
+    {
+     "value": "Soft,Sweating",
+     "weights": {
+      "kapha": 0.04720179192680884,
+      "pitta": 0.051386990333883144,
+      "vata": -0.09858878226069151
+     }
+    }
+   ],
+   "question": "Skin?"
+  },
+  {
+   "id": "complexion",
+   "options": [
+    {
+     "value": "Dark",
+     "weights": {
+      "kapha": 0.03886527230452017,
+      "pitta": -0.12259900207758453,
+      "vata": 0.08373372977306426
+     }
+    },
+    {
+     "value": "Glowing",
+     "weights": {
+      "kapha": 0.08028960598792739,
+      "pitta": -0.00829991226721679,
+      "vata": -0.07198969372070907
+     }
+    },
+    {
+     "value": "Pinkish",
+     "weights": {
+      "kapha": 0.028091476280244384,
+      "pitta": -0.025282311250198943,
+      "vata": -0.002809165030044933
+     }
+    }
+   ],
+   "question": "Complexion?"
+  },
+  {
+   "id": "body_weight",
+   "options": [
+    {
+     "value": "Normal",
+     "weights": {
+      "kapha": 0.025817147516107433,
+      "pitta": -0.07511379586324611,
+      "vata": 0.04929664834713989
+     }
+    },
+    {
+     "value": "Overweight",
+     "weights": {
+      "kapha": 0.04237399673103292,
+      "pitta": 0.005873961114376949,
+      "vata": -0.04824795784540909
+     }
+    },
+    {
+     "value": "Underweight",
+     "weights": {
+      "kapha": 0.07905521032555231,
+      "pitta": -0.08694139084613096,
+      "vata": 0.007886180520579517
+     }
+    }
+   ],
+   "question": "Body weight?"
+  },
+  {
+   "id": "nails",
+   "options": [
+    {
+     "value": "Blackish",
+     "weights": {
+      "kapha": 0.0649075418924434,
+      "pitta": -0.06873500855233834,
+      "vata": 0.003827466659895986
+     }
+    },
+    {
+     "value": "Pinkish",
+     "weights": {
+      "kapha": 0.02477300472948389,
+      "pitta": -0.0035300214478606504,
+      "vata": -0.02124298328162289
+     }
+    },
+    {
+     "value": "Redish",
+     "weights": {
+      "kapha": 0.05756580795076476,
+      "pitta": -0.08391619559480111,
+      "vata": 0.02635038764403763
+     }
+    }
+   ],
+   "question": "Nails?"
+  },
+  {
+   "id": "size_and_color_of_the_teeth",
+   "options": [
+    {
+     "value": "Irregular,Blackish",
+     "weights": {
+      "kapha": 0.07040113272356208,
+      "pitta": -0.037056156525863804,
+      "vata": -0.03334497619769826
+     }
+    },
+    {
+     "value": "Large,White",
+     "weights": {
+      "kapha": -0.040271579118663685,
+      "pitta": -0.0142839279994868,
+      "vata": 0.054555507118151304
+     }
+    },
+    {
+     "value": "Medium,Yellowish",
+     "weights": {
+      "kapha": 0.1171168009677933,
+      "pitta": -0.10484114106964953,
+      "vata": -0.012275659898142686
+     }
+    }
+   ],
+   "question": "Size and color of the teeth?"
+  },
+  {
+   "id": "pace_of_performing_work",
+   "options": [
+    {
+     "value": "Fast",
+     "weights": {
+      "kapha": -1.1666073637592302,
+      "pitta": 2.3230745849634027,
+      "vata": -1.1564672212041707
+     }
+    },
+    {
+     "value": "Medium",
+     "weights": {
+      "kapha": -1.0924107783230201,
+      "pitta": 2.2742214010276136,
+      "vata": -1.1818106227045906
+     }
+    },
+    {
+     "value": "Slow",
+     "weights": {
+      "kapha": 2.4062644966549422,
+      "pitta": -4.753477211586011,
+      "vata": 2.3472127149310738
+     }
+    }
+   ],
+   "question": "How fast do you usually do things (walk, talk, work)?"
+  },
+  {
+   "id": "mental_activity",
+   "options": [
+    {
+     "value": "Aggressive",
+     "weights": {
+      "kapha": -0.4323331235211133,
+      "pitta": 0.7705520791511931,
+      "vata": -0.33821895563007703
+     }
+    },
+    {
+     "value": "Restless",
+     "weights": {
+      "kapha": -0.5035357703548001,
+      "pitta": 0.8949270516577904,
+      "vata": -0.3913912813029895
+     }
+    },
+    {
+     "value": "Stable",
+     "weights": {
+      "kapha": 1.0831152484486095,
+      "pitta": -1.8216603564039853,
+      "vata": 0.7385451079553756
+     }
+    }
+   ],
+   "question": "How is your mind usually?"
+  },
+  {
+   "id": "memory",
+   "options": [
+    {
+     "value": "Good Memory",
+     "weights": {
+      "kapha": 0.02467432889291908,
+      "pitta": 0.014669173440494253,
+      "vata": -0.039343502333412085
+     }
+    },
+    {
+     "value": "Long Term",
+     "weights": {
+      "kapha": 0.08677439087212475,
+      "pitta": -0.1587585507311536,
+      "vata": 0.07198415985902797
+     }
+    },
+    {
+     "value": "Short term",
+     "weights": {
+      "kapha": 0.03579763480764576,
+      "pitta": -0.012091848304340786,
+      "vata": -0.023705786503305404
+     }
+    }
+   ],
+   "question": "Memory?"
+  },
+  {
+   "id": "sleep_pattern",
+   "options": [
+    {
+     "value": "Less",
+     "weights": {
+      "kapha": 0.032017818102776686,
+      "pitta": -0.10206760399882064,
+      "vata": 0.07004978589604405
+     }
+    },
+    {
+     "value": "Moderate",
+     "weights": {
+      "kapha": 0.011156115464328268,
+      "pitta": 0.027238993638228345,
+      "vata": -0.038395109102556904
+     }
+    },
+    {
+     "value": "Sleepy",
+     "weights": {
+      "kapha": 0.10407242100558634,
+      "pitta": -0.08135261523440766,
+      "vata": -0.022719805771177083
+     }
+    }
+   ],
+   "question": "Sleep pattern?"
+  },
+  {
+   "id": "weather_conditions",
+   "options": [
+    {
+     "value": "Dislike Cold",
+     "weights": {
+      "kapha": 0.10317264270036774,
+      "pitta": -0.11242750428175805,
+      "vata": 0.009254861581390564
+     }
+    },
+    {
+     "value": "Dislike Heat",
+     "weights": {
+      "kapha": -0.0020985081364973453,
+      "pitta": -0.042890383712916126,
+      "vata": 0.044988891849413154
+     }
+    },
+    {
+     "value": "Dislike Moist",
+     "weights": {
+      "kapha": 0.04617222000882213,
+      "pitta": -0.0008633376003259292,
+      "vata": -0.04530888240849509
+     }
+    }
+   ],
+   "question": "Weather conditions?"
+  },
+  {
+   "id": "reaction_under_adverse_situations",
+   "options": [
+    {
+     "value": "Anger",
+     "weights": {
+      "kapha": 0.09240765894130964,
+      "pitta": -0.09295765383336412,
+      "vata": 0.0005499948920553129
+     }
+    },
+    {
+     "value": "Anxiety",
+     "weights": {
+      "kapha": 0.03322706598848358,
+      "pitta": -0.015187303227325484,
+      "vata": -0.018039762761157693
+     }
+    },
+    {
+     "value": "Calm",
+     "weights": {
+      "kapha": 0.021611629642898724,
+      "pitta": -0.04803626853431055,
+      "vata": 0.026424638891411698
+     }
+    }
+   ],
+   "question": "Reaction under adverse situations?"
+  },
+  {
+   "id": "mood",
+   "options": [
+    {
+     "value": "Changes Quickly",
+     "weights": {
+      "kapha": 0.10698244396607895,
+      "pitta": -0.08121344226263945,
+      "vata": -0.025769001703438717
+     }
+    },
+    {
+     "value": "Changes Slowly",
+     "weights": {
+      "kapha": -0.027438922900942835,
+      "pitta": -0.08059172608593464,
+      "vata": 0.10803064898687832
+     }
+    },
+    {
+     "value": "Constant",
+     "weights": {
+      "kapha": 0.0677028335075576,
+      "pitta": 0.005623942753574355,
+      "vata": -0.0733267762611299
+     }
+    }
+   ],
+   "question": "Mood?"
+  },
+  {
+   "id": "eating_habit",
+   "options": [
+    {
+     "value": "Improper Chewing",
+     "weights": {
+      "kapha": 0.08755643633699542,
+      "pitta": -0.11160058328199819,
+      "vata": 0.024044146945004227
+     }
+    },
+    {
+     "value": "Irregular Chewing",
+     "weights": {
+      "kapha": 0.02994254241618562,
+      "pitta": -0.03448956328142565,
+      "vata": 0.004547020865240711
+     }
+    },
+    {
+     "value": "Proper Chewing",
+     "weights": {
+      "kapha": 0.029747375819511108,
+      "pitta": -0.010091079031576656,
+      "vata": -0.0196562967879341
+     }
+    }
+   ],
+   "question": "Eating habit?"
+  },
+  {
+   "id": "hunger",
+   "options": [
+    {
+     "value": "Irregular",
+     "weights": {
+      "kapha": 0.38142799872692074,
+      "pitta": -1.5261708875355757,
+      "vata": 1.1447428888086553
+     }
+    },
+    {
+     "value": "Skips Meal",
+     "weights": {
+      "kapha": -0.13013960001430305,
+      "pitta": 0.742729149957067,
+      "vata": -0.6125895499427613
+     }
+    },
+    {
+     "value": "Sudden and Sharp",
+     "weights": {
+      "kapha": -0.1040420441399247,
+      "pitta": 0.6272605119835082,
+      "vata": -0.5232184678435813
+     }
+    }
+   ],
+   "question": "How is your hunger / appetite pattern?"
+  },
+  {
+   "id": "body_temperature",
+   "options": [
+    {
+     "value": "Less than Normal",
+     "weights": {
+      "kapha": 0.0892193599401689,
+      "pitta": -0.07502699257580937,
+      "vata": -0.014192367364359018
+     }
+    },
+    {
+     "value": "More than Normal",
+     "weights": {
+      "kapha": 0.04701405037239845,
+      "pitta": -0.07654594645043784,
+      "vata": 0.029531896078038904
+     }
+    },
+    {
+     "value": "Normal",
+     "weights": {
+      "kapha": 0.011012944260124205,
+      "pitta": -0.004608286568752944,
+      "vata": -0.006404657691371089
+     }
+    }
+   ],
+   "question": "Body temperature?"
+  },
+  {
+   "id": "joints",
+   "options": [
+    {
+     "value": "Healthy",
+     "weights": {
+      "kapha": -0.38380394702223347,
+      "pitta": 0.7792029202614816,
+      "vata": -0.39539897323924644
+     }
+    },
+    {
+     "value": "Heavy",
+     "weights": {
+      "kapha": 1.0497190683635997,
+      "pitta": -1.7841697491328365,
+      "vata": 0.7344506807692367
+     }
+    },
+    {
+     "value": "Weak",
+     "weights": {
+      "kapha": -0.518668766768675,
+      "pitta": 0.8487856032763549,
+      "vata": -0.33011683650768087
+     }
+    }
+   ],
+   "question": "How are your joints?"
+  },
+  {
+   "id": "nature",
+   "options": [
+    {
+     "value": "Egoistic,Fearless",
+     "weights": {
+      "kapha": 0.058113393469347026,
+      "pitta": 0.004160811583936403,
+      "vata": -0.062274205053281365
+     }
+    },
+    {
+     "value": "Forgiving,Grateful",
+     "weights": {
+      "kapha": -0.008282245712660789,
+      "pitta": -0.08462033836485233,
+      "vata": 0.09290258407751399
+     }
+    },
+    {
+     "value": "Jealous,Fearful",
+     "weights": {
+      "kapha": 0.09741520681600635,
+      "pitta": -0.07572169881408393,
+      "vata": -0.02169350800192147
+     }
+    }
+   ],
+   "question": "Nature?"
+  },
+  {
+   "id": "body_energy",
+   "options": [
+    {
+     "value": "High",
+     "weights": {
+      "kapha": 0.6132695683402284,
+      "pitta": -1.4054472404470157,
+      "vata": 0.7921776721067869
+     }
+    },
+    {
+     "value": "Low",
+     "weights": {
+      "kapha": 0.712078932721923,
+      "pitta": -1.517990062573072,
+      "vata": 0.8059111298511495
+     }
+    },
+    {
+     "value": "Medium",
+     "weights": {
+      "kapha": -1.1781021464894588,
+      "pitta": 2.7672560774250887,
+      "vata": -1.589153930935627
+     }
+    }
+   ],
+   "question": "How is your physical energy through the day?"
+  },
+  {
+   "id": "quality_of_voice",
+   "options": [
+    {
+     "value": "Deep",
+     "weights": {
+      "kapha": 0.4983354796475921,
+      "pitta": -0.6190432135515281,
+      "vata": 0.12070773390393787
+     }
+    },
+    {
+     "value": "Fast",
+     "weights": {
+      "kapha": -1.5276633467596954,
+      "pitta": 3.592347594223724,
+      "vata": -2.0646842474640263
+     }
+    },
+    {
+     "value": "Rough",
+     "weights": {
+      "kapha": 1.1765742216847943,
+      "pitta": -3.129485606267195,
+      "vata": 1.9529113845824018
+     }
+    }
+   ],
+   "question": "How would you describe your voice?"
+  },
+  {
+   "id": "dreams",
+   "options": [
+    {
+     "value": "Fire",
+     "weights": {
+      "kapha": 0.026395370032405496,
+      "pitta": -0.01871688557526506,
+      "vata": -0.007678484457140104
+     }
+    },
+    {
+     "value": "Sky",
+     "weights": {
+      "kapha": 0.057501139721353164,
+      "pitta": -0.02712181117666956,
+      "vata": -0.030379328544681998
+     }
+    },
+    {
+     "value": "Water",
+     "weights": {
+      "kapha": 0.06334984481893442,
+      "pitta": -0.11034252884306546,
+      "vata": 0.04699268402413118
+     }
+    }
+   ],
+   "question": "Dreams?"
+  },
+  {
+   "id": "social_relations",
+   "options": [
+    {
+     "value": "Ambivert",
+     "weights": {
+      "kapha": 0.009205677290585414,
+      "pitta": -0.032361329114695955,
+      "vata": 0.023155651824111282
+     }
+    },
+    {
+     "value": "Extrovert",
+     "weights": {
+      "kapha": 0.12082647650220169,
+      "pitta": -0.13441117468994676,
+      "vata": 0.01358469818774649
+     }
+    },
+    {
+     "value": "Introvert",
+     "weights": {
+      "kapha": 0.017214200779905056,
+      "pitta": 0.010591278209642696,
+      "vata": -0.027805478989547293
+     }
+    }
+   ],
+   "question": "Social relations?"
+  },
+  {
+   "id": "body_odor",
+   "options": [
+    {
+     "value": "Mild",
+     "weights": {
+      "kapha": -0.4121384706564665,
+      "pitta": 0.7579460165994515,
+      "vata": -0.3458075459429834
+     }
+    },
+    {
+     "value": "Negligible",
+     "weights": {
+      "kapha": -0.4620199781456025,
+      "pitta": 0.7671266741977897,
+      "vata": -0.30510669605218693
+     }
+    },
+    {
+     "value": "Strong",
+     "weights": {
+      "kapha": 1.0214048033747616,
+      "pitta": -1.6812539163922384,
+      "vata": 0.6598491130174804
+     }
+    }
+   ],
+   "question": "How strong is your natural body odour?"
+  }
+ ]
+}

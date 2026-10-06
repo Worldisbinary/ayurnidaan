@@ -1,19 +1,17 @@
-import { Tabs } from 'expo-router';
-
-import { tabIcon as icon } from '@/components/tab-icon';
-import { usePalette } from '@/lib/theme';
+import { AppTabs } from '@/components/nav';
 
 export default function PatientTabs() {
-  const c = usePalette();
   return (
-    <Tabs screenOptions={{ headerShown: false, tabBarActiveTintColor: c.accent,
-      tabBarStyle: { backgroundColor: c.surface, borderTopColor: c.border } }}>
-      <Tabs.Screen name="index" options={{ title: 'Home', tabBarIcon: icon('home-outline') }} />
-      <Tabs.Screen name="check" options={{ title: 'New check', tabBarIcon: icon('add-circle-outline') }} />
-      <Tabs.Screen name="history" options={{ title: 'History', tabBarIcon: icon('time-outline') }} />
-      <Tabs.Screen name="profile" options={{ title: 'Profile', tabBarIcon: icon('person-outline') }} />
-      <Tabs.Screen name="encounter/[id]" options={{ href: null }} />
-      <Tabs.Screen name="prakriti" options={{ href: null }} />
-    </Tabs>
+    <AppTabs
+      role="Patient"
+      items={[
+        { name: 'index', title: 'Home', icon: 'home-outline' },
+        { name: 'today', title: 'Today', icon: 'sunny-outline' },
+        { name: 'check', title: 'New check', icon: 'add-circle-outline' },
+        { name: 'history', title: 'History', icon: 'time-outline' },
+        { name: 'profile', title: 'Profile', icon: 'person-outline' },
+      ]}
+      hidden={['encounter/[id]', 'prakriti', 'module/[id]']}
+    />
   );
 }

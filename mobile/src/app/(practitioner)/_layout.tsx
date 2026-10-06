@@ -1,17 +1,15 @@
-import { Tabs } from 'expo-router';
-
-import { tabIcon as icon } from '@/components/tab-icon';
-import { usePalette } from '@/lib/theme';
+import { AppTabs } from '@/components/nav';
 
 export default function PractitionerTabs() {
-  const c = usePalette();
   return (
-    <Tabs screenOptions={{ headerShown: false, tabBarActiveTintColor: c.accent,
-      tabBarStyle: { backgroundColor: c.surface, borderTopColor: c.border } }}>
-      <Tabs.Screen name="index" options={{ title: 'Queue', tabBarIcon: icon('list-outline') }} />
-      <Tabs.Screen name="insights" options={{ title: 'Insights', tabBarIcon: icon('analytics-outline') }} />
-      <Tabs.Screen name="account" options={{ title: 'Account', tabBarIcon: icon('person-outline') }} />
-      <Tabs.Screen name="case/[id]" options={{ href: null }} />
-    </Tabs>
+    <AppTabs
+      role="Practitioner"
+      items={[
+        { name: 'index', title: 'Queue', icon: 'list-outline' },
+        { name: 'insights', title: 'Insights', icon: 'analytics-outline' },
+        { name: 'account', title: 'Account', icon: 'person-outline' },
+      ]}
+      hidden={['case/[id]']}
+    />
   );
 }

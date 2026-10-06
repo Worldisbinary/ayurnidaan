@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import { View } from 'react-native';
 
-import { Badge, Card, Columns, Loading, Row, Screen, T, Table } from '@/components/ui';
+import { Badge, Card, Columns, EmptyState, Row, Screen, SkeletonCards, T, Table } from '@/components/ui';
 import { api } from '@/lib/api';
 import { DOSHA_ORDER, RITU_LABEL, pretty, usePalette } from '@/lib/theme';
 
@@ -13,7 +13,7 @@ export default function HistoryScreen() {
   return (
     <Screen onRefresh={() => q.refetch()} refreshing={q.isFetching}>
       <T v="h1">Health history</T>
-      {q.isLoading || !h ? <Loading /> : (
+      {q.isLoading || !h ? <SkeletonCards count={3} min={420} /> : (
         <Columns min={420}>
           <Card title={`Timeline · ${h.encounters.length} check-ups`}>
             {h.encounters.length ? (
@@ -24,7 +24,11 @@ export default function HistoryScreen() {
                   <Badge key="s" status={e.status === 'draft' ? e.triage : e.status} />,
                 ])}
                 onRowPress={(i) => router.push(`/(patient)/encounter/${[...h.encounters].reverse()[i].encounter_id}`)} />
-            ) : <T v="muted">No check-ups yet.</T>}
+            ) : (
+              <EmptyState icon="time-outline" title="Your timeline starts with a check-up"
+                message="Each check-up is saved here with its season, so recurring and seasonal patterns can show up over time."
+                action={{ label: 'Start a check-up', icon: 'add', onPress: () => router.push('/(patient)/check') }} />
+            )}
           </Card>
           <Card title="Patterns">
             {h.recurring.length === 0 && <T v="muted">No recurring conditions found yet.</T>}

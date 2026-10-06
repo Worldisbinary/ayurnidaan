@@ -7,7 +7,18 @@ from __future__ import annotations
 import uuid
 from datetime import UTC, date, datetime
 
-from sqlalchemy import JSON, Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    Date,
+    DateTime,
+    Float,
+    ForeignKey,
+    Integer,
+    String,
+    Text,
+    UniqueConstraint,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .db import Base
@@ -59,6 +70,11 @@ class PatientProfile(Base):
     prakriti_result: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     chronic_conditions: Mapped[list | None] = mapped_column(JSON, nullable=True)
     current_medicines: Mapped[list | None] = mapped_column(JSON, nullable=True)
+    # Optional assessment modules: {module_id: {answers, result, completed_at, history[]}}
+    modules: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+    # Identity verification (DigiLocker): source, verified_at, which fields were filled.
+    # Never the Aadhaar number or any document.
+    identity: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=_now, onupdate=_now
     )
@@ -155,6 +171,37 @@ class LocationClimate(Base):
     mean_temp_c: Mapped[float] = mapped_column(Float)
     desha: Mapped[str] = mapped_column(String(16))
     fetched_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_now)
+
+
+class DailyLog(Base):
+    """One Dinacharya + diet check-in per patient per day."""
+
+    __tablename__ = "daily_logs"
+    __table_args__ = (UniqueConstraint("user_id", "day", name="uq_daily_user_day"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    day: Mapped[date] = mapped_column(Date, index=True)
+    dinacharya: Mapped[dict] = mapped_column(JSON, default=dict)
+    meals: Mapped[dict] = mapped_column(JSON, default=dict)
+    score: Mapped[int] = mapped_column(Integer, default=0)
+    analysis: Mapped[dict | None] = mapped_column(JSON, nullable=True)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=_now, onupdate=_now
+    )
+
+
+class OAuthState(Base):
+    """Short-lived state for third-party sign-in (DigiLocker): CSRF state + PKCE verifier."""
+
+    __tablename__ = "oauth_states"
+
+    state: Mapped[str] = mapped_column(String(64), primary_key=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    provider: Mapped[str] = mapped_column(String(32))
+    code_verifier: Mapped[str] = mapped_column(String(128))
+    return_to: Mapped[str] = mapped_column(String(500))
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
 
 class AuditLog(Base):

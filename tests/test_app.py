@@ -110,6 +110,17 @@ def test_health_and_ready(client):
     assert client.get("/ready").json()["database"] is True
 
 
+def test_security_headers_and_deployed_commit(client, monkeypatch):
+    monkeypatch.setenv("AYUR_GIT_SHA", "abc1234")
+    r = client.get("/health")
+    assert r.json()["commit"] == "abc1234"
+    h = r.headers
+    assert h["content-security-policy"] == "default-src 'none'; frame-ancestors 'none'"
+    assert h["x-frame-options"] == "DENY" and h["x-content-type-options"] == "nosniff"
+    assert "max-age" in h["strict-transport-security"]
+    assert "content-security-policy" not in client.get("/docs").headers  # dev docs need CDN
+
+
 def test_register_validation_and_duplicates(client):
     bad = client.post(
         "/api/v1/auth/register",
@@ -354,6 +365,27 @@ def test_public_reference_endpoints(client):
     assert (
         client.get("/api/v1/geo/search", params={"q": "Pilani"}).json()[0]["state"] == "Rajasthan"
     )
+
+
+def test_rate_limit_ignores_cors_preflight(synthetic_settings, pipeline_run, tmp_path):
+    settings = Settings(
+        environment="development",
+        rate_limit_per_minute=3,
+        database_url=f"sqlite:///{(tmp_path / 'rl.db').as_posix()}",
+        knowledge_dir=synthetic_settings.knowledge_dir,
+        cors_origins=["https://app.example"],
+    )
+    preflight = {"Origin": "https://app.example", "Access-Control-Request-Method": "GET"}
+    with TestClient(create_app(settings)) as c:
+        for _ in range(10):  # preflights are free...
+            r = c.options("/api/v1/meta", headers=preflight)
+            assert r.status_code == 200 and r.headers["access-control-max-age"] == "7200"
+        assert [c.get("/api/v1/meta").status_code for _ in range(4)] == [
+            200,
+            200,
+            200,
+            429,
+        ]  # ...calls are not
 
 
 def test_production_refuses_dev_secrets():

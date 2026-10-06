@@ -3,6 +3,7 @@ import { DarkTheme, DefaultTheme, SplashScreen, Stack, ThemeProvider } from 'exp
 import { useColorScheme } from 'react-native';
 
 import { SessionProvider, useSession } from '@/lib/session';
+import { ToastProvider } from '@/lib/toast';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -46,8 +47,10 @@ export default function RootLayout() {
     <ThemeProvider value={scheme === 'dark' ? DarkTheme : DefaultTheme}>
       <QueryClientProvider client={queryClient}>
         <SessionProvider>
-          <SplashController />
-          <RootNavigator />
+          <ToastProvider>
+            <SplashController />
+            <RootNavigator />
+          </ToastProvider>
         </SessionProvider>
       </QueryClientProvider>
     </ThemeProvider>

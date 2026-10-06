@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import time
 import uuid
 from collections import defaultdict, deque
@@ -16,7 +17,7 @@ from .. import __version__
 from ..config import Settings, get_settings
 from ..logging_utils import get_logger
 from .db import Base, Database
-from .routers import admin, auth, encounters, knowledge, me, practitioner
+from .routers import admin, auth, ayurveda, encounters, knowledge, me, practitioner
 from .services import ClinicalService
 
 log = get_logger(__name__)
@@ -77,6 +78,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         allow_credentials=False,
         allow_methods=["GET", "POST", "PUT", "DELETE"],
         allow_headers=["Authorization", "Content-Type"],
+        max_age=7200,  # browsers cache preflights for up to 2 h (Chromium's cap)
     )
 
     @app.middleware("http")
@@ -88,7 +90,13 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             if request.url.path.startswith(f"{API_PREFIX}/auth/") and request.method == "POST"
             else "api"
         )
-        if settings.environment != "test" and not limiter.allow(ip, bucket):
+        # CORS preflights are answered by CORSMiddleware without touching the app. Counting
+        # them would double every browser call's cost (search-as-you-type preflights each new
+        # URL), and a 429 here would also lack CORS headers and surface as a CORS error.
+        preflight = (
+            request.method == "OPTIONS" and "access-control-request-method" in request.headers
+        )
+        if settings.environment != "test" and not preflight and not limiter.allow(ip, bucket):
             return JSONResponse(
                 {"detail": "too many requests"}, status_code=429, headers={"Retry-After": "60"}
             )
@@ -102,8 +110,16 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 "Referrer-Policy": "no-referrer",
                 "Cache-Control": "no-store",
                 "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+                "Cross-Origin-Resource-Policy": "cross-origin",
             }
         )
+        # A JSON API never needs to load anything; the dev-only /docs page needs its CDN.
+        # A route that serves HTML (the DigiLocker sandbox page) sets its own, narrower policy.
+        if not request.url.path.startswith(("/docs", "/redoc")):
+            response.headers.setdefault(
+                "Content-Security-Policy", "default-src 'none'; frame-ancestors 'none'"
+            )
         # Never log bodies or query strings: they can contain health data.
         log.info(
             "http",
@@ -121,6 +137,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         auth.router,
         me.router,
         encounters.router,
+        ayurveda.router,
         practitioner.router,
         admin.router,
         knowledge.router,
@@ -129,7 +146,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     @app.get("/health", tags=["ops"])
     def health() -> dict:
-        return {"status": "ok", "version": __version__}
+        # Render injects RENDER_GIT_COMMIT; the Docker build bakes AYUR_GIT_SHA. CD polls this
+        # until the deployed commit matches the one it just shipped.
+        commit = os.environ.get("RENDER_GIT_COMMIT") or os.environ.get("AYUR_GIT_SHA") or "dev"
+        return {"status": "ok", "version": __version__, "commit": commit}
 
     @app.get("/ready", tags=["ops"])
     def ready() -> JSONResponse:

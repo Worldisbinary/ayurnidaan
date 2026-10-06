@@ -13,9 +13,13 @@ const light = {
   textFaint: '#8a8984',
   accent: '#1c5cab',
   accentSoft: '#cde2fb',
+  onAccent: '#ffffff',
   vata: '#2a78d6',
   pitta: '#eb6834',
   kapha: '#1baf7a',
+  sattva: '#4a3aa7',
+  rajas: '#e87ba4',
+  tamas: '#8a8984',
   good: '#0ca30c',
   warning: '#b77800',
   serious: '#c4581f',
@@ -34,9 +38,13 @@ const dark: typeof light = {
   textFaint: '#8a8984',
   accent: '#6da7ec',
   accentSoft: '#184f95',
+  onAccent: '#0b1a2e',
   vata: '#3987e5',
   pitta: '#d95926',
   kapha: '#199e70',
+  sattva: '#9085e9',
+  rajas: '#d55181',
+  tamas: '#a8a79f',
   good: '#0ca30c',
   warning: '#fab219',
   serious: '#ec835a',
@@ -74,3 +82,7 @@ export const DESHA_LABEL: Record<string, string> = {
 
 export const pretty = (s: string | null | undefined) =>
   (s ?? '').replace(/_/g, ' ').replace(/^\w/, (c) => c.toUpperCase());
+
+// Sequential blue ramp for magnitudes (e.g. daily routine score), light -> dark.
+export const SEQ_LIGHT = ['#cde2fb', '#9ec5f4', '#6da7ec', '#3987e5', '#256abf', '#184f95'];
+export const SEQ_DARK = ['#184f95', '#1c5cab', '#256abf', '#2a78d6', '#5598e7', '#86b6ef'];

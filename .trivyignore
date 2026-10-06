@@ -1,0 +1,5 @@
+# CVEs accepted after review. One ID per line, with the reason and a re-review date above it.
+# Trivy runs with --ignore-unfixed, so only vulnerabilities that HAVE a fix can fail the build;
+# anything listed here must be a fixed CVE we deliberately cannot take yet.
+#
+# (none)

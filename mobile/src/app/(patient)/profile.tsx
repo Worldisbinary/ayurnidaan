@@ -1,10 +1,12 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import * as Location from 'expo-location';
-import { router } from 'expo-router';
+import * as Linking from 'expo-linking';
+import { router, useLocalSearchParams } from 'expo-router';
+import * as WebBrowser from 'expo-web-browser';
 import { useState } from 'react';
-import { Alert, Platform, Share } from 'react-native';
+import { Alert, Platform, Share, View } from 'react-native';
 
-import { Button, Card, Chip, Columns, ErrorText, Field, KV, Loading, Row, Screen, T } from '@/components/ui';
+import { Badge, Button, Card, Chip, Columns, ErrorText, Field, KV, Loading, Notice, Row, Screen, T } from '@/components/ui';
 import { api } from '@/lib/api';
 import { useSession } from '@/lib/session';
 import { DESHA_LABEL } from '@/lib/theme';
@@ -31,6 +33,9 @@ export default function ProfileScreen() {
   const { user, signOut } = useSession();
   const profile = useQuery({ queryKey: ['profile'], queryFn: api.profile });
   const consents = useQuery({ queryKey: ['consents'], queryFn: api.consents });
+  const modules = useQuery({ queryKey: ['questionnaires'], queryFn: api.questionnaires });
+  const dlStatus = useQuery({ queryKey: ['digilocker-status'], queryFn: api.digilockerStatus, staleTime: Infinity });
+  const { digilocker } = useLocalSearchParams<{ digilocker?: string }>();
   const [place, setPlace] = useState('');
   const [places, setPlaces] = useState<Awaited<ReturnType<typeof api.geoSearch>>>([]);
   const [busy, setBusy] = useState<string | null>(null);
@@ -64,6 +69,8 @@ export default function ProfileScreen() {
   return (
     <Screen>
       <T v="h1">Profile</T>
+      {digilocker === 'ok' && <Notice><T>✓ Details filled from DigiLocker.</T></Notice>}
+      {digilocker && digilocker !== 'ok' && <Notice tone="warning"><T>DigiLocker was not linked ({digilocker}).</T></Notice>}
       <ErrorText error={error} />
       <Columns min={380}>
         <AboutYou key={p.date_of_birth ?? 'new'} profile={p} busy={busy === 'profile'}
@@ -101,6 +108,39 @@ export default function ProfileScreen() {
               ))}
             </>
           )}
+        </Card>
+
+        {dlStatus.data && dlStatus.data.mode !== 'disabled' && (
+          <Card title="Fill from DigiLocker" right={dlStatus.data.mode === 'sandbox' ? <Badge status="Sandbox" /> : undefined}>
+            <T v="muted">Share your name, date of birth, sex and district from DigiLocker instead of typing them.
+              Your Aadhaar number and documents are never stored.</T>
+            {dlStatus.data.mode === 'sandbox' && <T v="small">Sandbox mode: returns a test identity until the app is approved as a DigiLocker partner.</T>}
+            <Button label="Continue with DigiLocker" icon="shield-checkmark-outline" loading={busy === 'digilocker'}
+              onPress={() => run('digilocker', async () => {
+                if (Platform.OS === 'web') {
+                  const { authorize_url } = await api.digilockerStart(`${window.location.origin}/profile`);
+                  window.location.assign(authorize_url);
+                  return;
+                }
+                const back = Linking.createURL('profile');
+                const { authorize_url } = await api.digilockerStart(back);
+                await WebBrowser.openAuthSessionAsync(authorize_url, back);
+              })} />
+          </Card>
+        )}
+
+        <Card title="Assessment modules (optional)">
+          <T v="small">Each one deepens your Ayurvedic profile. Answer again any time.</T>
+          {modules.data?.map((m) => (
+            <Row key={m.id} style={{ justifyContent: 'space-between', flexWrap: 'nowrap' }}>
+              <View style={{ flex: 1 }}>
+                <T>{m.title}</T>
+                <T v="small">{m.completed_at ? `Done ${new Date(m.completed_at).toLocaleDateString()}` : `${m.questions.length} questions`}</T>
+              </View>
+              <Chip label={m.completed_at ? 'Redo' : 'Start'} selected={!m.completed_at}
+                onPress={() => router.push(`/(patient)/module/${m.id}`)} />
+            </Row>
+          ))}
         </Card>
 
         <Card title="Prakriti">

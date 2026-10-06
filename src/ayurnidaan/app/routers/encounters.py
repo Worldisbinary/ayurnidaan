@@ -43,6 +43,26 @@ def encounter_out(e: Encounter, include_inputs: bool = True) -> dict:
     return out
 
 
+def profile_signals(p) -> dict:
+    """Carry relevant module answers into the assessment: patient-reported stool/urine
+    (counted as examination evidence until a practitioner examines) and BMI."""
+    mods = (p.modules or {}) if p else {}
+    digestion = (mods.get("agni_mala") or {}).get("answers", {})
+    reported = {
+        k: digestion[src]
+        for k, src in (("mala", "stool"), ("mutra", "urine"))
+        if digestion.get(src) and digestion[src] != "normal"
+    }
+    bmi = ((mods.get("dashavidha") or {}).get("result") or {}).get("bmi")
+    agni = {
+        "irregular": "irregular",
+        "sharp": "sharp_frequent_hunger",
+        "slow": "slow_heavy_after_meals",
+        "balanced": "balanced",
+    }.get(digestion.get("agni"))
+    return {"reported_examination": reported, "bmi": bmi, "profile_agni": agni}
+
+
 def run_assessment(e: Encounter, clinical) -> None:
     enc_input = to_input(e.inputs)
     result = clinical.assess(enc_input)
@@ -77,8 +97,11 @@ def create(body: EncounterCreate, user: Patient, db: DB, clinical: Clinical) -> 
         "examination": {},
         "aggravating": body.aggravating,
         "relieving": body.relieving,
-        "agni": body.agni,
+        **profile_signals(p),
     }
+    # the check-up's own answer wins; otherwise use the digestion module's
+    inputs["agni"] = body.agni or inputs.pop("profile_agni")
+    inputs.pop("profile_agni", None)
     e = Encounter(patient_id=user.id, chief_complaint=body.chief_complaint, inputs=inputs)
     run_assessment(e, clinical)
     # free text resolved to canonical symptoms is folded into the answers for next rounds

@@ -19,10 +19,10 @@ from __future__ import annotations
 
 import math
 import re
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import pandas as pd
+from defusedxml import ElementTree as ET  # XXE / billion-laughs safe
 
 CLASS_MIDPOINT = {  # per person
     ">1 / 1000": 2e-3,

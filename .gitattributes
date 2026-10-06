@@ -1,0 +1,10 @@
+# Normalise line endings in the repo; scripts that run inside Linux containers must stay LF
+# even on a Windows checkout, or the container fails with "/bin/sh^M: not found".
+* text=auto
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.png binary
+*.jpg binary
+*.ico binary

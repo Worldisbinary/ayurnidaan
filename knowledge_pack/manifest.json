@@ -86,8 +86,8 @@
   },
   "seed": 0
  },
- "built_at": "2026-10-04T07:24:14+00:00",
- "content_id": "f3a44403a751",
+ "built_at": "2026-10-04T11:48:37+00:00",
+ "content_id": "d1bedb97008e",
  "counts": {
   "conditions": 1446,
   "prakriti_questions": 9,
@@ -97,6 +97,7 @@
   "conditions.json": "cdf9ab466fb646041bfef510434ef33cc1f2cbcceede4e54401c6083fba251bf",
   "evidence.json": "3492478ac3f9aaafe94fcd1aa0e125331a0783866e336373ed608b45f1537bf6",
   "prakriti.json": "6debb63e8f8872c6cfdecdcadde450321a598c4ca3195e8c8afc9763b9a0a71c",
+  "prakriti_full.json": "3fd91961b2b4e94ebc3ddf575caa4800d66723c23dcc7b978bed61185160ac20",
   "symptoms.json": "521d3c6b0bc0ebb7dc36951a1ff2d3e5cc7830864f56f02008e91cbf38126b3a",
   "vikriti.json": "2f60bae2882935760c6409304088ac87f9a2fe21b967a072c621567da1a31a71"
  },

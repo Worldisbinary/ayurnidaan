@@ -43,12 +43,12 @@ def fetch(source: Source, data_dir: Path, force: bool = False) -> Path:
     if target.exists() and not force:
         return target
     if source.url:
-        import urllib.request
+        from .http import open_url
 
         target.parent.mkdir(parents=True, exist_ok=True)
         log.info("downloading", fields={"source": source.name, "url": source.url})
         tmp = target.with_suffix(target.suffix + ".part")
-        with urllib.request.urlopen(source.url, timeout=120) as resp, tmp.open("wb") as fh:
+        with open_url(source.url, timeout=120) as resp, tmp.open("wb") as fh:
             while block := resp.read(1 << 20):
                 fh.write(block)
         tmp.replace(target)

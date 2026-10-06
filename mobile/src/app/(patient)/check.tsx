@@ -3,9 +3,9 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 
-import { Button, Card, Chip, ErrorText, Field, Loading, Notice, Row, Screen, T } from '@/components/ui';
+import { Bar, Button, Card, Chip, ErrorText, Field, Notice, Row, Screen, SkeletonCards, Stepper, T } from '@/components/ui';
 import { api } from '@/lib/api';
-import { pretty } from '@/lib/theme';
+import { pretty, usePalette } from '@/lib/theme';
 
 const AGNI_LABEL: Record<string, string> = {
   irregular: 'Irregular, variable hunger',
@@ -16,6 +16,7 @@ const AGNI_LABEL: Record<string, string> = {
 
 export default function NewCheck() {
   const qc = useQueryClient();
+  const c = usePalette();
   const flags = useQuery({ queryKey: ['red-flags'], queryFn: api.redFlags, staleTime: Infinity });
   const options = useQuery({ queryKey: ['intake-options'], queryFn: api.intakeOptions, staleTime: Infinity });
   const [step, setStep] = useState<1 | 2>(1);
@@ -67,15 +68,18 @@ export default function NewCheck() {
     }
   };
 
-  if (flags.isLoading || options.isLoading) return <Screen><Loading /></Screen>;
+  if (flags.isLoading || options.isLoading) return <Screen><SkeletonCards count={4} min={600} /></Screen>;
+  const answeredFlags = flags.data?.filter((f) => checklist[f.code] !== undefined).length ?? 0;
 
   return (
     <Screen>
       <T v="h1">New check-up</T>
-      <T v="small">Step {step} of 2</T>
+      <Stepper steps={['Safety check', 'Symptoms', 'Assessment']} current={step - 1} />
       {step === 1 && (
         <Card title="First, a safety check">
           <T v="muted">Answer each question. Any “yes” means you should get emergency care now.</T>
+          <Bar label="Answered" value={answeredFlags / Math.max(1, flags.data?.length ?? 1)}
+            color={anyYes ? c.critical : c.accent} display={`${answeredFlags} / ${flags.data?.length ?? 0}`} />
           {flags.data?.map((f) => (
             <Card key={f.code}>
               <T>{f.question}</T>

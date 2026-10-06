@@ -79,6 +79,8 @@ export interface Assessment {
   differential?: DifferentialItem[];
   next_questions?: { symptom: string; information_gain_bits: number }[];
   guidance?: { season: string[]; balance: string[]; note: string };
+  ayurveda?: Derived;
+  vaya?: AyurvedaProfile['vaya'];
 }
 
 export interface ReviewOut {
@@ -153,6 +155,7 @@ export interface ConditionReference {
 }
 
 export interface CaseView {
+  ayurveda_profile: AyurvedaProfile;
   encounter: Encounter;
   patient: { name: string; profile: Profile | null };
   history: History;
@@ -164,4 +167,70 @@ export interface IntakeOptions {
   relieving: string[];
   agni: string[];
   examination: Record<string, string[]>;
+}
+
+// --- Ayurvedic profile (GET /me/ayurveda) ------------------------------------------------
+export interface Subdosha { name: string; dosha: Dosha; seat: string; governs: string; matched: string[]; score: number }
+export interface DhatuState {
+  name: string; nourishes: string; state: 'normal' | 'kshaya' | 'vriddhi' | 'mixed';
+  kshaya_signs: string[]; vriddhi_signs: string[];
+}
+export interface SrotasState { name: string; carries: string; involved: boolean; matched: string[] }
+export interface Derived { subdoshas: Subdosha[]; dhatus: DhatuState[]; srotas: SrotasState[]; basis: string }
+export interface RituChange {
+  ritu: string; starts: string; days_away: number; info: string;
+  aggravates: Dosha[]; accumulates: Dosha[]; subsides: Dosha[];
+}
+
+export interface AyurvedaProfile {
+  identity: { name: string; age: number | null; sex: string | null; state: string | null; district: string | null;
+    verified: boolean; source: string | null };
+  vaya: { stage: string; dosha: Dosha; note: string; age: number } | null;
+  desha: { desha: string | null; climate: Profile['climate'] };
+  kala: { ritu: string; info: string; dosha_states: Record<Dosha, string>; upcoming: RituChange[] };
+  dosha_clock: { current: Dosha | null; span: string | null; schedule: { span: string; dosha: Dosha }[] };
+  prakriti: DoshaProfile | null;
+  prakriti_source: 'quick' | 'full' | null;
+  manas_prakriti: { guna_shares: Record<'sattva' | 'rajas' | 'tamas', number>; dominant: string; note: string } | null;
+  vikriti: DoshaProfile | null;
+  vikriti_date: string | null;
+  ayurveda: Derived | null;
+  agni_mala: { agni: string | null; koshtha: string | null; aharashakti: string | null;
+    mala: Record<'stool' | 'urine' | 'sweat', string | null> } | null;
+  agni_latest: string | null;
+  ama: { level: string; signs: string[] } | null;
+  ojas: { ojas_score: number | null; bala: string | null; vyayamashakti: string | null } | null;
+  dashavidha: { bmi: number | null; pramana: string | null; samhanana: string | null; satmya: string | null } | null;
+  artava: { pattern: string } | null;
+  dinacharya: { window: string[]; days: { day: string; score: number }[]; average: number | null; streak: number };
+  diet: { tastes: Record<string, number>; dosha_effect: Record<Dosha, number>;
+    viruddha: { day: string; meal: string; message: string }[]; favour_tastes: string[]; focus_dosha: string | null };
+  completeness: { score: number; items: { id: string; label: string; weight: number; done: boolean }[] };
+  recommendations: string[];
+}
+
+export interface Trends {
+  checkups: { date: string; vikriti: Shares | null; ama: string | null; agni: string | null }[];
+  dinacharya: { date: string; score: number; dosha_effect: Record<Dosha, number> | null }[];
+  ojas: { date: string; score: number | null }[];
+}
+
+export interface QuestionnaireQuestion {
+  id: string; text: string; kind: 'single' | 'number';
+  options?: { value: string; label: string }[]; unit?: string; min?: number; max?: number;
+}
+export interface Questionnaire {
+  id: string; title: string; description: string; sex: string | null;
+  questions: QuestionnaireQuestion[]; completed_at: string | null;
+}
+
+export interface DailyCatalog {
+  dinacharya: { id: string; label: string; points: number }[];
+  foods: { id: string; label: string; tastes: string[] }[];
+  meals: ('breakfast' | 'lunch' | 'dinner')[];
+}
+export interface DailyLog {
+  day: string; score: number; dinacharya: Record<string, boolean>; meals: Record<string, string[]>;
+  analysis: { viruddha: { meal: string; message: string }[]; tastes: Record<string, number>;
+    dosha_effect: Record<Dosha, number>; missing_tastes: string[] } | null;
 }

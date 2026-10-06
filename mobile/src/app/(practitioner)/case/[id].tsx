@@ -4,11 +4,15 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { Linking, View } from 'react-native';
 
+import {
+  AgniCard, DhatuCard, DietCard, DinacharyaCard, GunaCard, OjasCard, SrotasCard, SubdoshaCard, VayaKalaCard,
+} from '@/components/ayurveda';
 import { DifferentialList, DoshaBars, KalaDeshaCard, TriageBanner } from '@/components/clinical';
 import { Badge, Button, Card, Chip, Columns, ErrorText, Field, KV, Loading, Row, Screen, T, Table } from '@/components/ui';
 import { api } from '@/lib/api';
 import type { CaseView } from '@/lib/types';
 import { DESHA_LABEL, pretty, space } from '@/lib/theme';
+import { useToast } from '@/lib/toast';
 
 const DECISIONS = [
   ['confirmed', 'Confirm'], ['revised', 'Revise to selected'], ['ruled_out', 'Rule out all'], ['referred', 'Refer'],
@@ -27,7 +31,8 @@ export default function CaseScreen() {
 
   const refresh = (enc: CaseView['encounter']) =>
     qc.setQueryData<CaseView>(['case', id], (old) => (old ? { ...old, encounter: enc } : old));
-  const claim = useMutation({ mutationFn: () => api.claim(id), onSuccess: () => q.refetch() });
+  const toast = useToast();
+  const claim = useMutation({ mutationFn: () => api.claim(id), onSuccess: () => { q.refetch(); toast('Case assigned to you'); } });
   const examine = useMutation({ mutationFn: () => api.examine(id, exam), onSuccess: refresh });
   const review = useMutation({
     mutationFn: () => {
@@ -39,12 +44,14 @@ export default function CaseScreen() {
     onSuccess: (enc) => {
       refresh(enc);
       qc.invalidateQueries({ queryKey: ['queue'] });
+      toast(`Review saved (${decision}) - the patient can now see your plan`);
       router.replace('/(practitioner)');
     },
+    onError: (err) => toast(err instanceof Error ? err.message : 'Could not save the review', 'error'),
   });
 
   if (q.isLoading || !q.data) return <Screen><Loading /><ErrorText error={q.error} /></Screen>;
-  const { encounter: e, patient, history, condition_references: refs } = q.data;
+  const { encounter: e, patient, history, condition_references: refs, ayurveda_profile: ayur } = q.data;
   const a = e.assessment;
   const sel = selected ?? a?.differential?.[0]?.condition_id ?? null;
   const ref = sel ? refs[sel] : undefined;
@@ -108,6 +115,19 @@ export default function CaseScreen() {
           <Button label="Record findings & re-assess" variant="secondary" onPress={() => examine.mutate()}
             loading={examine.isPending} disabled={!Object.keys(exam).length || reviewed} />
         </Card>
+      </Columns>
+
+      <T v="label">Ayurvedic profile · completeness {ayur.completeness.score}%</T>
+      <Columns min={340}>
+        <SubdoshaCard derived={a?.ayurveda ?? ayur.ayurveda} />
+        <DhatuCard derived={a?.ayurveda ?? ayur.ayurveda} />
+        <SrotasCard derived={a?.ayurveda ?? ayur.ayurveda} />
+        <GunaCard manas={ayur.manas_prakriti} readOnly />
+        <VayaKalaCard p={ayur} />
+        <AgniCard p={ayur} readOnly />
+        <OjasCard p={ayur} readOnly />
+        <DinacharyaCard d={ayur.dinacharya} readOnly />
+        <DietCard diet={ayur.diet} />
       </Columns>
 
       <Columns min={480}>

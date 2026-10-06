@@ -1,0 +1,8 @@
+# Every change needs the owner's review (enforced by branch protection on main).
+*                       @Worldisbinary
+
+# Clinical logic and patient-data handling: review with extra care.
+/src/ayurnidaan/clinical/   @Worldisbinary
+/src/ayurnidaan/app/        @Worldisbinary
+/migrations/                @Worldisbinary
+/.github/                   @Worldisbinary

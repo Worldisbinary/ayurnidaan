@@ -113,3 +113,30 @@ def kala_desha(day: date, desha: str | None = None) -> KalaDesha:
     ritu = ritu_for(day)
     info, doshas = DESHA_INFO.get(desha, (None, ())) if desha else (None, ())
     return KalaDesha(ritu, RITU_INFO[ritu], dosha_states(ritu), desha, info, tuple(doshas))
+
+
+def upcoming_ritus(day: date, n: int = 2) -> list[dict]:
+    """The next ``n`` season changes with what each does to the doshas (Ritu forecast)."""
+    out = []
+    year = day.year
+    starts = sorted(date(y, m, d) for y in (year, year + 1) for (m, d) in _RITU_START.values())
+    by_start = {v: k for k, v in _RITU_START.items()}
+    for start in starts:
+        if start <= day:
+            continue
+        ritu = by_start[(start.month, start.day)]
+        states = dosha_states(ritu)
+        out.append(
+            {
+                "ritu": ritu,
+                "starts": start.isoformat(),
+                "days_away": (start - day).days,
+                "info": RITU_INFO[ritu],
+                "aggravates": [d for d, s in states.items() if s == "prakopa"],
+                "accumulates": [d for d, s in states.items() if s == "chaya"],
+                "subsides": [d for d, s in states.items() if s == "prashama"],
+            }
+        )
+        if len(out) == n:
+            break
+    return out

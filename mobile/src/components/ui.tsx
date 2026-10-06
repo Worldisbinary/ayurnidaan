@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
-import type { ComponentProps, PropsWithChildren, ReactNode } from 'react';
+import { useEffect, useState, type ComponentProps, type PropsWithChildren, type ReactNode } from 'react';
 import {
-  ActivityIndicator, Pressable, RefreshControl, ScrollView, StyleSheet, Text, TextInput, View,
+  ActivityIndicator, Animated, Pressable, RefreshControl, ScrollView, StyleSheet, Text, TextInput, View,
   useWindowDimensions, type StyleProp, type TextStyle, type ViewStyle,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -40,7 +40,14 @@ export function T({ children, v = 'body', style, numberOfLines }: {
     label: { fontSize: font.xs, color: c.textFaint, fontWeight: '600', letterSpacing: 0.4, textTransform: 'uppercase' },
     mono: { fontSize: font.sm, color: c.textMuted, fontFamily: 'monospace' },
   };
-  return <Text style={[map[v], style]} numberOfLines={numberOfLines}>{children}</Text>;
+  const heading = v === 'h1' || v === 'h2' || v === 'h3';
+  return (
+    <Text style={[map[v], style]} numberOfLines={numberOfLines}
+      accessibilityRole={heading ? 'header' : undefined}
+      aria-level={heading ? { h1: 1, h2: 2, h3: 3 }[v] : undefined}>
+      {children}
+    </Text>
+  );
 }
 
 export function Card({ title, right, children, style }: PropsWithChildren<{
@@ -86,10 +93,12 @@ export function Button({ label, onPress, variant = 'primary', loading, disabled,
 }) {
   const c = usePalette();
   const bg = { primary: c.accent, secondary: c.surfaceAlt, danger: c.critical, ghost: 'transparent' }[variant];
-  const fg = variant === 'primary' || variant === 'danger' ? '#fff' : c.text;
+  const fg = variant === 'primary' ? c.onAccent : variant === 'danger' ? '#fff' : c.text;
   return (
     <Pressable
       accessibilityRole="button"
+      accessibilityLabel={label}
+      accessibilityState={{ disabled: !!(disabled || loading), busy: !!loading }}
       onPress={onPress}
       disabled={disabled || loading}
       style={({ pressed }) => [
@@ -112,6 +121,7 @@ export function Chip({ label, selected, onPress, tone }: {
   return (
     <Pressable
       onPress={onPress}
+      hitSlop={6}
       accessibilityRole={onPress ? 'button' : undefined}
       accessibilityState={{ selected: !!selected }}
       style={[styles.chip, { backgroundColor: bg, borderColor: selected || tone === 'yes' ? c.accent : c.border }]}>
@@ -130,6 +140,7 @@ export function Field({ label, ...props }: { label: string } & ComponentProps<ty
       <T v="label">{label}</T>
       <TextInput
         placeholderTextColor={c.textFaint}
+        accessibilityLabel={label}
         {...props}
         style={[styles.input, { borderColor: c.border, color: c.text, backgroundColor: c.surface }, props.style]}
       />
@@ -160,16 +171,17 @@ export function Badge({ status }: { status: string }) {
 }
 
 /** Horizontal bar with a text value, for shares / likelihoods (never colour-only). */
-export function Bar({ label, value, color, suffix = '%', max = 1 }: {
+export function Bar({ label, value, color, suffix = '%', max = 1, display }: {
   label: string; value: number; color: string; suffix?: string; max?: number;
+  display?: string; // text shown instead of the percentage (e.g. a raw count)
 }) {
   const c = usePalette();
   const pct = Math.max(0, Math.min(1, value / max));
   return (
-    <View style={{ gap: 2 }} accessibilityLabel={`${label} ${Math.round(value * 100)}${suffix}`}>
+    <View style={{ gap: 2 }} accessibilityLabel={`${label} ${display ?? `${Math.round(value * 100)}${suffix}`}`}>
       <Row style={{ justifyContent: 'space-between' }}>
         <T v="small">{label}</T>
-        <T v="small" style={{ color: c.text, fontVariant: ['tabular-nums'] }}>{(value * 100).toFixed(0)}{suffix}</T>
+        <T v="small" style={{ color: c.text, fontVariant: ['tabular-nums'] }}>{display ?? `${(value * 100).toFixed(0)}${suffix}`}</T>
       </Row>
       <View style={[styles.track, { backgroundColor: c.surfaceAlt }]}>
         <View style={{ width: `${pct * 100}%`, height: '100%', backgroundColor: color, borderRadius: 3 }} />
@@ -235,6 +247,108 @@ export function Loading() {
   return <View style={{ padding: space.xl }}><ActivityIndicator color={c.accent} /></View>;
 }
 
+/** Pulsing placeholder block; shows the shape of what is loading instead of a spinner. */
+export function Skeleton({ h = 12, w = '100%', r = 4 }: { h?: number; w?: ViewStyle['width']; r?: number }) {
+  const c = usePalette();
+  const [pulse] = useState(() => new Animated.Value(0.45));
+  useEffect(() => {
+    const loop = Animated.loop(Animated.sequence([
+      Animated.timing(pulse, { toValue: 1, duration: 650, useNativeDriver: true }),
+      Animated.timing(pulse, { toValue: 0.45, duration: 650, useNativeDriver: true }),
+    ]));
+    loop.start();
+    return () => loop.stop();
+  }, [pulse]);
+  return <Animated.View style={{ height: h, width: w, borderRadius: r, backgroundColor: c.surfaceAlt, opacity: pulse }} />;
+}
+
+/** A grid of card-shaped skeletons, laid out like the real page. */
+export function SkeletonCards({ count = 6, min = 330 }: { count?: number; min?: number }) {
+  const c = usePalette();
+  return (
+    <View accessibilityLabel="Loading" accessibilityRole="progressbar">
+      <Columns min={min}>
+        {Array.from({ length: count }, (_, i) => (
+          <View key={i} style={[styles.card, { backgroundColor: c.surface, borderColor: c.border }]}>
+            <Skeleton h={10} w="40%" />
+            <Skeleton h={18} w="70%" />
+            <Skeleton h={8} />
+            <Skeleton h={8} w={i % 2 ? '85%' : '60%'} />
+          </View>
+        ))}
+      </Columns>
+    </View>
+  );
+}
+
+/** Headline number with a label and an optional hint; for dashboards. */
+export function StatTile({ label, value, hint, icon, tone = 'accent', onPress }: {
+  label: string; value: string | number; hint?: string; icon?: IconName;
+  tone?: 'accent' | 'good' | 'warning' | 'critical' | 'muted'; onPress?: () => void;
+}) {
+  const c = usePalette();
+  const color = { accent: c.accent, good: c.good, warning: c.warning, critical: c.critical, muted: c.textMuted }[tone];
+  return (
+    <Pressable onPress={onPress} disabled={!onPress} accessibilityRole={onPress ? 'button' : 'summary'}
+      accessibilityLabel={`${label}: ${value}${hint ? `, ${hint}` : ''}`}
+      style={({ pressed }) => [styles.tile, { backgroundColor: c.surface, borderColor: c.border, opacity: pressed ? 0.85 : 1 }]}>
+      <Row style={{ justifyContent: 'space-between', flexWrap: 'nowrap' }}>
+        <T v="label" numberOfLines={1}>{label}</T>
+        {icon && <Ionicons name={icon} size={15} color={color} />}
+      </Row>
+      <Text style={{ fontSize: 24, fontWeight: '700', color: c.text, fontVariant: ['tabular-nums'] }} numberOfLines={1}>{value}</Text>
+      {hint ? <T v="small" numberOfLines={1}>{hint}</T> : null}
+    </Pressable>
+  );
+}
+
+/** A row of stat tiles that wraps on narrow screens. */
+export function StatRow({ children }: PropsWithChildren) {
+  return <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space.md }}>{children}</View>;
+}
+
+/** What to show when a list is empty: what it is, why it's empty, what to do next. */
+export function EmptyState({ icon, title, message, action }: {
+  icon: IconName; title: string; message?: string; action?: { label: string; onPress: () => void; icon?: IconName };
+}) {
+  const c = usePalette();
+  return (
+    <View style={{ alignItems: 'center', gap: space.sm, paddingVertical: space.xl, paddingHorizontal: space.md }}>
+      <View style={{ width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', backgroundColor: c.surfaceAlt }}>
+        <Ionicons name={icon} size={22} color={c.textMuted} />
+      </View>
+      <T v="h3" style={{ textAlign: 'center' }}>{title}</T>
+      {message ? <T v="muted" style={{ textAlign: 'center', maxWidth: 380 }}>{message}</T> : null}
+      {action && <Button label={action.label} icon={action.icon} onPress={action.onPress} compact />}
+    </View>
+  );
+}
+
+/** Numbered progress steps (done / current / upcoming), e.g. for multi-step forms. */
+export function Stepper({ steps, current }: { steps: string[]; current: number }) {
+  const c = usePalette();
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm, flexWrap: 'wrap' }}
+      accessibilityRole="progressbar" accessibilityLabel={`Step ${current + 1} of ${steps.length}: ${steps[current]}`}>
+      {steps.map((s, i) => {
+        const done = i < current;
+        const active = i === current;
+        const color = done || active ? c.accent : c.textFaint;
+        return (
+          <View key={s} style={{ flexDirection: 'row', alignItems: 'center', gap: space.sm }}>
+            {i > 0 && <View style={{ width: 18, height: 2, backgroundColor: done || active ? c.accent : c.border }} />}
+            <View style={[styles.step, { borderColor: color, backgroundColor: done ? c.accent : active ? c.accentSoft : 'transparent' }]}>
+              {done ? <Ionicons name="checkmark" size={12} color={c.onAccent} />
+                : <Text style={{ fontSize: font.xs, fontWeight: '700', color }}>{i + 1}</Text>}
+            </View>
+            <T v="small" style={{ color: active ? c.text : c.textMuted, fontWeight: active ? '700' : '400' }}>{s}</T>
+          </View>
+        );
+      })}
+    </View>
+  );
+}
+
 export function ErrorText({ error }: { error: unknown }) {
   if (!error) return null;
   return <Notice tone="critical"><T>{error instanceof Error ? error.message : String(error)}</T></Notice>;
@@ -254,4 +368,6 @@ const styles = StyleSheet.create({
   track: { height: 6, borderRadius: 3, overflow: 'hidden' },
   tr: { flexDirection: 'row', paddingVertical: 6, borderBottomWidth: StyleSheet.hairlineWidth, alignItems: 'center' },
   notice: { flexDirection: 'row', gap: 8, borderLeftWidth: 3, borderRadius: radius, padding: space.md },
+  tile: { borderWidth: 1, borderRadius: radius, padding: space.md, gap: 2, flexGrow: 1, flexBasis: 150, minWidth: 140 },
+  step: { width: 22, height: 22, borderRadius: 11, borderWidth: 1.5, alignItems: 'center', justifyContent: 'center' },
 });

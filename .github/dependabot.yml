@@ -1,0 +1,41 @@
+# Weekly dependency updates. Each PR goes through the full CI + security pipeline.
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule: { interval: weekly, day: monday }
+    open-pull-requests-limit: 5
+    groups:
+      python-minor:
+        update-types: [minor, patch]
+    ignore:
+      # Pinned on purpose (pickled models + Windows Smart App Control); bump by hand.
+      - dependency-name: scikit-learn
+
+  - package-ecosystem: npm
+    directory: /mobile
+    schedule: { interval: weekly, day: monday }
+    open-pull-requests-limit: 5
+    groups:
+      # Expo SDK packages must move together; majors go through `npx expo install --fix`.
+      expo-sdk:
+        patterns: ["expo", "expo-*", "@expo/*", "react", "react-dom", "react-native", "react-native-*"]
+        update-types: [minor, patch]
+      npm-minor:
+        update-types: [minor, patch]
+    ignore:
+      - dependency-name: "expo"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-native"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly, day: monday }
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: docker
+    directory: /
+    schedule: { interval: weekly, day: monday }

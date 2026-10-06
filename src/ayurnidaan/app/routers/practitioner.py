@@ -5,6 +5,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException
 from sqlalchemy import case, or_, select
 
+from ..ayurveda_profile import build as build_ayurveda
 from ..deps import DB, Clinical, Practitioner
 from ..models import Encounter, Review, User
 from ..schemas import ExaminationIn, ReviewIn
@@ -110,6 +111,7 @@ def case_view(encounter_id: str, user: Practitioner, db: DB, clinical: Clinical)
         },
         "history": patient_history(db, e.patient_id),
         "condition_references": refs,
+        "ayurveda_profile": build_ayurveda(db, patient),
     }
 
 

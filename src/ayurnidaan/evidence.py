@@ -21,9 +21,9 @@ import math
 import re
 import time
 import urllib.parse
-import urllib.request
 from pathlib import Path
 
+from .http import get_json
 from .logging_utils import get_logger
 
 log = get_logger(__name__)
@@ -38,9 +38,7 @@ def _get(query: str, page_size: int = 1, sort: str | None = None, retries: int =
     url = f"{API}?{urllib.parse.urlencode(params)}"
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "ayurnidaan-evidence/1.0"})
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                return json.loads(resp.read())
+            return get_json(url, timeout=30)
         except Exception as exc:  # network blips, 429/5xx
             wait = 2**attempt
             log.warning(

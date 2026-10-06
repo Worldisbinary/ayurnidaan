@@ -1,0 +1,14 @@
+# gitleaks config: the default ruleset, plus an allowlist for values that are public by design.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public data and development-only defaults, not secrets"
+paths = [
+  '''mobile/package-lock\.json''',
+  '''knowledge_pack/.*\.json''',
+]
+regexes = [
+  # Development-only defaults in config.py; check_production() refuses to start with them.
+  '''dev-only-[a-z0-9-]*change-me[a-z0-9-]*''',
+]

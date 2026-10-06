@@ -3,14 +3,17 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 
+import { DhatuCard, SrotasCard, SubdoshaCard } from '@/components/ayurveda';
 import { AssessmentSummary, DoshaBars, KalaDeshaCard } from '@/components/clinical';
 import { Badge, Button, Card, Chip, Columns, ErrorText, Loading, Notice, Row, Screen, T } from '@/components/ui';
 import { api } from '@/lib/api';
+import { useToast } from '@/lib/toast';
 import type { Encounter } from '@/lib/types';
 
 export default function EncounterScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const qc = useQueryClient();
+  const toast = useToast();
   const q = useQuery({ queryKey: ['encounter', id], queryFn: () => api.encounter(id) });
   const set = (e: Encounter) => qc.setQueryData(['encounter', id], e);
   const answer = useMutation({ mutationFn: (a: Record<string, boolean>) => api.answer(id, a), onSuccess: set });
@@ -27,7 +30,9 @@ export default function EncounterScreen() {
       set(e);
       qc.invalidateQueries({ queryKey: ['encounters'] });
       qc.invalidateQueries({ queryKey: ['consents'] });
+      toast('Shared - a verified practitioner will review it');
     },
+    onError: (err) => toast(err instanceof Error ? err.message : 'Could not share', 'error'),
   });
 
   if (q.isLoading || !q.data) return <Screen><Loading /><ErrorText error={q.error} /></Screen>;
@@ -71,6 +76,9 @@ export default function EncounterScreen() {
           <DoshaBars title="Prakriti · constitution" profile={a.prakriti}
             note={a.prakriti ? undefined : 'Answer the Prakriti questions in Profile.'} />
           <KalaDeshaCard a={a} />
+          <SubdoshaCard derived={a.ayurveda ?? null} />
+          <DhatuCard derived={a.ayurveda ?? null} />
+          <SrotasCard derived={a.ayurveda ?? null} />
           {a.guidance && (
             <Card title="General guidance">
               {[...a.guidance.season, ...a.guidance.balance].map((g) => <T key={g}>• {g}</T>)}

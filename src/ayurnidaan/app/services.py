@@ -2,10 +2,8 @@
 
 from __future__ import annotations
 
-import json
 import threading
 import urllib.parse
-import urllib.request
 from collections import Counter, defaultdict
 from dataclasses import asdict, fields
 from datetime import UTC, date, datetime, timedelta
@@ -21,6 +19,7 @@ from ..clinical.engine import AssessmentEngine, EncounterInput
 from ..clinical.kala_desha import classify_desha, kala_desha
 from ..clinical.knowledge import KnowledgePack
 from ..config import Settings
+from ..http import get_json
 from .models import AuditLog, Consent, Encounter, LocationClimate, ModelVersion, Review, User
 
 LEARNING_DECISIONS = ("confirmed", "revised")
@@ -105,9 +104,7 @@ class ClinicalService:
 
 # --- geography ------------------------------------------------------------------------------
 def _http_json(url: str, timeout: float = 20) -> dict:
-    req = urllib.request.Request(url, headers={"User-Agent": "ayurnidaan/1.1"})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return json.loads(resp.read())
+    return get_json(url, timeout=timeout)
 
 
 def geocode(settings: Settings, query: str, limit: int = 5) -> list[dict]:
