@@ -30,11 +30,13 @@ RUN apt-get update \
  && useradd --create-home --uid 10001 --shell /usr/sbin/nologin ayur
 
 COPY --from=build /wheels /wheels
-# pip itself is upgraded so the image does not ship a pip with known CVEs.
+# Install the app, then remove pip: nothing installs packages at runtime, and pip vendors
+# its own urllib3 / msgpack / setuptools, which carry CVEs even in the latest release.
+# A production image without a package manager is also a smaller attack surface.
 # hadolint ignore=DL3013
-RUN pip install --no-cache-dir --upgrade pip \
- && pip install --no-cache-dir /wheels/*.whl \
- && rm -rf /wheels
+RUN pip install --no-cache-dir /wheels/*.whl \
+ && rm -rf /wheels \
+ && python -m pip uninstall --yes pip
 COPY --chown=ayur:ayur knowledge_pack ./knowledge_pack
 COPY --chown=ayur:ayur migrations ./migrations
 COPY --chown=ayur:ayur alembic.ini docker-entrypoint.sh ./
