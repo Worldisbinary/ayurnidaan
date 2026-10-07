@@ -64,6 +64,32 @@ jobs:
             type=raw,value=main,enable=${{ github.ref_type != 'tag' }}
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
+      # Build locally first and scan it, so a vulnerable image is never published.
+      - name: Build for scanning
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: .
+          load: true
+          push: false
+          tags: ayurnidaan-api:release
+          build-args: GIT_SHA=${{ env.SHA }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      # Gate: no fixable HIGH/CRITICAL CVEs and no secrets in the release image.
+      - name: Scan the release image
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        env:
+          # Fall back to the public mirrors when ghcr.io rate-limits the database download.
+          TRIVY_DB_REPOSITORY: mirror.gcr.io/aquasec/trivy-db:2,public.ecr.aws/aquasecurity/trivy-db:2,ghcr.io/aquasecurity/trivy-db:2
+          TRIVY_JAVA_DB_REPOSITORY: mirror.gcr.io/aquasec/trivy-java-db:1,public.ecr.aws/aquasecurity/trivy-java-db:1,ghcr.io/aquasecurity/trivy-java-db:1
+        with:
+          image-ref: ayurnidaan-api:release
+          scanners: vuln,secret
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          trivyignores: .trivyignore
+          exit-code: "1"
+      # Same Dockerfile + cache: the push reuses the scanned layers.
       - id: build
         uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
         with:
@@ -75,16 +101,6 @@ jobs:
           provenance: mode=max # SLSA build provenance, attached to the image
           sbom: true # BuildKit SBOM, attached to the image
           cache-from: type=gha
-          cache-to: type=gha,mode=max
-      # Gate: the exact image that ships must have no fixable HIGH/CRITICAL CVEs.
-      - name: Scan the pushed image
-        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
-        with:
-          image-ref: ${{ env.IMAGE }}@${{ steps.build.outputs.digest }}
-          severity: HIGH,CRITICAL
-          ignore-unfixed: true
-          trivyignores: .trivyignore
-          exit-code: "1"
       - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
       - name: Sign (keyless, Sigstore)
         env:
