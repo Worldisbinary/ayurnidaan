@@ -65,11 +65,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Glaucoma",
-  "namc": {
-   "code": "HF-2",
-   "term": "adhimanthaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Adhimantha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -192,11 +188,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hypopyon ulcer / Panophthalmitis",
-  "namc": {
-   "code": "HF-12",
-   "term": "akShipAkAtyayaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aksipakatyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -364,11 +356,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Subconjunctival haemorrhage",
-  "namc": {
-   "code": "HD-7",
-   "term": "arjunaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Arjuna",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -616,11 +604,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Xanthelasma",
-  "namc": {
-   "code": "HB-20",
-   "term": "bisavartma",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Bisavartma",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -904,11 +888,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Chronic glaucoma",
-  "namc": {
-   "code": "HF-2.3",
-   "term": "kaPaja-adhimanthaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Adhimantha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -1639,11 +1619,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Secondary / Congestive glaucoma",
-  "namc": {
-   "code": "HF-2.4",
-   "term": "raktaja-adhimanthaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktaja Adhimantha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -1725,11 +1701,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Scleritis / Haemangioma",
-  "namc": {
-   "code": "HD-9",
-   "term": "sirAjAlaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Sirajala",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -1854,11 +1826,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cataract (early stage)",
-  "namc": {
-   "code": "AAB-43",
-   "term": "timiraḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Timira",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -1898,11 +1866,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Sub-acute catarrhal conjunctivitis",
-  "namc": {
-   "code": "HF-1.1",
-   "term": "vAtABiShyandaH",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Vataja Abhisyanda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -2152,11 +2116,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Ear diseases (general)",
-  "namc": {
-   "code": "J",
-   "term": "karNarogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Karna Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -2325,11 +2285,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Earache / Otalgia",
-  "namc": {
-   "code": "AAB-23",
-   "term": "karṇaśūlaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Karna Sula",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -2610,11 +2566,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Atrophy of pinna",
-  "namc": {
-   "code": "JA-7",
-   "term": "pAlISoShaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Palisosa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -2855,11 +2807,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Eczema of external ear",
-  "namc": {
-   "code": "JA-8",
-   "term": "vidArI",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vidari (Karna)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -2981,11 +2929,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Chronic / Hypertrophic rhinitis",
-  "namc": {
-   "code": "I-1.5",
-   "term": "kaphaja-pratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Pratisyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -3652,11 +3596,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Acute influenza",
-  "namc": {
-   "code": "I-1.7",
-   "term": "raktaja-pratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktaja Pratisyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -3779,11 +3719,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Sublingual abscess / Cancer",
-  "namc": {
-   "code": "O-51",
-   "term": "ālasyam",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Alasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -3912,11 +3848,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Peritonsillar abscess",
-  "namc": {
-   "code": "GF-9 (SL0Y)",
-   "term": "galavidradhiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Galavidradhi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -4374,11 +4306,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Diseases of mouth (general)",
-  "namc": {
-   "code": "G",
-   "term": "mukharogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Mukharoga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -4782,11 +4710,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cracked lips / Cheilosis",
-  "namc": {
-   "code": "JA-8",
-   "term": "vidArI",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vidari (Ostha)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -4868,11 +4792,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Diseases of lips",
-  "namc": {
-   "code": "GA",
-   "term": "oShTharogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ostha Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -5604,11 +5524,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Seborrhoea / Furunculosis of scalp",
-  "namc": {
-   "code": "FA-5",
-   "term": "arUMShikA (kapAla)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Arumsika",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -5689,11 +5605,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Burns",
-  "namc": {
-   "code": "LB-1",
-   "term": "agnidagdhaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Agnidagdha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -6099,11 +6011,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Skin diseases (Mahakushtha & Ksudrakushtha)",
-  "namc": {
-   "code": "ED-4",
-   "term": "kuṣṭham",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kustha (general)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -6185,11 +6093,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Sebaceous cyst / Naevus",
-  "namc": {
-   "code": "O-33",
-   "term": "maṣakaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Masaka",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -6265,11 +6169,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cracked heels / Rhagades",
-  "namc": {
-   "code": "O-31",
-   "term": "pādadārī",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Padadari",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -6390,11 +6290,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Urticaria (acute)",
-  "namc": {
-   "code": "ED-14",
-   "term": "śītapittam",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Sitapitta",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -6516,11 +6412,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Abscess",
-  "namc": {
-   "code": "ED-9",
-   "term": "vidradhiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vidradhi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -6562,11 +6454,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Fissures of hands & feet",
-  "namc": {
-   "code": "AAB-90",
-   "term": "vipādikā (nānātmaja) (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vipadika",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -7004,11 +6892,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Smallpox",
-  "namc": {
-   "code": "ED-6",
-   "term": "masūrikā",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Masurika",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -8387,11 +8271,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Ascites",
-  "namc": {
-   "code": "EK-4.9",
-   "term": "jalodaraH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Jalodara",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -8431,11 +8311,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Jaundice",
-  "namc": {
-   "code": "ABB-13",
-   "term": "kāmalā (kēvalapitta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kamala",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -8477,11 +8353,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hepatic / Pre-hepatic jaundice",
-  "namc": {
-   "code": "ABB-13",
-   "term": "kāmalā (kēvalapitta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kamala (Kosthashraya)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -8522,11 +8394,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Obstructive jaundice",
-  "namc": {
-   "code": "ABB-13",
-   "term": "kāmalā (kēvalapitta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kamala (Shakhashraya)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -8821,11 +8689,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Blood dysentery",
-  "namc": {
-   "code": "EB-2.10",
-   "term": "raktātisāraḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktatisara",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -8907,11 +8771,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Reverse peristalsis / Suppression disorders",
-  "namc": {
-   "code": "AAB-17",
-   "term": "udāvartaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Udavarta",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -9036,11 +8896,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Food poisoning / Ileus",
-  "namc": {
-   "code": "K-2.1.5",
-   "term": "vilambī",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Vilambika",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -9999,11 +9855,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Facial paralysis / Bell's palsy",
-  "namc": {
-   "code": "AAB-6",
-   "term": "arditaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ardita",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -10089,11 +9941,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Convulsions",
-  "namc": {
-   "code": "AAB-14",
-   "term": "ākṣēpakaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aksepaka",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -10209,11 +10057,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Sciatica",
-  "namc": {
-   "code": "AAB-37",
-   "term": "gr̥dhrasī (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Grdhrasi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -10254,11 +10098,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Sciatica - pure Vata",
-  "namc": {
-   "code": "AAB-37",
-   "term": "gr̥dhrasī (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Grdhrasi (Vataja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -10302,11 +10142,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Sciatica - Vata-Kapha",
-  "namc": {
-   "code": "AAB-37",
-   "term": "gr̥dhrasī (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Grdhrasi (Vata-Kaphaja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -10510,11 +10346,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Torticollis",
-  "namc": {
-   "code": "AAB-73",
-   "term": "manyAstamBaH (kEvalavAta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Manyastambha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -11004,11 +10836,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Sacral pain",
-  "namc": {
-   "code": "EB-10.16",
-   "term": "trikaśūlaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Trika Sula",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -11048,11 +10876,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Peripheral neuritis",
-  "namc": {
-   "code": "AAE-7",
-   "term": "tvak^-gatavātaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Tvakgata Vata",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -11949,11 +11773,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Ligament / Tendon disorders",
-  "namc": {
-   "code": "AAE-14",
-   "term": "snāyugatavātaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Snayugata Vata",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -11995,11 +11815,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Fibroma / Muscle swelling",
-  "namc": {
-   "code": "EE-4.8",
-   "term": "mAMsajagranthiH",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Mamsa Granthi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12120,11 +11936,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Dry cough (Vata)",
-  "namc": {
-   "code": "EA-3.2",
-   "term": "vātajakāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Kasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12166,11 +11978,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cough with yellow sputum (Pitta)",
-  "namc": {
-   "code": "EA-3.3",
-   "term": "pittajakāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Kasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12208,11 +12016,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Productive cough (Kapha)",
-  "namc": {
-   "code": "EA-3.4",
-   "term": "kaphajakāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Kasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12253,11 +12057,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Traumatic chest cough",
-  "namc": {
-   "code": "EA-3.5",
-   "term": "kṣatajakāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ksataja Kasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12300,11 +12100,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Tubercular / Wasting cough",
-  "namc": {
-   "code": "EA-3.6",
-   "term": "kṣayajakāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ksayaja Kasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12347,11 +12143,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Dyspnoea / Breathlessness",
-  "namc": {
-   "code": "VH-5",
-   "term": "svastha",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Svasa (general)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12389,11 +12181,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Biot's breathing (severe)",
-  "namc": {
-   "code": "EA-4.2",
-   "term": "mahāśvāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Maha Svasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12431,11 +12219,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Stertorous / Kussmaul breathing",
-  "namc": {
-   "code": "EA-4.3",
-   "term": "ūrdhvaśvāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Urdhva Svasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12473,11 +12257,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cheyne-Stokes respiration",
-  "namc": {
-   "code": "EA-4.4",
-   "term": "chinnaśvāsaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Chinna Svasa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12599,11 +12379,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hiccough",
-  "namc": {
-   "code": "AAB-109",
-   "term": "hikkā (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Hikka (general)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12641,11 +12417,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hiccough from food",
-  "namc": {
-   "code": "EA-2.6",
-   "term": "annajāhikkā",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Annaja Hikka",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -12881,11 +12653,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pulmonary cavitation",
-  "namc": {
-   "code": "EA-6",
-   "term": "uraHkShataH/kShatakShINa",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Urah Ksata",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -13010,11 +12778,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pneumonia",
-  "namc": {
-   "code": "EC-3.22",
-   "term": "śvasanaka-jvaraḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Svasaka Jvara",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -13970,11 +13734,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Suppression of urine",
-  "namc": {
-   "code": "SR83 (CA-1)",
-   "term": "mūtrakṣayaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Mutraksaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -14141,11 +13901,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kidney diseases",
-  "namc": {
-   "code": "EJ-4.11",
-   "term": "vṛkkarogaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vrkka Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -14938,11 +14694,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Abortion / Miscarriage",
-  "namc": {
-   "code": "EL-7.2",
-   "term": "garbhapātaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Garbhapata",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -15066,11 +14818,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Amenorrhoea",
-  "namc": {
-   "code": "EL-8",
-   "term": "mūḍhagarbhaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Mudagarbha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -15148,11 +14896,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Blood tumour of uterus",
-  "namc": {
-   "code": "EB-8.5",
-   "term": "raktajagulmaḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Rakta Gulma",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -15606,11 +15350,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Psoriasis (major type)",
-  "namc": {
-   "code": "ED-4.2.2",
-   "term": "kApAlakakuShTham",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Kapala Kushtha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -15854,11 +15594,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Black nodular skin disease",
-  "namc": {
-   "code": "ED-4.2.8",
-   "term": "kākaṇakaḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Kakanaka Kushtha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -16620,11 +16356,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata erysipelas",
-  "namc": {
-   "code": "ED-10.4",
-   "term": "vātajavisarpaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Visarpa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -16664,11 +16396,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta erysipelas",
-  "namc": {
-   "code": "ED-10.5",
-   "term": "pittajavisarpaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Visarpa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -16710,11 +16438,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha erysipelas",
-  "namc": {
-   "code": "ED-10.6",
-   "term": "kaphajavisarpaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Visarpa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -16756,11 +16480,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Tridoshic erysipelas",
-  "namc": {
-   "code": "ED-10.11",
-   "term": "sānnipātajavisarpaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Sannipataja Visarpa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -17400,11 +17120,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Rectal prolapse",
-  "namc": {
-   "code": "AAB-34",
-   "term": "gudabhraṁśaḥ (kēvalavāta)",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Gudabhransha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -17730,11 +17446,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata abdominal tumour",
-  "namc": {
-   "code": "EB-8.2",
-   "term": "vātajagulmaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Gulma",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -17775,11 +17487,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta abdominal tumour",
-  "namc": {
-   "code": "EB-8.3",
-   "term": "pittajagulmaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Gulma",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -17819,11 +17527,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha abdominal tumour",
-  "namc": {
-   "code": "EB-8.4",
-   "term": "kaphajagulmaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Gulma",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -17903,11 +17607,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Uterine blood tumour (women)",
-  "namc": {
-   "code": "EB-8.5",
-   "term": "raktajagulmaḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Rakta Gulma",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -17991,11 +17691,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Anaemia (Pitta)",
-  "namc": {
-   "code": "EC-5.3",
-   "term": "pittajapāṇḍurōgaḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Pittaja Pandu",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -18037,11 +17733,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Anaemia (Kapha)",
-  "namc": {
-   "code": "EC-5.4",
-   "term": "kaphajapāṇḍurōgaḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Kaphaja Pandu",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -18167,11 +17859,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Bleeding from upper orifices",
-  "namc": {
-   "code": "ED-7.2",
-   "term": "ūrdhvaga-raktapittam",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Urdhvagata Raktapitta",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -18212,11 +17900,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Bleeding from lower orifices",
-  "namc": {
-   "code": "ED-7.3",
-   "term": "adhōga-raktapittam",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Adhogata Raktapitta",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -18256,11 +17940,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Bleeding from all orifices",
-  "namc": {
-   "code": "ED-7.4",
-   "term": "ubhayaga-raktapittam",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Ubhayagata Raktapitta",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -19613,11 +19293,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Traumatic retention",
-  "namc": {
-   "code": "EJ-3.14",
-   "term": "aBighAtajamUtrAghAtaH",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Abhighata Mutraghata",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -19935,11 +19611,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata intoxication",
-  "namc": {
-   "code": "EM-6.1",
-   "term": "vAtajamadaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Mada",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -19980,11 +19652,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta intoxication",
-  "namc": {
-   "code": "EM-6.2",
-   "term": "pittajamadaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Mada",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20026,11 +19694,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha intoxication",
-  "namc": {
-   "code": "EM-6.3",
-   "term": "kaPajamadaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Mada",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20073,11 +19737,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Tridoshic intoxication",
-  "namc": {
-   "code": "EM-6.4",
-   "term": "sAnnipAtajamadaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Sannipataja Mada",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20115,11 +19775,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata headache / Neuralgic headache",
-  "namc": {
-   "code": "F-1",
-   "term": "vAtaja-SirorogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Shiroroga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20244,11 +19900,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Tridoshic headache",
-  "namc": {
-   "code": "F-4",
-   "term": "sAnnipAtaja-SirorogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Sannipataja Shiroroga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20450,11 +20102,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hoarseness (Vata)",
-  "namc": {
-   "code": "EA-5.1",
-   "term": "vAtajasvaraBedaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Svarabheda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20492,11 +20140,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hoarseness (Pitta)",
-  "namc": {
-   "code": "EA-5.2",
-   "term": "pittajasvaraBedaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Svarabheda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20536,11 +20180,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hoarseness (Kapha)",
-  "namc": {
-   "code": "EA-5.3",
-   "term": "kaPajasvaraBedaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Svarabheda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20621,11 +20261,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hoarseness from tuberculosis",
-  "namc": {
-   "code": "EA-5.5",
-   "term": "kShayajasvaraBedaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ksayaja Svarabheda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20706,11 +20342,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata abscess",
-  "namc": {
-   "code": "ED-9.1",
-   "term": "vātajavidradhiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Vidradhi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20751,11 +20383,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta abscess",
-  "namc": {
-   "code": "ED-9.2",
-   "term": "pittajavidradhiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Vidradhi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20798,11 +20426,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha abscess",
-  "namc": {
-   "code": "ED-9.3",
-   "term": "kaphajavidradhiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Vidradhi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -20883,11 +20507,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Haematic abscess",
-  "namc": {
-   "code": "ED-9.5",
-   "term": "raktajavidradhiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktaja Vidradhi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -21479,11 +21099,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Ear disease of infants",
-  "namc": {
-   "code": "JA",
-   "term": "karNapAlirogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Karnapali Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -21983,11 +21599,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Facial palsy (Vata)",
-  "namc": {
-   "code": "AAB-6",
-   "term": "arditaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ardita",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -22066,11 +21678,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Quadriplegia / Poly-neuropathy",
-  "namc": {
-   "code": "AAB-106",
-   "term": "sarvāṅgarōgaḥ/sarvāṅgavātaḥ (kēvalavāta)",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Sarvangavata",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -22274,11 +21882,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cervical spondylosis / Torticollis",
-  "namc": {
-   "code": "AAB-73",
-   "term": "manyAstamBaH (kEvalavAta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Manyastambha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23016,11 +22620,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Head pain (Vata)",
-  "namc": {
-   "code": "AAB-96",
-   "term": "śirōruk (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Shiroruk",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23103,11 +22703,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Delirium",
-  "namc": {
-   "code": "AAB-62",
-   "term": "pralāpakaḥ (kēvalavāta)",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Pralapa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23149,11 +22745,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Bruxism / Gnashing of teeth",
-  "namc": {
-   "code": "AAB-47",
-   "term": "dantabhēdaḥ (kēvalavāta)",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Dantabhedana",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23279,11 +22871,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Burning sensation (Pitta)",
-  "namc": {
-   "code": "ED-20",
-   "term": "dāhaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Daha (Pitta)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23406,11 +22994,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Intense thirst (Pitta)",
-  "namc": {
-   "code": "ED-2.10",
-   "term": "pipāsā",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pipasa (Pitta)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23653,11 +23237,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Laziness / Lethargy",
-  "namc": {
-   "code": "O-51",
-   "term": "ālasyam",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Alasya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23781,11 +23361,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Anorexia (Kapha)",
-  "namc": {
-   "code": "EC-7",
-   "term": "aruciḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aruchi (Kaphaja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23829,11 +23405,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Goitre",
-  "namc": {
-   "code": "ACB-13",
-   "term": "galagaṇḍaḥ (kēvala-kapha)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Galaganda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23913,11 +23485,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata nasal catarrh",
-  "namc": {
-   "code": "I-1.3",
-   "term": "vātajapratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Pratishyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -23959,11 +23527,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta nasal catarrh",
-  "namc": {
-   "code": "I-1.4",
-   "term": "pittaja-pratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Pratishyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24005,11 +23569,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha nasal catarrh",
-  "namc": {
-   "code": "I-1.5",
-   "term": "kaphaja-pratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Pratishyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24049,11 +23609,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Haemorrhagic rhinitis",
-  "namc": {
-   "code": "I-1.7",
-   "term": "raktaja-pratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktaja Pratishyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24097,11 +23653,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Tridoshic rhinitis",
-  "namc": {
-   "code": "I-1.6",
-   "term": "sānnipātaja-pratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Sannipataja Pratishyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24143,11 +23695,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Chronic sinusitis / Ozaena",
-  "namc": {
-   "code": "I-1.2",
-   "term": "duṣṭapratiśyāyaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Dushta Pratishyaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24190,11 +23738,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata eye disease",
-  "namc": {
-   "code": "H-2",
-   "term": "vAtaja-netrarogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Netra Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24238,11 +23782,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta eye disease",
-  "namc": {
-   "code": "H-3",
-   "term": "pittaja-netrarogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Netra Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24285,11 +23825,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha eye disease",
-  "namc": {
-   "code": "H-4",
-   "term": "kaPaja-netrarogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Netra Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24584,11 +24120,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata cyst / fibrous tumour",
-  "namc": {
-   "code": "EE-4.1",
-   "term": "vātajagranthiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Granthi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24626,11 +24158,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta cyst / suppurative tumour",
-  "namc": {
-   "code": "EE-4.2",
-   "term": "pittajagranthiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Granthi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24670,11 +24198,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha cyst / hard tumour",
-  "namc": {
-   "code": "EE-4.3",
-   "term": "kaphajagranthiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Granthi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24710,11 +24234,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Haematic cyst",
-  "namc": {
-   "code": "EE-4.6",
-   "term": "raktajagranthiH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktaja Granthi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24754,11 +24274,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Muscular tumour / Fibroma",
-  "namc": {
-   "code": "EE-4.8",
-   "term": "mAMsajagranthiH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Mamsaja Granthi",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -24950,11 +24466,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta ulcer",
-  "namc": {
-   "code": "K-1.2",
-   "term": "pittajavraṇaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Vrana",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25075,11 +24587,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Haematic ulcer",
-  "namc": {
-   "code": "K-1.4",
-   "term": "raktajavraṇaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktaja Vrana",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25118,11 +24626,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Traumatic wound",
-  "namc": {
-   "code": "K-2",
-   "term": "āgantujavraṇaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Agantuja Vrana",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25165,11 +24669,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Chronic non-healing ulcer",
-  "namc": {
-   "code": "K-10",
-   "term": "duShTavraNaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Dushta Vrana",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25332,11 +24832,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Fibrous / Bony tumour",
-  "namc": {
-   "code": "EE-2.1",
-   "term": "vātaja-arbudaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Arbuda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25376,11 +24872,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Inflammatory tumour",
-  "namc": {
-   "code": "EE-2.2",
-   "term": "pittaja-arbudaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittaja Arbuda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25421,11 +24913,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Hard / Benign tumour",
-  "namc": {
-   "code": "EE-2.3",
-   "term": "kaphaja-arbudaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Arbuda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25461,11 +24949,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Haemangioma / Blood tumour",
-  "namc": {
-   "code": "EE-2.4",
-   "term": "raktaja-arbudaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Raktaja Arbuda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25503,11 +24987,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Soft tissue sarcoma",
-  "namc": {
-   "code": "EE-2.5",
-   "term": "māṁsaja-arbudaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Mamsaja Arbuda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25543,11 +25023,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Lipoma / Liposarcoma",
-  "namc": {
-   "code": "EE-2.6",
-   "term": "mēdōja-arbudaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Medoja Arbuda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -25854,11 +25330,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Skin diseases",
-  "namc": {
-   "code": "ED-4",
-   "term": "kuṣṭham",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kushtha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -26622,11 +26094,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Traumatic diseases",
-  "namc": {
-   "code": "L",
-   "term": "abhighātaḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Abhighata Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -26896,11 +26364,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Snakebite poisoning",
-  "namc": {
-   "code": "PE-1",
-   "term": "sarpaviṣaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Sarpa Visha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -27663,11 +27127,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Delusion / Confusion",
-  "namc": {
-   "code": "AAB-70",
-   "term": "mōhaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Moha (Delusion)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -28506,11 +27966,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Ligament tear / Sprain",
-  "namc": {
-   "code": "LH-2",
-   "term": "snāyuviddhaḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Snayuvikara",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -28595,11 +28051,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Early cataract (1st stage)",
-  "namc": {
-   "code": "AAB-43",
-   "term": "timiraḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Timira (Prathamapata)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -28638,11 +28090,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cataract (2nd stage)",
-  "namc": {
-   "code": "AAB-43",
-   "term": "timiraḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Timira (Dvitiyapata)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -28683,11 +28131,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cataract (3rd stage)",
-  "namc": {
-   "code": "AAB-43",
-   "term": "timiraḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Timira (Tritiyapata)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -28727,11 +28171,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Mature cataract",
-  "namc": {
-   "code": "AAB-43",
-   "term": "timiraḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Timira (Chaturthapata)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -30796,11 +30236,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Convulsive spasm (Vata)",
-  "namc": {
-   "code": "AAB-14",
-   "term": "ākṣēpakaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Akshepaka (Vataja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -30883,11 +30319,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Monoplegia",
-  "namc": {
-   "code": "AAB-20",
-   "term": "ēkāṅgarōgaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ekanga Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -31255,11 +30687,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Bladder pain",
-  "namc": {
-   "code": "EB-10.12",
-   "term": "bastiSUlaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Basti Shoola",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -31387,11 +30815,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Minor skin / surface diseases",
-  "namc": {
-   "code": "O",
-   "term": "kṣudrarōgaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kshudra Roga",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -31432,11 +30856,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Goitre (thyroid)",
-  "namc": {
-   "code": "ACB-13",
-   "term": "galagaṇḍaḥ (kēvala-kapha)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Gala Ganda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -33306,11 +32726,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Warts / Naevus (minor)",
-  "namc": {
-   "code": "O-33",
-   "term": "maṣakaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Masaka (Ksudra)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -33546,11 +32962,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Minor skin disease",
-  "namc": {
-   "code": "ED-4.3",
-   "term": "kṣudrakuṣṭham",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Ksudra Kushtha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -33590,11 +33002,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata goitre / Thyroid disorder",
-  "namc": {
-   "code": "GF-19.1",
-   "term": "vātaja-galagaṇḍaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vataja Galaganda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -33678,11 +33086,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha goitre / Hypothyroid",
-  "namc": {
-   "code": "GF-19.2",
-   "term": "kaphaja-galagaṇḍaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Kaphaja Galaganda",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -34199,11 +33603,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Ichthyosis vulgaris",
-  "namc": {
-   "code": "ED-4.3",
-   "term": "kṣudrakuṣṭham",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Ksudra Kushtha 1 - Ekakushtha",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -34368,11 +33768,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Corns / Hyperkeratosis",
-  "namc": {
-   "code": "ED-4.3",
-   "term": "kṣudrakuṣṭham",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Ksudra Kushtha 5 - Alasaka",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -34494,11 +33890,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Prurigo / Eczema",
-  "namc": {
-   "code": "ED-4.3",
-   "term": "kṣudrakuṣṭham",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Ksudra Kushtha 8 - Pama",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -34579,11 +33971,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Erythroderma",
-  "namc": {
-   "code": "ED-4.3",
-   "term": "kṣudrakuṣṭham",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Ksudra Kushtha 10 - Sataru",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -36039,11 +35427,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Flatulence / Bloating",
-  "namc": {
-   "code": "AAB-13",
-   "term": "āṭōpaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Atopa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -36866,11 +36250,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Congenital Vata disorder",
-  "namc": {
-   "code": "AA",
-   "term": "vātavyādhiḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vata Vyadhi (Sahaja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -37067,11 +36447,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Fever with Ama (toxic)",
-  "namc": {
-   "code": "EC-3.12",
-   "term": "āmajajvaraḥ",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Ama Jwara",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -37630,11 +37006,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cervical spondylosis (Vata)",
-  "namc": {
-   "code": "AAB-73",
-   "term": "manyAstamBaH (kEvalavAta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Manyastambha (Vataja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -37676,11 +37048,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Cervical spondylosis (Kapha)",
-  "namc": {
-   "code": "AAB-73",
-   "term": "manyAstamBaH (kEvalavAta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Manyastambha (Kaphaja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -37804,11 +37172,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta ear disease",
-  "namc": {
-   "code": "J",
-   "term": "karNarogaH",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Karna Roga (Pittaja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38140,11 +37504,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Anuria",
-  "namc": {
-   "code": "SR83 (CA-1)",
-   "term": "mūtrakṣayaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Mutrakshaya",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38388,11 +37748,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata anorexia",
-  "namc": {
-   "code": "EC-7",
-   "term": "aruciḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aruchi (Vataja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38435,11 +37791,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta anorexia",
-  "namc": {
-   "code": "EC-7",
-   "term": "aruciḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aruchi (Pittaja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38482,11 +37834,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Kapha anorexia",
-  "namc": {
-   "code": "EC-7",
-   "term": "aruciḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aruchi (Kaphaja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38531,11 +37879,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Tridoshic anorexia",
-  "namc": {
-   "code": "EC-7",
-   "term": "aruciḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aruchi (Sannipataja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38574,11 +37918,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Anorexia from external cause",
-  "namc": {
-   "code": "EC-7",
-   "term": "aruciḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Aruchi (Agantuja)",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38742,11 +38082,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vertigo / Dizziness",
-  "namc": {
-   "code": "AAB-71",
-   "term": "bhramaḥ (kēvalavāta)",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Bhrama",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -38916,11 +38252,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Delirium",
-  "namc": {
-   "code": "AAB-62",
-   "term": "pralāpakaḥ (kēvalavāta)",
-   "tier": "fuzzy"
-  },
+  "namc": null,
   "name": "Pralapa",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -39002,11 +38334,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Fatigue without exertion",
-  "namc": {
-   "code": "ED-2.4",
-   "term": "klamaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Klama",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -39486,11 +38814,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata-Pitta ulcer",
-  "namc": {
-   "code": "K-1.5",
-   "term": "vātapittajavraṇaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vatapittaja Vrana",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -39531,11 +38855,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Vata-Kapha ulcer",
-  "namc": {
-   "code": "K-1.6",
-   "term": "vātakaphajavraṇaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Vatakaphaja Vrana",
   "patient_guidance": {},
   "practitioner_reference": {
@@ -39577,11 +38897,7 @@
    "regional_weight": 1.0
   },
   "modern_equivalent": "Pitta-Kapha ulcer",
-  "namc": {
-   "code": "K-1.7",
-   "term": "pittakaphajavraṇaḥ",
-   "tier": "exact"
-  },
+  "namc": null,
   "name": "Pittakaphaja Vrana",
   "patient_guidance": {},
   "practitioner_reference": {

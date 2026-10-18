@@ -6,11 +6,18 @@ JSON - no pickles - so it loads identically under any Python/library version.
 
     knowledge_pack/
       manifest.json     version, build time, source checksums, counts, metrics
-      conditions.json   profiles, dosha, demographics, NAMC code, references
+      conditions.json   profiles, dosha, demographics, references
       symptoms.json     canonical vocabulary, document frequency, cluster, aliases
       prakriti.json     constitution questionnaire + multinomial-logit coefficients
       vikriti.json      per-symptom dosha log-likelihood ratios
       evidence.json     literature per condition (Europe PMC), optional
+      namc_links.json   NAMC code per classical condition, optional and NOT committed
+
+The NAMC terminology mirror on Kaggle carries no clear redistribution licence, so its
+codes are kept out of the committed pack. ``ayur fetch-namc`` downloads it with the
+operator's own Kaggle credentials and writes ``namc_links.json`` locally; the loader
+overlays it when present. Licences of everything that is committed are listed in
+``knowledge_pack/ATTRIBUTION.md``.
 """
 
 from __future__ import annotations
@@ -31,6 +38,7 @@ from ..transform import normalize
 from .demographics import parse_age, parse_sex
 
 PACK_VERSION = 1
+NAMC_LINKS = "namc_links.json"
 
 # Patient-facing wording for the Prakriti items the screening analysis selected.
 PRAKRITI_QUESTIONS = {
@@ -236,6 +244,9 @@ def write_pack(
     out_dir.mkdir(parents=True, exist_ok=True)
     previous = out_dir / "manifest.json"
     old = json.loads(previous.read_text(encoding="utf-8")) if previous.exists() else {}
+    # NAMC codes go to a separate, git-ignored overlay (see the module docstring).
+    write_namc_links(out_dir, {c["id"]: c["namc"] for c in conditions if c.get("namc")})
+    conditions = [{**c, "namc": None} for c in conditions]
     hashes = {
         "conditions.json": _write(out_dir / "conditions.json", conditions),
         "symptoms.json": _write(out_dir / "symptoms.json", symptoms),
@@ -267,6 +278,29 @@ def write_pack(
     return manifest
 
 
+# --- NAMC overlay -----------------------------------------------------------------------
+def link_namc(conditions: list[dict], namc: pd.DataFrame) -> dict[str, dict]:
+    """NAMC code for each classical condition, keyed by condition id (exact + fuzzy tiers)."""
+    from ..transform import terminology
+
+    classical = [c for c in conditions if c["source"] == "condition_kb_classical"]
+    names = pd.Series([c["name"] for c in classical])
+    links = terminology.link_namc(names, namc)
+    return {
+        c["id"]: {"code": row.namc_code, "term": row.namc_term, "tier": row.namc_tier}
+        for c, row in zip(classical, links.itertuples(index=False), strict=True)
+        if isinstance(row.namc_code, str)
+    }
+
+
+def write_namc_links(out_dir: Path, links: dict[str, dict]) -> None:
+    path = out_dir / NAMC_LINKS
+    if links:
+        _write(path, links)
+    elif path.exists():
+        path.unlink()
+
+
 # --- loading ----------------------------------------------------------------------------
 @dataclass
 class KnowledgePack:
@@ -283,9 +317,14 @@ class KnowledgePack:
         read = lambda n: json.loads((directory / n).read_text(encoding="utf-8"))  # noqa: E731
         evidence = read("evidence.json") if (directory / "evidence.json").exists() else {}
         full = read("prakriti_full.json") if (directory / "prakriti_full.json").exists() else None
+        conditions = read("conditions.json")
+        if (directory / NAMC_LINKS).exists():
+            links = read(NAMC_LINKS)
+            for c in conditions:
+                c["namc"] = links.get(c["id"])
         return cls(
             read("manifest.json"),
-            read("conditions.json"),
+            conditions,
             read("symptoms.json")["terms"],
             read("prakriti.json"),
             read("vikriti.json"),

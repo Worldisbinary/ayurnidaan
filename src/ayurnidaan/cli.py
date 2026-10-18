@@ -95,6 +95,25 @@ def build_evidence(delay: float = typer.Option(0.25, help="Seconds between reque
     typer.echo(f"{len(cache)} diseases cached")
 
 
+@app.command("fetch-namc")
+def fetch_namc(force: bool = typer.Option(False, help="Re-download even if cached")) -> None:
+    """Download the NAMC codes (your Kaggle credentials) and link them to the pack.
+
+    The NAMC mirror has no clear redistribution licence, so the result is written to
+    knowledge_pack/namc_links.json, which git and Docker builds ignore.
+    """
+    from .clinical import knowledge
+
+    s = get_settings()
+    src = load_registry(s.sources_file)["namc_terminology"]
+    ingest.fetch(src, s.data_dir, force=force)
+    namc = ingest.read_raw(ingest.verify(src, s.data_dir))
+    pack = knowledge.KnowledgePack.load(s.knowledge_dir)
+    links = knowledge.link_namc(pack.conditions, namc)
+    knowledge.write_namc_links(s.knowledge_dir, links)
+    typer.echo(f"{len(links)} classical conditions linked to NAMC codes")
+
+
 @app.command()
 def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
     """Start the REST API."""

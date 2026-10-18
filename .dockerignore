@@ -10,3 +10,4 @@ mobile
 .env
 *.db
 knowledge_pack/evidence_cache.json
+knowledge_pack/namc_links.json

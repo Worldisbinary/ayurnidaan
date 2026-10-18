@@ -87,14 +87,14 @@
   "seed": 0
  },
  "built_at": "2026-10-04T11:48:37+00:00",
- "content_id": "d1bedb97008e",
+ "content_id": "b463eba79ab1",
  "counts": {
   "conditions": 1446,
   "prakriti_questions": 9,
   "symptoms": 215
  },
  "files": {
-  "conditions.json": "cdf9ab466fb646041bfef510434ef33cc1f2cbcceede4e54401c6083fba251bf",
+  "conditions.json": "8359a6f23ed1973eb5badfee09f7e58f69e9973a2bbef6e9012649f35d0d5313",
   "evidence.json": "3492478ac3f9aaafe94fcd1aa0e125331a0783866e336373ed608b45f1537bf6",
   "prakriti.json": "6debb63e8f8872c6cfdecdcadde450321a598c4ca3195e8c8afc9763b9a0a71c",
   "prakriti_full.json": "3fd91961b2b4e94ebc3ddf575caa4800d66723c23dcc7b978bed61185160ac20",

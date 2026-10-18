@@ -27,6 +27,34 @@ def test_pipeline_publishes_all_artifacts(synthetic_settings, pipeline_run):
     )
 
 
+def test_namc_codes_stay_out_of_the_committed_pack(synthetic_settings, pipeline_run):
+    """NAMC has no clear redistribution licence: conditions.json must not carry codes, the
+    overlay holds them, and the loader merges the overlay only when it is present."""
+    from ayurnidaan.clinical.knowledge import NAMC_LINKS, KnowledgePack
+
+    k = synthetic_settings.knowledge_dir
+    committed = json.loads((k / "conditions.json").read_text(encoding="utf-8"))
+    assert all(c["namc"] is None for c in committed)
+    links = json.loads((k / NAMC_LINKS).read_text(encoding="utf-8"))
+    assert links, "synthetic NAMC terms should link to some classical conditions"
+    assert NAMC_LINKS not in json.loads((k / "manifest.json").read_text())["files"]
+
+    pack = KnowledgePack.load(k)
+    merged = {c["id"]: c["namc"] for c in pack.conditions if c["namc"]}
+    assert merged == links
+
+
+def test_pack_loads_without_namc_overlay(synthetic_settings, pipeline_run, tmp_path):
+    import shutil
+
+    from ayurnidaan.clinical.knowledge import NAMC_LINKS, KnowledgePack
+
+    copy = tmp_path / "pack"
+    shutil.copytree(synthetic_settings.knowledge_dir, copy)
+    (copy / NAMC_LINKS).unlink()
+    assert all(c["namc"] is None for c in KnowledgePack.load(copy).conditions)
+
+
 def test_warehouse_contents_and_lineage(synthetic_settings, pipeline_run):
     con = duckdb.connect(str(synthetic_settings.warehouse_path), read_only=True)
     try:

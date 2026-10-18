@@ -16,6 +16,14 @@ data/raw/
 artifacts/
 # Local SQLite databases (production uses Postgres)
 *.db
+# NAMC code links: the NAMC source has no clear redistribution licence, so the links are
+# rebuilt locally with `ayur fetch-namc` and never committed.
+knowledge_pack/namc_links.json
+# Editor / AI-assistant tooling, not part of the project
+.claude/
+mobile/.claude/
+mobile/AGENTS.md
+mobile/CLAUDE.md
 # Mobile / web client
 mobile/node_modules/
 mobile/dist/

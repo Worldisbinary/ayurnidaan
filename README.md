@@ -83,14 +83,18 @@ client credentials.
 
 | Source | Used for | Licence / access |
 |---|---|---|
-| Kaggle: classical Ayurvedic knowledge base (1,000 conditions) | condition profiles, dosha, body system, age/sex, treatment principles | Kaggle |
-| Kaggle: AyurGenixAI (446 diseases) | modern profiles, herbs, tests, diet/yoga guidance | Kaggle |
-| Kaggle: Prakriti assessments (5,000) | constitution model | Kaggle |
-| Kaggle: lifestyle intake survey (3,563) | diabetes risk analytics | Kaggle (contains names, scrubbed on ingest) |
-| Ministry of AYUSH NAMC codes (2,893) | standard morbidity coding | Kaggle mirror |
+| Kaggle: classical Ayurvedic knowledge base (1,000 conditions) | condition profiles, dosha, body system, age/sex, treatment principles | CC BY 4.0 |
+| Kaggle: AyurGenixAI (446 diseases) | modern profiles, herbs, tests, diet/yoga guidance | CC BY 4.0 |
+| Kaggle: Prakriti assessments (5,000) | constitution model (coefficients only) | ODbL 1.0 / DbCL 1.0 |
+| Kaggle: lifestyle intake survey (3,563) | diabetes risk analytics, local only | unknown: never redistributed (contains names, scrubbed on ingest) |
+| Ministry of AYUSH NAMC codes (2,893) | standard morbidity coding | unclear: not committed; `ayur fetch-namc` builds it locally |
 | **Orphanet** prevalence + names | rare-disease priors (India / Asia / Worldwide only) | CC-BY-4.0 |
 | **Europe PMC** (PubMed + PMC) | literature per condition, regional relevance | free REST API |
 | **Open-Meteo** ERA5 archive + geocoding | Desha from local climate | free API |
+
+Code is MIT ([LICENSE](LICENSE)). The committed `knowledge_pack/` is derived data under
+the upstream licences above, with the required attribution in
+[knowledge_pack/ATTRIBUTION.md](knowledge_pack/ATTRIBUTION.md).
 
 Google Scholar has no API and its terms forbid scraping, so Europe PMC is the
 literature source. Three Kaggle datasets were **rejected by the quality gate**: one is
