@@ -23,11 +23,23 @@ updates:
         update-types: [minor, patch]
       npm-minor:
         update-types: [minor, patch]
+    # Expo SDK 57 pins a compatible version of each native package. Moving one of them
+    # on its own breaks the build: react-native 0.86 -> 0.87 is a semver "minor" but
+    # broke the web export (closed PR #8). Those packages therefore get patches only, and
+    # every major waits for an SDK upgrade (`npx expo upgrade` + `npx expo install --fix`).
     ignore:
-      - dependency-name: "expo"
+      - dependency-name: "*"
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-native"
-        update-types: ["version-update:semver-major"]
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "react-native-*"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "@types/react"
+        update-types: ["version-update:semver-minor"]
 
   - package-ecosystem: github-actions
     directory: /
