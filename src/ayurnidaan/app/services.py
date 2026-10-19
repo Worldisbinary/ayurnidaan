@@ -21,6 +21,7 @@ from ..clinical.knowledge import KnowledgePack
 from ..config import Settings
 from ..http import get_json
 from .models import AuditLog, Consent, Encounter, LocationClimate, ModelVersion, Review, User
+from .observability import ASSESSMENT_LATENCY
 
 LEARNING_DECISIONS = ("confirmed", "revised")
 MIN_CASES_TO_LEARN = 20
@@ -86,6 +87,10 @@ class ClinicalService:
         self._lock = threading.Lock()
         self.engine = AssessmentEngine(self.pack)
         self.active_version: str | None = None
+        self._by_id = {c["id"]: c for c in self.pack.conditions}
+
+    def condition(self, condition_id: str | None) -> dict | None:
+        return self._by_id.get(condition_id) if condition_id else None
 
     def load_active(self, s: Session) -> None:
         mv = s.scalars(select(ModelVersion).where(ModelVersion.active)).first()
@@ -99,7 +104,8 @@ class ClinicalService:
     def assess(self, enc: EncounterInput) -> dict:
         with self._lock:
             engine = self.engine
-        return engine.assess(enc)
+        with ASSESSMENT_LATENCY.time():
+            return engine.assess(enc)
 
 
 # --- geography ------------------------------------------------------------------------------

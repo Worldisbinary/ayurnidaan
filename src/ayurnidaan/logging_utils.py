@@ -5,7 +5,12 @@ from __future__ import annotations
 import json
 import logging
 import sys
+from contextvars import ContextVar
 from datetime import UTC, datetime
+
+# Set by the API's HTTP middleware for the duration of one request. A ContextVar (not a
+# global or thread-local) is correct under both threads and asyncio tasks.
+request_id_var: ContextVar[str | None] = ContextVar("request_id", default=None)
 
 
 class JsonFormatter(logging.Formatter):
@@ -16,6 +21,9 @@ class JsonFormatter(logging.Formatter):
             "logger": record.name,
             "msg": record.getMessage(),
         }
+        # Inside an API request every line carries its ID (set by the HTTP middleware).
+        if (rid := request_id_var.get()) is not None:
+            payload["request_id"] = rid
         payload.update(getattr(record, "extra_fields", {}))
         if record.exc_info:
             payload["exc"] = self.formatException(record.exc_info)

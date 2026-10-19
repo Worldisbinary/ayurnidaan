@@ -2,12 +2,17 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException
-from sqlalchemy import case, or_, select
+from datetime import datetime
+
+from fastapi import APIRouter, HTTPException, Query, Response
+from sqlalchemy import or_, select, tuple_
+from sqlalchemy.orm import selectinload
 
 from ..ayurveda_profile import build as build_ayurveda
 from ..deps import DB, Clinical, Practitioner
+from ..idempotency import Idempotent
 from ..models import Encounter, Review, User
+from ..pagination import DEFAULT_LIMIT, MAX_LIMIT, decode_cursor, page
 from ..schemas import ExaminationIn, ReviewIn
 from ..services import audit, current_consents, patient_history, population_insights
 from .encounters import encounter_out, run_assessment
@@ -15,9 +20,21 @@ from .me import profile_out
 
 router = APIRouter(prefix="/practitioner", tags=["practitioner"])
 
-_PRIORITY = case(
-    (Encounter.triage_level == "emergency", 0), (Encounter.triage_level == "urgent", 1), else_=2
-)
+
+def queue_query(user_id: str, status: str, after: tuple | None, limit: int):
+    """Emergency and urgent cases first, then oldest first; keyset-paginated.
+
+    ORDER BY (triage_rank, created_at, id) is exactly the ix_encounters_queue index order
+    after its leading ``status`` column, so the database reads the first ``limit + 1``
+    index entries and stops. ``scripts/explain_queries.py`` checks this plan.
+    """
+    q = select(Encounter).where(
+        Encounter.status == status,
+        or_(Encounter.practitioner_id.is_(None), Encounter.practitioner_id == user_id),
+    )
+    if after is not None:
+        q = q.where(tuple_(Encounter.triage_rank, Encounter.created_at, Encounter.id) > after)
+    return q.order_by(Encounter.triage_rank, Encounter.created_at, Encounter.id).limit(limit + 1)
 
 
 def _visible(db, user: User, encounter_id: str) -> Encounter:
@@ -34,20 +51,27 @@ def _visible(db, user: User, encounter_id: str) -> Encounter:
 
 
 @router.get("/queue")
-def queue(user: Practitioner, db: DB, status: str = "submitted") -> list[dict]:
-    """Emergency and urgent cases first, then oldest first."""
+def queue(
+    user: Practitioner,
+    db: DB,
+    response: Response,
+    status: str = "submitted",
+    limit: int = Query(DEFAULT_LIMIT, ge=1, le=MAX_LIMIT),
+    cursor: str | None = None,
+) -> list[dict]:
+    """Triaged queue, one page at a time. More pages: pass back ``X-Next-Cursor``."""
+    after = decode_cursor(cursor, (int, datetime, str)) if cursor else None
     rows = db.scalars(
-        select(Encounter)
-        .where(
-            Encounter.status == status,
-            or_(Encounter.practitioner_id.is_(None), Encounter.practitioner_id == user.id),
-        )
-        .order_by(_PRIORITY, Encounter.created_at)
+        queue_query(user.id, status, after, limit)
+        # Patients and their profiles in 2 extra queries for the whole page, instead of
+        # 2 per row (the N+1 query problem).
+        .options(selectinload(Encounter.patient).selectinload(User.profile))
     ).all()
+    rows = page(list(rows), limit, lambda e: (e.triage_rank, e.created_at, e.id), response)
     out = []
     for e in rows:
         top = ((e.assessment or {}).get("differential") or [{}])[0]
-        patient = db.get(User, e.patient_id)
+        patient = e.patient
         p = patient.profile if patient else None
         out.append(
             {
@@ -88,10 +112,9 @@ def case_view(encounter_id: str, user: Practitioner, db: DB, clinical: Clinical)
     and Ayurveda literature."""
     e = _visible(db, user, encounter_id)
     patient = db.get(User, e.patient_id)
-    by_id = {c["id"]: c for c in clinical.pack.conditions}
     refs = {}
     for d in (e.assessment or {}).get("differential", [])[:8]:
-        c = by_id.get(d["condition_id"], {})
+        c = clinical.condition(d["condition_id"]) or {}
         refs[d["condition_id"]] = {
             "practitioner_reference": c.get("practitioner_reference", {}),
             "patient_guidance": c.get("patient_guidance", {}),
@@ -132,18 +155,26 @@ def examination(
 
 @router.post("/encounters/{encounter_id}/review")
 def review(
-    encounter_id: str, body: ReviewIn, user: Practitioner, db: DB, clinical: Clinical
+    encounter_id: str,
+    body: ReviewIn,
+    user: Practitioner,
+    db: DB,
+    clinical: Clinical,
+    idem: Idempotent,
 ) -> dict:
+    """Record the verdict. Send an ``Idempotency-Key`` so a retry cannot record it twice
+    (each review row is a training label for the learning loop)."""
+    if (replayed := idem.replay({"encounter_id": encounter_id, **body.model_dump()})) is not None:
+        return replayed
     e = _visible(db, user, encounter_id)
     name = None
     if body.decision in ("confirmed", "revised"):
-        cond = next((c for c in clinical.pack.conditions if c["id"] == body.condition_id), None)
+        cond = clinical.condition(body.condition_id)
         if cond is None:
             raise HTTPException(422, "confirmed / revised reviews need a valid condition_id")
         name = cond["name"]
-    db.add(
+    e.reviews.append(
         Review(
-            encounter_id=e.id,
             practitioner_id=user.id,
             decision=body.decision,
             condition_id=body.condition_id,
@@ -163,9 +194,8 @@ def review(
         decision=body.decision,
         condition_id=body.condition_id,
     )
-    db.commit()
-    db.refresh(e)
-    return encounter_out(e)
+    db.flush()  # assigns the review's id and timestamp before the response is built
+    return idem.commit(200, encounter_out(e))
 
 
 @router.get("/insights")

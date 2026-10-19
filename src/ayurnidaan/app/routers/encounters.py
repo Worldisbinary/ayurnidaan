@@ -2,13 +2,16 @@
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime
 
-from fastapi import APIRouter, HTTPException
-from sqlalchemy import select
+from fastapi import APIRouter, HTTPException, Query, Response
+from sqlalchemy import select, tuple_
+from sqlalchemy.orm import selectinload
 
 from ..deps import DB, Clinical, Patient
-from ..models import Encounter
+from ..idempotency import Idempotent
+from ..models import TRIAGE_RANK, Encounter
+from ..pagination import DEFAULT_LIMIT, MAX_LIMIT, decode_cursor, page
 from ..schemas import AnswersIn, EncounterCreate
 from ..services import age_on, audit, current_consents, encounter_context, to_input
 
@@ -69,6 +72,7 @@ def run_assessment(e: Encounter, clinical) -> None:
     e.assessment = result
     e.engine_version = result["engine_version"]
     e.triage_level = result["triage"]["level"]
+    e.triage_rank = TRIAGE_RANK.get(e.triage_level, 2)
     e.ritu, e.desha = encounter_context(enc_input)
     if result.get("stopped"):
         e.status = "emergency"
@@ -82,7 +86,13 @@ def _own(db, user, encounter_id: str) -> Encounter:
 
 
 @router.post("", status_code=201)
-def create(body: EncounterCreate, user: Patient, db: DB, clinical: Clinical) -> dict:
+def create(
+    body: EncounterCreate, user: Patient, db: DB, clinical: Clinical, idem: Idempotent
+) -> dict:
+    """Start a check-up. Send an ``Idempotency-Key`` header: a retry after a lost response
+    then returns the same encounter instead of filing a duplicate case."""
+    if (replayed := idem.replay(body.model_dump())) is not None:
+        return replayed
     p = user.profile
     today = date.today()
     inputs = {
@@ -120,8 +130,7 @@ def create(body: EncounterCreate, user: Patient, db: DB, clinical: Clinical) -> 
     db.add(e)
     db.flush()
     audit(db, user.id, "encounter.create", "encounter", e.id, triage=e.triage_level)
-    db.commit()
-    return encounter_out(e)
+    return idem.commit(201, encounter_out(e))
 
 
 @router.post("/{encounter_id}/answers")
@@ -165,12 +174,25 @@ def submit(encounter_id: str, user: Patient, db: DB) -> dict:
 
 
 @router.get("")
-def list_mine(user: Patient, db: DB) -> list[dict]:
+def list_mine(
+    user: Patient,
+    db: DB,
+    response: Response,
+    limit: int = Query(DEFAULT_LIMIT, ge=1, le=MAX_LIMIT),
+    cursor: str | None = None,
+) -> list[dict]:
+    """Newest first, keyset-paginated on (created_at, id) via ix_encounters_patient_created."""
+    q = select(Encounter).where(Encounter.patient_id == user.id)
+    if cursor:
+        q = q.where(
+            tuple_(Encounter.created_at, Encounter.id) < decode_cursor(cursor, (datetime, str))
+        )
     rows = db.scalars(
-        select(Encounter)
-        .where(Encounter.patient_id == user.id)
-        .order_by(Encounter.created_at.desc())
+        q.order_by(Encounter.created_at.desc(), Encounter.id.desc())
+        .limit(limit + 1)
+        .options(selectinload(Encounter.reviews))  # one query for all reviews, not N
     ).all()
+    rows = page(list(rows), limit, lambda e: (e.created_at, e.id), response)
     return [encounter_out(e, include_inputs=False) for e in rows]
 
 

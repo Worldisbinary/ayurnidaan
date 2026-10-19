@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from sqlalchemy import select
 
 from ..deps import DB, Admin, Clinical
@@ -67,10 +67,21 @@ def run_retrain(user: Admin, db: DB, clinical: Clinical) -> dict:
 
 
 @router.get("/audit")
-def audit_log(user: Admin, db: DB, limit: int = 200) -> list[dict]:
-    rows = db.scalars(select(AuditLog).order_by(AuditLog.id.desc()).limit(min(limit, 1000))).all()
+def audit_log(
+    user: Admin,
+    db: DB,
+    limit: int = Query(200, ge=1, le=1000),
+    before_id: int | None = Query(None, description="keyset: entries older than this id"),
+) -> list[dict]:
+    """Newest first. Page back with ``before_id`` = the last ``id`` received (an index
+    seek on the primary key, so page 1,000 costs the same as page 1)."""
+    q = select(AuditLog)
+    if before_id is not None:
+        q = q.where(AuditLog.id < before_id)
+    rows = db.scalars(q.order_by(AuditLog.id.desc()).limit(limit)).all()
     return [
         {
+            "id": r.id,
             "at": r.created_at.isoformat(),
             "actor": r.actor_id,
             "action": r.action,

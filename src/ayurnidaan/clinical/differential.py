@@ -29,6 +29,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
+from . import topk
 from .dosha import DOSHAS, DoshaProfile
 from .kala_desha import KalaDesha
 from .knowledge import KnowledgePack
@@ -190,7 +191,7 @@ class DifferentialModel:
         top: int = 10,
     ) -> list[dict]:
         """Top conditions, same-name duplicates merged, each with an evidence breakdown."""
-        order = np.argsort(-post)
+        order = topk.descending(post, expect=top)  # O(n) selection, not a full sort
         seen: dict[str, int] = {}
         out: list[dict] = []
         positives = {s for s, v in answers.items() if v}

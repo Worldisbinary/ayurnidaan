@@ -42,6 +42,19 @@ class Settings(BaseSettings):
         default_factory=lambda: ["http://localhost:8081", "http://localhost:19006"]
     )
     rate_limit_per_minute: int = 120
+    auth_rate_limit_per_minute: int = 10  # login / register / refresh, per client IP
+    # Proxies in front of the API that append to X-Forwarded-For: 0 = exposed directly,
+    # 1 = behind one proxy (nginx in docker-compose, or Render's edge). See ratelimit.py.
+    trusted_proxy_hops: int = 0
+    # Bearer token for /metrics. Unset: /metrics is open in development and test, and
+    # disabled (404) in production, so it is never public by accident.
+    metrics_token: str | None = None
+    # Connection pool per worker process (Postgres only). Workers x (size + overflow)
+    # must stay below the database's connection limit; see docs/SYSTEM_DESIGN.md.
+    db_pool_size: int = 5
+    db_max_overflow: int = 5
+    db_pool_timeout: float = 10.0  # seconds to wait for a free connection, then 500
+    db_pool_recycle: int = 300  # seconds; Neon closes idle connections server-side
     policy_version: str = "2026-10"
     open_meteo_archive_url: str = "https://archive-api.open-meteo.com/v1/archive"
     open_meteo_geocode_url: str = "https://geocoding-api.open-meteo.com/v1/search"

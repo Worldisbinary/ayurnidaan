@@ -7,16 +7,18 @@ import urllib.parse
 from datetime import UTC, date, datetime, timedelta
 from typing import Literal
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel, Field
 from sqlalchemy import select
 
+from ... import __version__
 from ...clinical import modules as M
 from .. import digilocker as dl
 from ..ayurveda_profile import build, trends
 from ..deps import DB, AppSettings, Clinical, Patient
 from ..models import Consent, DailyLog, OAuthState, PatientProfile, User
+from ..pagination import cached_json
 from ..services import audit
 
 router = APIRouter(tags=["ayurveda"])
@@ -99,8 +101,8 @@ def submit_module(
 
 # --- daily tracking ---------------------------------------------------------------------------
 @router.get("/daily/catalog")
-def daily_catalog() -> dict:
-    return M.catalog()
+def daily_catalog(request: Request) -> Response:
+    return cached_json(request, M.catalog(), __version__)
 
 
 @router.put("/me/daily/{day}")
